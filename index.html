@@ -60,25 +60,34 @@
 
 						</div>
 						<div class="col-8 col-7-large col-12-medium">
+							
        <header>
-    <h2>
-        Hei, I'm <strong>Rishikesh Kesari</strong> - 
-        <span class="data-velho-neon">A Data Velho</span>
-    </h2>
+  <h2>
+    Hei, I'm <strong>Rishikesh Kesari</strong> — 
+    <span class="data-velho-neon">A Data Velho</span>
+  </h2>
 </header>
 
 <style>
 .data-velho-neon {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    color: #9B30FF; /* neon blue */
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
-    animation: pulseNeon 1.5s infinite alternate;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #9B30FF; /* vibrant purple */
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+  animation: pulseNeon 1.5s infinite alternate, bounce 1.8s ease-in-out infinite;
+  display: inline-block; /* allows movement */
 }
 
+/* glowing effect */
 @keyframes pulseNeon {
-    0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; }
-    50% { text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 40px #00ffff; }
-    100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; }
+  0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; }
+  50% { text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 40px #00ffff; }
+  100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; }
+}
+
+/* bounce effect */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 </style>
 
