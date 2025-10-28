@@ -2586,3 +2586,94 @@ header p {
         max-width: calc(100% - 30px);
     }
 }
+/* Meet Me cinematic fade-in animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInCinematic 2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInCinematic {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Fade in video and text sequentially */
+#meet-subtext {
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 2s;
+}
+
+.video-container {
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 3.5s;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: make the section look cinematic */
+#meet-me {
+    background: radial-gradient(circle at center, #0b0b0b 20%, #000000 90%);
+    color: #f0f0f0;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Meet Me cinematic fade-in animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInCinematic 2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInCinematic {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Fade in video and text sequentially */
+#meet-subtext {
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 2s;
+}
+
+.video-container {
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 3.5s;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: make the section look cinematic */
+#meet-me {
+    background: radial-gradient(circle at center, #0b0b0b 20%, #000000 90%);
+    color: #f0f0f0;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 20px;
+}
