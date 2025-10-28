@@ -255,23 +255,116 @@
 
 
 
-<!-- Meet Me Section -->
-<article id="meet-me" class="wrapper style4">
-    <div class="container medium">
-        <header>
-            <h2>Meet Me</h2>
-            <p>Watch my video intro to get to know me better!</p>
-        </header>
-        
-        <div class="row">
-            <div class="col-12">
-                <section class="box style1">
-                    <div class="content">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Bv3D1wxcPk0" title="Video Interview" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </section>
+<!-- Meet Me Section (upgraded with glowing play overlay) -->
+<article id="meet-me" class="wrapper style4 fade-in-section">
+  <div class="container medium">
+    <header>
+      <h2 class="meet-title">🎥 Meet Me</h2>
+      <p class="meet-subtext">
+        Watch my short intro — where data meets creativity and curiosity drives everything I do.
+      </p>
+    </header>
+
+    <div class="video-box">
+      <div class="video-frame" id="video-frame">
+        <!-- Poster image shown under overlay; replace with your thumbnail path -->
+        <img class="video-poster" src="images/video_thumbnail.jpg" alt="Rishi intro thumbnail" />
+
+        <!-- YouTube iframe (initially without autoplay param) -->
+        <iframe
+          id="meet-iframe"
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/Bv3D1wxcPk0?rel=0&showinfo=0"
+          title="Rishi Kesari - Meet Me Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+
+        <!-- Glowing play button overlay -->
+        <button class="play-overlay" id="play-overlay" aria-label="Play video">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" />
+            <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
     </div>
+  </div>
 </article>
+
+		/* Meet Me layout (keep existing styles you already have) */
+#meet-me { /* keep or merge with existing */ }
+
+/* Video frame and poster */
+.video-frame {
+  position: relative;
+  width: 90%;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6));
+  box-shadow: 0 0 30px rgba(0,255,255,0.12);
+}
+
+/* Poster image sits behind iframe for quick loading preview */
+.video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* iframe sits above poster but under overlay; initially visible but we keep poster visible until play */
+#meet-iframe {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Play overlay button centered */
+.play-overlay {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 23, 68, 0.12); /* soft cherry red */
+  border: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #ff1744; /* icon color */
+  box-shadow: 0 0 12px rgba(255,23,68,0.25), 0 0 40px rgba(255,23,68,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+  backdrop-filter: blur(4px);
+}
+
+/* icon inside button */
+.play-overlay svg { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35)); }
+
+/* hover effect */
+.play-overlay:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 0 20px rgba(255,23,68,0.35), 0 0 60px rgba(255,23,68,0.12);
+}
+
+/* When playing hide poster and overlay smoothly */
+.video-frame.playing .video-poster { opacity: 0; pointer-events: none; }
+.video-frame.playing .play-overlay { opacity: 0; visibility: hidden; transform: translate(-50%, -50%) scale(0.9); }
+
+/* Fade-in scroll helper (if using intersection observer) */
+.fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.fade-in-section.visible { opacity: 1; transform: translateY(0); }
 
 		
 <!-- Beyond Data Section -->
