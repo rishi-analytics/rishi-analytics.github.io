@@ -71,9 +71,9 @@
 <style>
 .data-velho-neon {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
-  animation: pulseNeon 2s infinite alternate, bounce 1.8s ease-in-out infinite, colorShift 4s infinite linear;
+  color: #ff1744; /* cherry red */
+  text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744, 0 0 20px #ff1744;
+  animation: pulseNeon 2s infinite alternate, bounce 1.8s ease-in-out infinite, colorShift 6s infinite linear;
   display: inline-block;
 }
 
@@ -90,15 +90,17 @@
   50% { transform: translateY(-8px); }
 }
 
-/* color shift (cyan → pink → purple → back) */
+/* color shift: cherry red → yellow → green → cyan → pink → purple → back to cherry red */
 @keyframes colorShift {
-  0% { color: #00ffff; }
-  33% { color: #ff00ff; }
-  66% { color: #9b30ff; }
-  100% { color: #00ffff; }
+  0%   { color: #ff1744; }   /* cherry red */
+  17%  { color: #ffff00; }   /* yellow */
+  34%  { color: #00ff7f; }   /* green */
+  51%  { color: #00ffff; }   /* cyan */
+  68%  { color: #ff00ff; }   /* pink */
+  85%  { color: #9b30ff; }   /* purple */
+  100% { color: #ff1744; }   /* back to cherry red */
 }
 </style>
-
 
 <p style="font-family: Caladea, serif;">
     As an analyst, I don’t just crunch numbers— I uncover the stories hidden in data 
