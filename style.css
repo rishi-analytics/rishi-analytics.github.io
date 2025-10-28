@@ -2677,3 +2677,69 @@ header p {
     text-align: center;
     border-radius: 20px;
 }
+
+
+
+
+
+/* Cinematic fade-in animation for Meet Me section */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInCinematic 1.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInCinematic {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Title and text appear in sequence */
+.fade-title {
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+  animation-delay: 1s;
+}
+
+.fade-subtext {
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+  animation-delay: 2s;
+}
+
+.video-fade {
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional cinematic styling */
+#meet-me {
+  background: radial-gradient(circle at center, #0b0b0b 20%, #000000 90%);
+  color: #f0f0f0;
+  padding: 80px 0;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
