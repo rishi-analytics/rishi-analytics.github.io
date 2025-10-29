@@ -2743,3 +2743,14 @@ header p {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
+body {
+  background: linear-gradient(270deg, #ff6ec7, #5dade2, #00ffcc);
+  background-size: 600% 600%;
+  animation: backgroundShift 15s ease infinite;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
