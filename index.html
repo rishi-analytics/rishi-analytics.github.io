@@ -255,40 +255,28 @@
 			</article>
 
 
+		
 
 <!-- Meet Me Section -->
 <article id="meet-me" class="wrapper" style="text-align:center; padding:60px 0;">
 
   <style>
-    /* Inline CSS for this section only */
-
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-    }
-
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* --- Meet Me Section Styling --- */
+    #meet-me {
+      background: radial-gradient(circle at center, #0b0b0b 20%, #000000 90%);
+      color: #f0f0f0;
+      padding: 80px 0;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
     }
 
     .glow-title {
       font-family: "Oswald", sans-serif;
-      color: #ffd700;
+      color: #ffcc00;
       text-shadow: 0 0 10px #ffdd33, 0 0 20px #ffaa00, 0 0 30px #ffaa00;
       animation: glowPulse 2s infinite alternate;
       letter-spacing: 1px;
-    }
-
-    .fade-subtext {
-      opacity: 0;
-      transition: opacity 1.5s ease-out;
-    }
-
-    .fade-video {
-      opacity: 0;
-      transition: opacity 1.5s ease-out;
     }
 
     @keyframes glowPulse {
@@ -296,7 +284,48 @@
       50% { text-shadow: 0 0 20px #ffdd33, 0 0 30px #ffaa00, 0 0 40px #ff8800; }
       100% { text-shadow: 0 0 10px #ffdd33, 0 0 20px #ffaa00, 0 0 30px #ffaa00; }
     }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
+
+  <div class="container medium fade-in">
+    <header>
+      <h2 class="glow-title">🎥 Let’s Meet Rishi</h2>
+      <p>Get to know the person behind the data — a snapshot of my creativity & curiosity 😎</p>
+    </header>
+    
+    <div class="row">
+      <div class="col-12">
+        <section class="box style1">
+          <div class="content">
+            <iframe 
+              width="100%" 
+              height="315" 
+              src="https://www.youtube.com/embed/Bv3D1wxcPk0" 
+              title="Video Interview" 
+              frameborder="0" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
 
   <div class="container fade-in-section">
     <header>
