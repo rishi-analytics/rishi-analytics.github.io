@@ -325,50 +325,6 @@
 </article>
 
 
-
-
-  <div class="container fade-in-section">
-    <header>
-      <h2 class="glow-title">🎥 Let's Meet Rishi</h2>
-      <p class="fade-subtext">Get to know the person behind the data— a snapshot of my personality + creativity 😎 </p>
-	
-    </header>
-
-    <div style="margin-top:30px;" class="fade-video">
-      <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/Bv3D1wxcPk0"
-        title="Video Interview"
-        frameborder="0"
-        allowfullscreen
-        style="border-radius:12px; box-shadow:0 0 20px rgba(255,200,0,0.3);">
-      </iframe>
-    </div>
-  </div>
-
-  <script>
-    // Inline JS for fade effect
-    function fadeInMeetMe() {
-      const section = document.querySelector('.fade-in-section');
-      const subtitle = section.querySelector('.fade-subtext');
-      const video = section.querySelector('.fade-video');
-      const windowBottom = window.innerHeight + window.scrollY;
-      const sectionTop = section.offsetTop + 100;
-
-      if (windowBottom >= sectionTop) {
-        section.classList.add('visible');
-        setTimeout(() => { subtitle.style.opacity = 1; }, 500);
-        setTimeout(() => { video.style.opacity = 1; }, 1000);
-      }
-    }
-
-    window.addEventListener('scroll', fadeInMeetMe);
-    window.addEventListener('load', fadeInMeetMe);
-  </script>
-
-</article>
-
-
-
 		
 <!-- Beyond Data Section -->
 <article id="beyond-data" class="wrapper style5">
