@@ -2754,3 +2754,16 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* Initial hidden state */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* When visible, apply fade-in and slide-up */
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
