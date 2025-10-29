@@ -449,23 +449,24 @@
 			<script src="assets/js/main.js"></script>
 
 	<script>
-// Detect elements in viewport
-function fadeInOnScroll() {
-  const elements = document.querySelectorAll('.fade-in-section');
+function fadeInMeetMe() {
+  const section = document.querySelector('.fade-in-section');
+  const subtitle = section.querySelector('.fade-subtext');
+  const video = section.querySelector('.fade-video');
   const windowBottom = window.innerHeight + window.scrollY;
+  const sectionTop = section.offsetTop + 100;
 
-  elements.forEach(el => {
-    const elTop = el.offsetTop + 100; // slightly earlier trigger
-    if (windowBottom >= elTop) {
-      el.classList.add('visible');
-    }
-  });
+  if (windowBottom >= sectionTop) {
+    section.classList.add('visible');
+    setTimeout(() => { subtitle.style.opacity = 1; }, 500);
+    setTimeout(() => { video.style.opacity = 1; }, 1000);
+  }
 }
 
-// Trigger on load and scroll
-window.addEventListener('scroll', fadeInOnScroll);
-window.addEventListener('load', fadeInOnScroll);
+window.addEventListener('scroll', fadeInMeetMe);
+window.addEventListener('load', fadeInMeetMe);
 </script>
+
 
 
 	</body>
