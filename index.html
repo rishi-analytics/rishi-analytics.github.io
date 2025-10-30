@@ -385,7 +385,7 @@
   <div class="container medium">
     <header>
       <h2>Skills</h2>
-      <p>Here’s a snapshot of my skillset in my analytics universe 🌌</p>
+      <p>Here’s a snapshot of my analytics universe 🌌</p>
     </header>
 
     <div class="skills-grid">
@@ -403,50 +403,40 @@
       <a href="#" class="skill-bubble">Self-Organized</a>
     </div>
   </div>
+
+  <!-- Stars & Analytics Symbols -->
+  <canvas id="stars-canvas"></canvas>
 </article>
 
 <style>
-/* Galaxy background for the skills section */
 #skills {
   position: relative;
   padding: 60px 0;
   background: radial-gradient(ellipse at center, #0b0b0b 0%, #000000 100%);
   color: #f0f0f0;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
 }
 
-/* Optional stars overlay */
-#skills::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: transparent url('images/stars.png') repeat;
-  opacity: 0.2;
-  z-index: 0;
-}
-
-/* Skill header styling */
+/* Skills header */
 #skills header h2 {
   font-size: 2.2rem;
-  margin-bottom: 10px;
   color: #ffdd33;
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffaa00;
+  margin-bottom: 10px;
 }
 
-/* Skill grid container */
+/* Skill bubbles */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
   margin-top: 40px;
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 
-/* Individual skill bubble (planet) */
 .skill-bubble {
   width: 120px;
   height: 120px;
@@ -466,20 +456,81 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Floating animation */
+.skill-bubble:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(255,255,255,0.7), inset 0 0 15px rgba(0,0,0,0.4);
+  background: radial-gradient(circle at 30% 30%, #ff6ec7, #5dade2);
+}
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
   100% { transform: translateY(0px); }
 }
 
-/* Hover effect */
-.skill-bubble:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 25px rgba(255,255,255,0.7), inset 0 0 15px rgba(0,0,0,0.4);
-  background: radial-gradient(circle at 30% 30%, #ff6ec7, #5dade2);
+/* Canvas for stars & symbols */
+#stars-canvas {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
-</style>		
+</style>
+
+<script>
+const canvas = document.getElementById('stars-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+// Generate stars and symbols
+const stars = [];
+const numStars = 80;
+const symbols = ['📊','📈','📉','🗂️','🧮'];
+
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2 + 1,
+    alpha: Math.random(),
+    dx: (Math.random() - 0.5) * 0.2,
+    dy: (Math.random() - 0.5) * 0.2,
+    symbol: symbols[Math.floor(Math.random()*symbols.length)],
+    fontSize: Math.random() * 18 + 10
+  });
+}
+
+// Animation loop
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(star => {
+    star.x += star.dx;
+    star.y += star.dy;
+
+    if(star.x < 0) star.x = canvas.width;
+    if(star.x > canvas.width) star.x = 0;
+    if(star.y < 0) star.y = canvas.height;
+    if(star.y > canvas.height) star.y = 0;
+
+    // Draw symbol or dot
+    ctx.globalAlpha = star.alpha;
+    ctx.font = star.fontSize + 'px Arial';
+    ctx.fillStyle = '#fff';
+    ctx.fillText(star.symbol, star.x, star.y);
+  });
+  requestAnimationFrame(animateStars);
+}
+animateStars();
+
+// Update canvas on resize
+window.addEventListener('resize', () => {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+});
+</script>
 
 <!-- Social Section -->
 <article id="contact-me" class="wrapper style5">
