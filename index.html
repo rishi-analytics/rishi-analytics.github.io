@@ -404,7 +404,7 @@
     </div>
   </div>
 
-  <!-- Stars & Analytics Symbols -->
+  <!-- Starfield Background -->
   <canvas id="stars-canvas"></canvas>
 </article>
 
@@ -412,21 +412,12 @@
 #skills {
   position: relative;
   padding: 60px 0;
-  background: radial-gradient(ellipse at center, #0b0b0b 0%, #000000 100%);
+  background: #0b0b0b;
   color: #f0f0f0;
   text-align: center;
   overflow: hidden;
 }
 
-/* Skills header */
-#skills header h2 {
-  font-size: 2.2rem;
-  color: #ffdd33;
-  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffaa00;
-  margin-bottom: 10px;
-}
-
-/* Skill bubbles */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -468,7 +459,7 @@
   100% { transform: translateY(0px); }
 }
 
-/* Canvas for stars & symbols */
+/* Canvas for stars */
 #stars-canvas {
   position: absolute;
   top:0;
@@ -485,52 +476,43 @@ const ctx = canvas.getContext('2d');
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
-// Generate stars and symbols
 const stars = [];
-const numStars = 80;
-const symbols = ['📊','📈','📉','🗂️','🧮'];
+const numStars = 150;
 
 for (let i = 0; i < numStars; i++) {
   stars.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    radius: Math.random() * 2 + 1,
-    alpha: Math.random(),
-    dx: (Math.random() - 0.5) * 0.2,
-    dy: (Math.random() - 0.5) * 0.2,
-    symbol: symbols[Math.floor(Math.random()*symbols.length)],
-    fontSize: Math.random() * 18 + 10
+    radius: Math.random() * 1.5 + 0.5,
+    speed: Math.random() * 0.5 + 0.2,
+    alpha: Math.random() * 0.8 + 0.2
   });
 }
 
-// Animation loop
 function animateStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   stars.forEach(star => {
-    star.x += star.dx;
-    star.y += star.dy;
-
-    if(star.x < 0) star.x = canvas.width;
-    if(star.x > canvas.width) star.x = 0;
-    if(star.y < 0) star.y = canvas.height;
-    if(star.y > canvas.height) star.y = 0;
-
-    // Draw symbol or dot
+    star.y -= star.speed;
+    if (star.y < 0) star.y = canvas.height;
     ctx.globalAlpha = star.alpha;
-    ctx.font = star.fontSize + 'px Arial';
-    ctx.fillStyle = '#fff';
-    ctx.fillText(star.symbol, star.x, star.y);
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
   });
+
   requestAnimationFrame(animateStars);
 }
+
 animateStars();
 
-// Update canvas on resize
 window.addEventListener('resize', () => {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 });
 </script>
+
 
 <!-- Social Section -->
 <article id="contact-me" class="wrapper style5">
