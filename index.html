@@ -323,8 +323,8 @@
 
   <div class="container medium fade-in">
     <header>
-      <h2 class="glow-title">🎥 Let’s Meet Rishi</h2>
-      <p>Get to know the person behind the data — a snapshot of my creativity & curiosity 😎</p>
+      <h2 class="glow-title"> Let’s Meet Rishi</h2>
+      <p>Get to know the person behind the data— a snapshot of my personality + creativity 😎</p>
     </header>
     
     <div class="row">
@@ -468,6 +468,21 @@
   height: 100%;
   z-index: 0;
 }
+	
+#skills h2 {
+  color: #ff0066; /* or try #b266ff for a purple glow */
+  text-shadow: 0 0 10px #ff0066, 0 0 20px #ff3399, 0 0 30px #ff66cc;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px #ff0066, 0 0 10px #ff3399, 0 0 20px #ff66cc; }
+  50% { text-shadow: 0 0 20px #ff99cc, 0 0 30px #ff66ff, 0 0 40px #ff33cc; }
+  100% { text-shadow: 0 0 10px #ff0066, 0 0 20px #ff3399, 0 0 30px #ff66cc; }
+}
+
 </style>
 
 <script>
