@@ -345,37 +345,115 @@
 
 		
 <!-- Beyond Data Section -->
-<article id="beyond-data" class="wrapper style5">
-    <div class="container">
-        <header>
-            <h2 style="color: black;">Beyond Data</h2>
-		<p style="font-family: 'Comic Sans MS', cursive, sans-serif;">Data velho Rishi</p>
-        </header>
+<article id="beyond-data" class="wrapper" style="padding: 80px 0; background: radial-gradient(circle at center, #0a0a0a 20%, #000000 90%); color: #fff; text-align: center;">
 
-        <div class="row">
-            <!-- CV Box -->
-            <div class="col-6 col-12-medium">
-                <section class="box style1">
-                    <div class="content">
-                        <img src="images/moomin cv.jpeg" alt="CV Image" style="max-width:100%; height:auto;">
-                        <h3 style="color: white; text-align: center;">Check out my CV</h3>
-                        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/kesari.rishi_CV.pdf" class="button" target="_blank">View CV</a>
-                    </div>
-                </section>
-            </div>
+  <style>
+    /* Beyond Data Styling */
+    #beyond-data h2 {
+      font-size: 2.5rem;
+      color: #ff3366;
+      text-shadow: 0 0 8px #ff3366, 0 0 20px #cc0099;
+      animation: glowPulse 2s infinite alternate;
+    }
 
-            <!-- About Me Box -->
-            <div class="col-6 col-12-medium">
-                <section class="box style1">
-                    <div class="content">
-                        <img src="images/moomin_about me.jpeg" alt="About Me Image" style="max-width:100%; height:auto;">
-                        <h3 style="color: white; text-align: center;">About Me</h3>
-                        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/About%20Me.md" class="button" target="_blank">Read About Me</a>
-                    </div>
-                </section>
-            </div>
-        </div>
+    #beyond-data p {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #ddd;
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 5px #ff3366, 0 0 10px #cc0099; }
+      100% { text-shadow: 0 0 20px #ff3366, 0 0 30px #ff0099; }
+    }
+
+    .data-cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .data-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      width: 300px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .data-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 25px rgba(255, 0, 128, 0.3);
+    }
+
+    .data-card img {
+      border-radius: 15px;
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .data-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .data-card h3 {
+      margin-top: 15px;
+      color: #ffccff;
+      font-size: 1.4rem;
+    }
+
+    .data-card a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: 1px solid #ff66cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .data-card a.button:hover {
+      background: #ff66cc;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 768px) {
+      .data-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <header>
+      <h2>Beyond Data</h2>
+      <p>Data velho Rishi</p>
+    </header>
+
+    <div class="data-cards">
+      <!-- CV Card -->
+      <div class="data-card">
+        <img src="images/moomin cv.jpeg" alt="CV Image">
+        <h3>Check out my CV</h3>
+        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/kesari.rishi_CV.pdf" class="button" target="_blank">View CV</a>
+      </div>
+
+      <!-- About Me Card -->
+      <div class="data-card">
+        <img src="images/moomin_about me.jpeg" alt="About Me Image">
+        <h3>About Me</h3>
+        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/About%20Me.md" class="button" target="_blank">Read About Me</a>
+      </div>
     </div>
+  </div>
 </article>
 
 
