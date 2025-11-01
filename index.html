@@ -151,82 +151,138 @@
 			</article>
 		
 
-<!-- Tools Section -->
-<article id="tool" class="wrapper style2" style="background: #111; padding: 80px 0; color: #fff;">
+<!-- Tools Section - Circular Planets Version -->
+<article id="tool" class="wrapper style2">
   <div class="container">
-    <header style="text-align: center; margin-bottom: 40px;">
-      <h2 style="color: #ff004c;">Primary Tools I Use</h2>
-      <p style="color: #ccc;">Efficient tools that power my data analysis & visualization</p>
+    <header>
+      <h2 style="color: #ff4c4c; text-align: center; text-shadow: 0 0 10px #ff4c4c;">Primary Tools I Use</h2>
+      <p style="text-align:center; color: #f0f0f0; font-size: 1.1rem;">Sleek, efficient tools for data analysis & visualization</p>
     </header>
 
-    <div class="row aln-center" style="gap: 30px; justify-content: center;">
+    <div class="tools-grid">
       <!-- Python -->
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="tool-card">
-          <span class="icon fa-code" style="color: #ffd700; font-size: 2.5em;"></span>
-          <h3>Python</h3>
-          <p>Automating and analyzing data to extract insights efficiently.</p>
-        </section>
+      <div class="tool-planet">
+        <span class="fa fa-code"></span>
+        <h3>Python</h3>
+        <p>Analysis, visualization, modeling & ML</p>
       </div>
 
       <!-- Power BI / Tableau -->
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="tool-card">
-          <span class="icon fa-chart-bar" style="color: #00eaff; font-size: 2.5em;"></span>
-          <h3>Power BI / Tableau</h3>
-          <p>Designing dashboards and visualizations that communicate data clearly.</p>
-        </section>
+      <div class="tool-planet">
+        <span class="fa fa-chart-bar"></span>
+        <h3>Power BI / Tableau</h3>
+        <p>Insightful dashboards & visualizations</p>
       </div>
 
       <!-- SQL -->
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="tool-card">
-          <span class="icon fa-database" style="color: #00ff84; font-size: 2.5em;"></span>
-          <h3>SQL</h3>
-          <p>Extracting, querying, and managing data from multiple sources.</p>
-        </section>
+      <div class="tool-planet">
+        <span class="fa fa-database"></span>
+        <h3>SQL</h3>
+        <p>Data querying & management</p>
+      </div>
+
+      <!-- BigQuery -->
+      <div class="tool-planet">
+        <span class="fa fa-cloud"></span>
+        <h3>BigQuery</h3>
+        <p>Cloud data warehousing & analytics</p>
+      </div>
+
+      <!-- Snowflake -->
+      <div class="tool-planet">
+        <span class="fa fa-snowflake"></span>
+        <h3>Snowflake</h3>
+        <p>Cloud data platform</p>
+      </div>
+
+      <!-- Power BI Certification -->
+      <div class="tool-planet">
+        <span class="fa fa-chart-line"></span>
+        <h3>Power BI Cert</h3>
+        <p><a href="https://www.linkedin.com/learning/certificates/9204b5b82dc2f921c12e9c5defcd3d3d8911ed8af81a8bd9e4bb2cc9e73de85f?trk=share_certificate" target="_blank" style="color:#ffcc00; text-decoration: underline;">View</a></p>
       </div>
     </div>
-
-    <footer style="text-align: center; margin-top: 50px;">
-      <p style="color: #ccc;">Check out my top projects built using these tools</p>
-      <a href="#portfolio" class="button large scrolly">See my work</a>
-    </footer>
   </div>
 </article>
 
 <style>
-/* Tool card styling */
-.tool-card {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 15px;
+/* Tools Planets Grid */
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual Tool Planet */
+.tool-planet {
+  background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+  color: #f0f0f0;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.tool-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: floatPlanet 4s ease-in-out infinite alternate;
 }
 
-/* Header glow */
-#tool h2 {
-  text-shadow: 0 0 5px #ff004c, 0 0 10px #ff004c;
+.tool-planet span {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ff4c4c;
 }
 
-/* Optional subtle stars */
-.wrapper.style2::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  background: radial-gradient(white 0.5px, transparent 0.5px);
-  background-size: 4px 4px;
-  opacity: 0.05;
-  pointer-events: none;
-  z-index: 0;
+.tool-planet h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.tool-planet p {
+  font-size: 0.8rem;
+  margin: 5px 0 0;
+  line-height: 1.2rem;
+}
+
+/* Hover Effect */
+.tool-planet:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 76, 76, 0.6);
+}
+
+/* Floating Animation */
+@keyframes floatPlanet {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tool-planet {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+  }
+
+  .tool-planet span {
+    font-size: 2rem;
+  }
+
+  .tool-planet h3 {
+    font-size: 0.9rem;
+  }
+
+  .tool-planet p {
+    font-size: 0.7rem;
+  }
 }
 </style>
 
