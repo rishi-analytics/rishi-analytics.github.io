@@ -152,46 +152,108 @@
 		
 
 <!-- Tools -->
-<article id="tool" class="wrapper style2">
-    <div class="container">
-        <header>
-            <h2>Here are the primary tools I use!</h2>
-            <p>For analyzing and visualizing data efficiently & effectively</p>
-        </header>
-        <div class="row aln-center">
-            <!-- Python -->
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon featured fa-code"></span>
-                    <h3>Python Programming</h3>
-                    <p>My go-to programming language for data analysis, visualization, data modelling & machine learning</p>
-                </section>
-            </div>
+<article id="tool" class="wrapper style2" style="background: radial-gradient(circle at center, #04000e 0%, #000000 100%); position: relative; overflow: hidden;">
+  <!-- Floating stars -->
+  <div class="stars"></div>
 
-            <!-- PowerBI/Tableau -->
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon solid featured fa-chart-bar"></span>
-                    <h3>PowerBI / Tableau</h3>
-                    <p>I use these Business Intelligence tools for creating insightful data visualizations & interractive dashboards</p>
-                </section>
-            </div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <header>
+      <h2 class="glow-text">Here are the primary tools I use!</h2>
+      <p style="color: #ccc;">Empowering data into insights with precision and creativity</p>
+    </header>
 
-            <!-- SQL -->
-            <div class="col-4 col-6-medium col-12-small">
-                <section class="box style1">
-                    <span class="icon featured fa-database"></span>
-                    <h3>SQL</h3>
-                    <p>For efficient data extraction, querying & database management. I use sql to run queries on BigQuery too.</p>
-    </section>
-</div>
-        </div>
-        <footer>
-            <p>Check out some of my top projects that I built using these tools!</p>
-            <a href="#portfolio" class="button large scrolly">See some of my recent work</a>
-        </footer>
+    <div class="row aln-center">
+      <!-- Python -->
+      <div class="col-4 col-6-medium col-12-small">
+        <section class="tool-box" style="--glow-color: #ffd700;">
+          <span class="icon featured fa-code pulse" style="color: #ffd700;"></span>
+          <h3>Python Programming</h3>
+          <p>Transforming data into actionable intelligence through automation, analytics, and machine learning.</p>
+        </section>
+      </div>
+
+      <!-- Power BI / Tableau -->
+      <div class="col-4 col-6-medium col-12-small">
+        <section class="tool-box" style="--glow-color: #00eaff;">
+          <span class="icon solid featured fa-chart-bar pulse" style="color: #00eaff;"></span>
+          <h3>Power BI / Tableau</h3>
+          <p>Crafting dynamic dashboards that turn complex datasets into compelling business stories.</p>
+        </section>
+      </div>
+
+      <!-- SQL -->
+      <div class="col-4 col-6-medium col-12-small">
+        <section class="tool-box" style="--glow-color: #00ff84;">
+          <span class="icon featured fa-database pulse" style="color: #00ff84;"></span>
+          <h3>SQL</h3>
+          <p>Extracting, cleaning, and connecting data streams for powerful and efficient analysis.</p>
+        </section>
+      </div>
     </div>
+
+    <footer>
+      <p style="color: #ccc;">Explore some of my top projects built using these tools.</p>
+      <a href="#portfolio" class="button large scrolly" style="background: linear-gradient(90deg, #ff004c, #ff7b00); box-shadow: 0 0 20px #ff004c;">See my work</a>
+    </footer>
+  </div>
 </article>
+
+<style>
+/* Galaxy stars animation */
+.stars {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: moveStars 60s linear infinite;
+  opacity: 0.2;
+  z-index: 1;
+}
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* Glowing header */
+.glow-text {
+  color: #fff;
+  text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c;
+  animation: headerGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes headerGlow {
+  from { text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c; }
+  to { text-shadow: 0 0 25px #ff7b00, 0 0 45px #ff004c; }
+}
+
+/* Tool cards */
+.tool-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tool-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px var(--glow-color), 0 0 50px var(--glow-color);
+}
+
+/* Icon pulse */
+.pulse {
+  animation: pulseEffect 2s infinite ease-in-out;
+  display: inline-block;
+  font-size: 3em;
+}
+@keyframes pulseEffect {
+  0%, 100% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor; transform: scale(1); }
+  50% { text-shadow: 0 0 25px currentColor, 0 0 45px currentColor; transform: scale(1.1); }
+}
+</style>
 
 
 		<!-- Portfolio -->
@@ -630,7 +692,45 @@ window.addEventListener('resize', () => {
 <!-- glowing line -->
 		
 <!-- Solid Full-Width Neon Line -->
-<div style="width: 100%; height: 3px; background: #ff004c; box-shadow: 0 0 20px #ff004c, 0 0 40px #ff004c; margin: 0; border: none;"></div>
+<!-- Electric Current Style Glowing Line -->
+<div class="electric-line"></div>
+
+<style>
+.electric-line {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  background: #ff004c;
+  overflow: hidden;
+  box-shadow: 0 0 20px #ff004c, 0 0 40px #ff004c;
+  margin: 0;
+  border: none;
+}
+
+/* Moving glow overlay */
+.electric-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  animation: electricFlow 2s linear infinite;
+  opacity: 0.8;
+}
+
+/* Animation keyframes for the moving current */
+@keyframes electricFlow {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+</style>
+
 
 
 
