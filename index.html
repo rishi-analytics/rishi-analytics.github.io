@@ -152,17 +152,18 @@
 		
 
 
-<!-- Sleek Tools Section -->
-<article id="tools" style="background-color:#0b0b0b; padding:80px 0;">
-  <div class="container" style="text-align:center;">
+<!-- Elegant Tools Section -->
+<article id="tools" style="background-color:#000; padding:100px 0; position:relative;">
+  <div class="container" style="text-align:center; position:relative;">
+
     <!-- Section Heading -->
     <header style="margin-bottom:60px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffd700; font-weight:700; text-shadow:0 0 15px #ffd700;">Primary Tools I Use</h2>
-      <p style="font-family:'Agrandir',serif; color:#ffffff;">Efficient and elegant tools for data mastery</p>
+      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.2rem;">Primary Tools I Use</h2>
+      <p style="font-family:'Agrandir',serif; color:#ffffff; font-size:1rem;">Efficient and elegant tools for data mastery</p>
     </header>
 
-    <!-- Tools Row -->
-    <div class="tools-row" style="display:flex; justify-content:center; align-items:center; gap:80px; position:relative; flex-wrap:wrap;">
+    <!-- Glowing Layout -->
+    <div class="glow-layout" style="position:relative; display:flex; justify-content:center; align-items:center; gap:80px; padding:60px 40px; border-radius:30px; box-shadow: 0 0 60px rgba(255,215,0,0.6);">
 
       <!-- Python Card -->
       <div class="tool-card">
@@ -170,7 +171,7 @@
         <p class="tool-desc">Data manipulation, visualization & ML</p>
       </div>
 
-      <!-- Electric Wave -->
+      <!-- Wave 1 -->
       <div class="electric-wave"></div>
 
       <!-- Power BI Card -->
@@ -179,7 +180,7 @@
         <p class="tool-desc">Interactive dashboards & BI visualizations</p>
       </div>
 
-      <!-- Electric Wave -->
+      <!-- Wave 2 -->
       <div class="electric-wave"></div>
 
       <!-- SQL Card -->
@@ -193,6 +194,12 @@
 </article>
 
 <style>
+/* Glowing Layout */
+.glow-layout {
+  background-color: rgba(255,215,0,0.05);
+  position: relative;
+}
+
 /* Cards */
 .tool-card {
   background-color: #0b0b0b;
@@ -209,9 +216,10 @@
   box-shadow: 0 0 30px rgba(255,215,0,0.8);
 }
 
+/* Fonts */
 .tool-title {
   font-family: 'Montserrat', sans-serif;
-  color: #333333;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.3rem;
   margin-bottom: 10px;
@@ -228,26 +236,23 @@
 /* Electric Waves */
 .electric-wave {
   width: 60px;
-  height: 2px;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffd700,
-    #ffd700 2px,
-    transparent 2px,
-    transparent 6px
-  );
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ff4c4c, #ff0000);
+  border-radius: 2px;
+  box-shadow: 0 0 15px #ff0000, 0 0 25px #ff4c4c;
   align-self: center;
   animation: waveMove 1s linear infinite;
 }
 
 @keyframes waveMove {
-  0% { background-position:0 0; }
-  100% { background-position:20px 0; }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .tools-row {
+  .glow-layout {
     flex-direction: column;
     gap: 50px;
   }
@@ -256,7 +261,6 @@
   }
 }
 </style>
-
 
 
 		<!-- Portfolio -->
