@@ -151,99 +151,117 @@
 			</article>
 		
 
-<!-- Tools Section: Icon + Wave Lines -->
+<!-- Tools Section: Professional + Wave Connectors -->
 <article id="tools" class="wrapper style2" style="background-color: #0b0b0b; padding: 80px 0;">
   <div class="container">
+    <!-- Header -->
     <header style="text-align:center; margin-bottom: 60px;">
-      <h2 style="color: #ff00cc; font-family: 'Oswald', sans-serif; text-shadow: 0 0 10px #ff00cc;">Primary Tools I Use</h2>
-      <p style="color: #ffffff; font-family: 'Caladea', serif;">Sleek & efficient toolkit for data analytics 🚀</p>
+      <h2 style="color: #00e5ff; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; letter-spacing: 1px;">Primary Tools I Use</h2>
+      <p style="color: #ffffff; font-family: 'Caladea', serif;">Essential tools for efficient data analysis & visualization</p>
     </header>
 
-    <div class="tools-row" style="display:flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 50px;">
+    <!-- Tools Row -->
+    <div class="tools-row" style="display:flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap; position: relative;">
+      
       <!-- Python -->
-      <div class="tool" style="text-align:center;">
-        <div class="icon-circle">
+      <div class="tool" style="text-align:center; width: 200px;">
+        <div class="icon-square">
           <i class="fab fa-python"></i>
         </div>
-        <span class="tool-name">Python</span>
+        <h3 class="tool-name">Python</h3>
+        <p class="tool-desc">For data manipulation, visualization, and machine learning.</p>
       </div>
 
-      <!-- Power BI -->
-      <div class="tool" style="text-align:center;">
-        <div class="icon-circle">
-          <i class="fas fa-chart-bar"></i>
-        </div>
-        <span class="tool-name">Power BI</span>
-      </div>
-
-      <!-- SQL -->
-      <div class="tool" style="text-align:center;">
-        <div class="icon-circle">
-          <i class="fas fa-database"></i>
-        </div>
-        <span class="tool-name">SQL</span>
-      </div>
-    </div>
-
-    <!-- Wave Line -->
-    <div class="wave-line" style="position: relative; height: 40px; margin-top: 60px;">
-      <svg width="100%" height="40px" viewBox="0 0 1200 40" preserveAspectRatio="none">
-        <path d="M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z" fill="none" stroke="#ff00cc" stroke-width="3">
-          <animate attributeName="d" dur="6s" repeatCount="indefinite"
-            values="M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z;
-                    M0,20 C300,0 900,40 1200,20 L1200,40 L0,40 Z;
-                    M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z" />
+      <!-- Wave Connector -->
+      <svg class="wave-connector" width="100" height="4" style="position:absolute; top:50%; left:200px;">
+        <path d="M0,2 C25,0 75,4 100,2" stroke="#00e5ff" stroke-width="2" fill="none">
+          <animate attributeName="d" dur="4s" repeatCount="indefinite"
+            values="M0,2 C25,0 75,4 100,2; M0,2 C25,4 75,0 100,2; M0,2 C25,0 75,4 100,2"/>
         </path>
       </svg>
+
+      <!-- Power BI -->
+      <div class="tool" style="text-align:center; width: 200px;">
+        <div class="icon-square">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3 class="tool-name">Power BI</h3>
+        <p class="tool-desc">For interactive dashboards & business intelligence visualizations.</p>
+      </div>
+
+      <!-- Wave Connector -->
+      <svg class="wave-connector" width="100" height="4" style="position:absolute; top:50%; left:520px;">
+        <path d="M0,2 C25,0 75,4 100,2" stroke="#00e5ff" stroke-width="2" fill="none">
+          <animate attributeName="d" dur="4s" repeatCount="indefinite"
+            values="M0,2 C25,0 75,4 100,2; M0,2 C25,4 75,0 100,2; M0,2 C25,0 75,4 100,2"/>
+        </path>
+      </svg>
+
+      <!-- SQL -->
+      <div class="tool" style="text-align:center; width: 200px;">
+        <div class="icon-square">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3 class="tool-name">SQL</h3>
+        <p class="tool-desc">For querying, extracting, and managing relational data efficiently.</p>
+      </div>
+
     </div>
   </div>
 </article>
 
 <style>
-  .icon-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff00cc, #6600ff);
-    display: flex;
+/* Tool squares */
+.icon-square {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #0077b6, #00e5ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,229,255,0.5);
+}
+
+.icon-square i {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.tool:hover .icon-square {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0,229,255,0.8);
+}
+
+.tool-name {
+  color: #00e5ff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.tool-desc {
+  color: #ffffff;
+  font-family: 'Caladea', serif;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .tools-row {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(255,0,204,0.5);
+    gap: 40px;
   }
-
-  .icon-circle i {
-    font-size: 40px;
-    color: #ffffff;
+  .wave-connector {
+    display: none;
   }
-
-  .tool:hover .icon-circle {
-    transform: scale(1.15);
-    box-shadow: 0 0 30px rgba(255,0,204,0.8);
-  }
-
-  .tool-name {
-    display: block;
-    color: #ffffff;
-    font-family: 'Caladea', serif;
-    font-size: 1.1rem;
-    margin-top: 5px;
-    font-weight: bold;
-  }
-
-  .wave-line svg path {
-    stroke-linecap: round;
-  }
-
-  @media (max-width: 768px) {
-    .tools-row {
-      flex-direction: column;
-      gap: 40px;
-    }
-  }
+}
 </style>
-
 
 
 		<!-- Portfolio -->
