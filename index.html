@@ -627,25 +627,13 @@ window.addEventListener('resize', () => {
 
 <!-- glowing line -->
 		
-	<div class="animated-line"></div>
-
-<style>
-.animated-line {
-  width: 80%;
-  height: 2px;
-  margin: 0 auto;
+<div style="width: 80%; margin: 0 auto; height: 2px;
+  background: linear-gradient(to right, #ff0000, #ffcc00, #ff0000);
+  border: none;
   border-radius: 2px;
-  background: linear-gradient(90deg, #ff0000, #ffcc00, #ff0000);
-  background-size: 200% 100%;
-  animation: moveLine 3s linear infinite;
-  box-shadow: 0 0 10px #ff0000;
-}
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ffcc00;">
+</div>
 
-@keyframes moveLine {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 200% 0%; }
-}
-</style>
 
 
 <!-- Footer -->
