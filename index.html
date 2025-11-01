@@ -152,106 +152,117 @@
 		
 
 
-<!-- Tools Section - Vertical Rounded Squares -->
-<article id="tool" class="wrapper style2" style="background-color: #000; padding: 80px 0;">
-  <div class="container">
-    <header style="text-align: center; margin-bottom: 50px;">
-      <h2 style="color: #FFD700; font-family: 'Montserrat', sans-serif; font-size: 2.5rem;">Primary Tools I Use</h2>
-      <p style="color: #fff; font-family: 'Agrandir', sans-serif; font-size: 1rem;">Tools that fuel my analytics & visualization journey</p>
+<!-- Elegant Tools Section -->
+<article id="tools" style="background-color:#000; padding:100px 0; position:relative;">
+  <div class="container" style="text-align:center; position:relative;">
+
+    <!-- Section Heading -->
+    <header style="margin-bottom:60px;">
+      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.2rem;">Primary Tools I Use</h2>
+      <p style="font-family:'Agrandir',serif; color:#ffffff; font-size:1rem;">Efficient and elegant tools for data mastery</p>
     </header>
 
-    <div class="tools-grid" style="display: flex; gap: 80px; align-items: center; justify-content: center; flex-wrap: wrap;">
-      
-      <!-- Left: Image Placeholder -->
-      <div class="tool-image-left" style="flex: 1; min-width: 250px; max-width: 350px; display: flex; align-items: center; justify-content: center;">
-        <div style="width: 100%; height: 100%; border-radius: 20px; background-color: #111; box-shadow: 0 0 25px #FFD700; display:flex; align-items:center; justify-content:center;">
-          <img src="images/tool_placeholder.png" alt="Your Image Here" style="max-width: 90%; border-radius: 15px;">
-        </div>
+    <!-- Glowing Layout -->
+    <div class="glow-layout" style="position:relative; display:flex; justify-content:center; align-items:center; gap:80px; padding:60px 40px; border-radius:30px; box-shadow: 0 0 60px rgba(255,215,0,0.6);">
+
+      <!-- Python Card -->
+      <div class="tool-card">
+        <h3 class="tool-title">Python</h3>
+        <p class="tool-desc">Data manipulation, visualization & ML</p>
       </div>
 
-      <!-- Right: Vertical Rounded Squares -->
-      <div class="tool-cards-right" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 50px; position: relative;">
+      <!-- Wave 1 -->
+      <div class="electric-wave"></div>
 
-        <!-- Python -->
-        <div class="tool-card" style="background-color: #111; border-radius: 25px; width: 250px; height: 250px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Python</h3>
-          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Data analysis, visualization, modeling & ML</p>
-        </div>
-
-        <!-- Power BI -->
-        <div class="tool-card" style="background-color: #111; border-radius: 25px; width: 250px; height: 250px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Power BI / Tableau</h3>
-          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Business Intelligence & interactive dashboards</p>
-        </div>
-
-        <!-- SQL -->
-        <div class="tool-card" style="background-color: #111; border-radius: 25px; width: 250px; height: 250px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">SQL</h3>
-          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Efficient data extraction & querying</p>
-        </div>
-
-        <!-- Electric Waves Canvas -->
-        <canvas id="verticalWavesCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
-
+      <!-- Power BI Card -->
+      <div class="tool-card">
+        <h3 class="tool-title">Power BI</h3>
+        <p class="tool-desc">Interactive dashboards & BI visualizations</p>
       </div>
+
+      <!-- Wave 2 -->
+      <div class="electric-wave"></div>
+
+      <!-- SQL Card -->
+      <div class="tool-card">
+        <h3 class="tool-title">SQL</h3>
+        <p class="tool-desc">Querying & managing relational databases</p>
+      </div>
+
     </div>
   </div>
 </article>
 
 <style>
-  .tool-card:hover {
-    box-shadow: 0 0 35px #FFD700, 0 0 50px #FFD700 inset;
-    transition: 0.4s;
+/* Glowing Layout */
+.glow-layout {
+  background-color: rgba(255,215,0,0.05);
+  position: relative;
+}
+
+/* Cards */
+.tool-card {
+  background-color: #0b0b0b;
+  border-radius: 20px;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255,215,0,0.5);
+  padding: 40px 25px;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255,215,0,0.8);
+}
+
+/* Fonts */
+.tool-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.tool-desc {
+  font-family: 'Agrandir', serif;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  margin:0;
+}
+
+/* Electric Waves */
+.electric-wave {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000, #ff4c4c, #ff0000);
+  border-radius: 2px;
+  box-shadow: 0 0 15px #ff0000, 0 0 25px #ff4c4c;
+  align-self: center;
+  animation: waveMove 1s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glow-layout {
+    flex-direction: column;
+    gap: 50px;
   }
+  .electric-wave {
+    display: none;
+  }
+}
 </style>
 
-<script>
-  const canvasV = document.getElementById('verticalWavesCanvas');
-  const ctxV = canvasV.getContext('2d');
-
-  function resizeCanvasV() {
-    canvasV.width = canvasV.offsetWidth;
-    canvasV.height = canvasV.offsetHeight;
-  }
-  window.addEventListener('resize', resizeCanvasV);
-  resizeCanvasV();
-
-  function drawWaveV(x1, y1, x2, y2, color, timeOffset) {
-    const amplitude = 10;
-    const frequency = 0.02;
-    ctxV.strokeStyle = color;
-    ctxV.lineWidth = 2;
-    ctxV.beginPath();
-    for(let y = 0; y <= (y2-y1); y++) {
-      const x = amplitude * Math.sin((y + Date.now()*0.5 + timeOffset) * frequency);
-      ctxV.lineTo(x1 + x, y1 + y);
-    }
-    ctxV.stroke();
-  }
-
-  function animateV() {
-    ctxV.clearRect(0,0,canvasV.width,canvasV.height);
-    const rows = document.querySelectorAll('.tool-card');
-    const imageBlock = document.querySelector('.tool-image-left div');
-    const imageRect = imageBlock.getBoundingClientRect();
-    const containerTop = imageBlock.offsetParent.getBoundingClientRect().top;
-
-    rows.forEach((card,index)=>{
-      const cardRect = card.getBoundingClientRect();
-      const x1 = imageRect.right - imageBlock.offsetParent.getBoundingClientRect().left;
-      const y1 = imageRect.top + imageRect.height/2 - containerTop;
-      const x2 = cardRect.left - card.offsetParent.getBoundingClientRect().left;
-      const y2 = cardRect.top + cardRect.height/2 - containerTop;
-      drawWaveV(x1,y1,x2,y2,'red',index*100);
-    });
-
-    requestAnimationFrame(animateV);
-  }
-  animateV();
-</script>
-
-
-
+		
 		<!-- Portfolio -->
 			<article id="portfolio" class="wrapper style3">
 				<div class="container">
