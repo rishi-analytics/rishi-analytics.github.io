@@ -151,140 +151,99 @@
 			</article>
 		
 
-<!-- Tools Section - Circular Planets Version -->
-<article id="tool" class="wrapper style2">
+<!-- Tools Section: Icon + Wave Lines -->
+<article id="tools" class="wrapper style2" style="background-color: #0b0b0b; padding: 80px 0;">
   <div class="container">
-    <header>
-      <h2 style="color: #ff4c4c; text-align: center; text-shadow: 0 0 10px #ff4c4c;">Primary Tools I Use</h2>
-      <p style="text-align:center; color: #f0f0f0; font-size: 1.1rem;">Sleek, efficient tools for data analysis & visualization</p>
+    <header style="text-align:center; margin-bottom: 60px;">
+      <h2 style="color: #ff00cc; font-family: 'Oswald', sans-serif; text-shadow: 0 0 10px #ff00cc;">Primary Tools I Use</h2>
+      <p style="color: #ffffff; font-family: 'Caladea', serif;">Sleek & efficient toolkit for data analytics 🚀</p>
     </header>
 
-    <div class="tools-grid">
+    <div class="tools-row" style="display:flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 50px;">
       <!-- Python -->
-      <div class="tool-planet">
-        <span class="fa fa-code"></span>
-        <h3>Python</h3>
-        <p>Analysis, visualization, modeling & ML</p>
+      <div class="tool" style="text-align:center;">
+        <div class="icon-circle">
+          <i class="fab fa-python"></i>
+        </div>
+        <span class="tool-name">Python</span>
       </div>
 
-      <!-- Power BI / Tableau -->
-      <div class="tool-planet">
-        <span class="fa fa-chart-bar"></span>
-        <h3>Power BI / Tableau</h3>
-        <p>Insightful dashboards & visualizations</p>
+      <!-- Power BI -->
+      <div class="tool" style="text-align:center;">
+        <div class="icon-circle">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <span class="tool-name">Power BI</span>
       </div>
 
       <!-- SQL -->
-      <div class="tool-planet">
-        <span class="fa fa-database"></span>
-        <h3>SQL</h3>
-        <p>Data querying & management</p>
+      <div class="tool" style="text-align:center;">
+        <div class="icon-circle">
+          <i class="fas fa-database"></i>
+        </div>
+        <span class="tool-name">SQL</span>
       </div>
+    </div>
 
-      <!-- BigQuery -->
-      <div class="tool-planet">
-        <span class="fa fa-cloud"></span>
-        <h3>BigQuery</h3>
-        <p>Cloud data warehousing & analytics</p>
-      </div>
-
-      <!-- Snowflake -->
-      <div class="tool-planet">
-        <span class="fa fa-snowflake"></span>
-        <h3>Snowflake</h3>
-        <p>Cloud data platform</p>
-      </div>
-
-      <!-- Power BI Certification -->
-      <div class="tool-planet">
-        <span class="fa fa-chart-line"></span>
-        <h3>Power BI Cert</h3>
-        <p><a href="https://www.linkedin.com/learning/certificates/9204b5b82dc2f921c12e9c5defcd3d3d8911ed8af81a8bd9e4bb2cc9e73de85f?trk=share_certificate" target="_blank" style="color:#ffcc00; text-decoration: underline;">View</a></p>
-      </div>
+    <!-- Wave Line -->
+    <div class="wave-line" style="position: relative; height: 40px; margin-top: 60px;">
+      <svg width="100%" height="40px" viewBox="0 0 1200 40" preserveAspectRatio="none">
+        <path d="M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z" fill="none" stroke="#ff00cc" stroke-width="3">
+          <animate attributeName="d" dur="6s" repeatCount="indefinite"
+            values="M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z;
+                    M0,20 C300,0 900,40 1200,20 L1200,40 L0,40 Z;
+                    M0,20 C300,40 900,0 1200,20 L1200,40 L0,40 Z" />
+        </path>
+      </svg>
     </div>
   </div>
 </article>
 
 <style>
-/* Tools Planets Grid */
-.tools-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-/* Individual Tool Planet */
-.tool-planet {
-  background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
-  color: #f0f0f0;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  animation: floatPlanet 4s ease-in-out infinite alternate;
-}
-
-.tool-planet span {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #ff4c4c;
-}
-
-.tool-planet h3 {
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 700;
-}
-
-.tool-planet p {
-  font-size: 0.8rem;
-  margin: 5px 0 0;
-  line-height: 1.2rem;
-}
-
-/* Hover Effect */
-.tool-planet:hover {
-  transform: translateY(-10px) scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 76, 76, 0.6);
-}
-
-/* Floating Animation */
-@keyframes floatPlanet {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .tool-planet {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
+  .icon-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff00cc, #6600ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(255,0,204,0.5);
   }
 
-  .tool-planet span {
-    font-size: 2rem;
+  .icon-circle i {
+    font-size: 40px;
+    color: #ffffff;
   }
 
-  .tool-planet h3 {
-    font-size: 0.9rem;
+  .tool:hover .icon-circle {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(255,0,204,0.8);
   }
 
-  .tool-planet p {
-    font-size: 0.7rem;
+  .tool-name {
+    display: block;
+    color: #ffffff;
+    font-family: 'Caladea', serif;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    font-weight: bold;
   }
-}
+
+  .wave-line svg path {
+    stroke-linecap: round;
+  }
+
+  @media (max-width: 768px) {
+    .tools-row {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
 </style>
+
 
 
 		<!-- Portfolio -->
