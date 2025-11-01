@@ -152,115 +152,118 @@
 		
 
 
-<!-- Elegant Tools Section -->
-<article id="tools" style="background-color:#000; padding:100px 0; position:relative;">
-  <div class="container" style="text-align:center; position:relative;">
-
-    <!-- Section Heading -->
-    <header style="margin-bottom:60px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.2rem;">Primary Tools I Use</h2>
-      <p style="font-family:'Agrandir',serif; color:#ffffff; font-size:1rem;">Efficient and elegant tools for data mastery</p>
+<!-- Tools Section - Vertical Layout -->
+<article id="tool" class="wrapper style2" style="background-color: #000; padding: 80px 0;">
+  <div class="container">
+    <header style="text-align: center; margin-bottom: 50px;">
+      <h2 style="color: #FFD700; font-family: 'Montserrat', sans-serif; font-size: 2.5rem;">Primary Tools I Use</h2>
+      <p style="color: #fff; font-family: 'Agrandir', sans-serif; font-size: 1rem;">Tools that fuel my analytics & visualization journey</p>
     </header>
 
-    <!-- Glowing Layout -->
-    <div class="glow-layout" style="position:relative; display:flex; justify-content:center; align-items:center; gap:80px; padding:60px 40px; border-radius:30px; box-shadow: 0 0 60px rgba(255,215,0,0.6);">
+    <div class="tools-grid" style="display: flex; flex-direction: column; gap: 60px; position: relative;">
 
-      <!-- Python Card -->
-      <div class="tool-card">
-        <h3 class="tool-title">Python</h3>
-        <p class="tool-desc">Data manipulation, visualization & ML</p>
+      <!-- Python Row -->
+      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
+        <!-- Image Placeholder -->
+        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
+          <img src="images/python_icon.png" alt="Python" style="width:60px; height:60px;">
+        </div>
+        <!-- Skill Card -->
+        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Python Programming</h3>
+          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Go-to programming language for data analysis, visualization, modeling & ML</p>
+        </div>
       </div>
 
-      <!-- Wave 1 -->
-      <div class="electric-wave"></div>
-
-      <!-- Power BI Card -->
-      <div class="tool-card">
-        <h3 class="tool-title">Power BI</h3>
-        <p class="tool-desc">Interactive dashboards & BI visualizations</p>
+      <!-- Power BI Row -->
+      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
+        <!-- Image Placeholder -->
+        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
+          <img src="images/powerbi_icon.png" alt="Power BI" style="width:60px; height:60px;">
+        </div>
+        <!-- Skill Card -->
+        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Power BI / Tableau</h3>
+          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Business Intelligence tools for insightful dashboards & visualizations</p>
+        </div>
       </div>
 
-      <!-- Wave 2 -->
-      <div class="electric-wave"></div>
-
-      <!-- SQL Card -->
-      <div class="tool-card">
-        <h3 class="tool-title">SQL</h3>
-        <p class="tool-desc">Querying & managing relational databases</p>
+      <!-- SQL Row -->
+      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
+        <!-- Image Placeholder -->
+        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
+          <img src="images/sql_icon.png" alt="SQL" style="width:60px; height:60px;">
+        </div>
+        <!-- Skill Card -->
+        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+          <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">SQL</h3>
+          <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Efficient data extraction & querying, also used with BigQuery & Snowflake</p>
+        </div>
       </div>
+
+      <!-- Connecting Electric Waves -->
+      <canvas id="wavesCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
 
     </div>
   </div>
 </article>
 
+<!-- CSS for subtle glow and waves -->
 <style>
-/* Glowing Layout */
-.glow-layout {
-  background-color: rgba(255,215,0,0.05);
-  position: relative;
-}
-
-/* Cards */
-.tool-card {
-  background-color: #0b0b0b;
-  border-radius: 20px;
-  border: 2px solid #ffd700;
-  box-shadow: 0 0 20px rgba(255,215,0,0.5);
-  padding: 40px 25px;
-  width: 220px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(255,215,0,0.8);
-}
-
-/* Fonts */
-.tool-title {
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.tool-desc {
-  font-family: 'Agrandir', serif;
-  color: #ffffff;
-  font-size: 0.95rem;
-  line-height: 1.4rem;
-  margin:0;
-}
-
-/* Electric Waves */
-.electric-wave {
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ff4c4c, #ff0000);
-  border-radius: 2px;
-  box-shadow: 0 0 15px #ff0000, 0 0 25px #ff4c4c;
-  align-self: center;
-  animation: waveMove 1s linear infinite;
-}
-
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .glow-layout {
-    flex-direction: column;
-    gap: 50px;
+  .tool-card:hover {
+    box-shadow: 0 0 35px #FFD700, 0 0 50px #FFD700 inset;
+    transition: 0.4s;
   }
-  .electric-wave {
-    display: none;
+
+  .tool-image img {
+    transition: transform 0.3s;
   }
-}
+  .tool-image:hover img {
+    transform: scale(1.2);
+  }
 </style>
+
+<!-- JS for electrifying connecting waves -->
+<script>
+  const canvas = document.getElementById('wavesCanvas');
+  const ctx = canvas.getContext('2d');
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function drawWave(x1, y1, x2, y2, color, timeOffset) {
+    const amplitude = 10;
+    const frequency = 0.02;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for(let x = 0; x <= (x2-x1); x++) {
+      const y = amplitude * Math.sin((x+Date.now()*0.5+timeOffset) * frequency);
+      ctx.lineTo(x1 + x, y1 + y);
+    }
+    ctx.stroke();
+  }
+
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const rows = document.querySelectorAll('.tool-row');
+    rows.forEach((row,index)=>{
+      const left = row.querySelector('.tool-image').getBoundingClientRect();
+      const right = row.querySelector('.tool-card').getBoundingClientRect();
+      const x1 = left.right - row.offsetParent.getBoundingClientRect().left;
+      const y1 = left.top + left.height/2 - row.offsetParent.getBoundingClientRect().top;
+      const x2 = right.left - row.offsetParent.getBoundingClientRect().left;
+      const y2 = right.top + right.height/2 - row.offsetParent.getBoundingClientRect().top;
+      drawWave(x1,y1,x2,y2,'red',index*100);
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
 
 
 		<!-- Portfolio -->
