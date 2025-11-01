@@ -152,7 +152,7 @@
 		
 
 
-<!-- Tools Section - Vertical Layout -->
+<!-- Tools Section - Vertical Layout (Right Side Cards) -->
 <article id="tool" class="wrapper style2" style="background-color: #000; padding: 80px 0;">
   <div class="container">
     <header style="text-align: center; margin-bottom: 50px;">
@@ -160,108 +160,96 @@
       <p style="color: #fff; font-family: 'Agrandir', sans-serif; font-size: 1rem;">Tools that fuel my analytics & visualization journey</p>
     </header>
 
-    <div class="tools-grid" style="display: flex; flex-direction: column; gap: 60px; position: relative;">
-
-      <!-- Python Row -->
-      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
-        <!-- Image Placeholder -->
-        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
-          <img src="images/python_icon.png" alt="Python" style="width:60px; height:60px;">
+    <div class="tools-grid" style="display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap;">
+      
+      <!-- Left: Image Placeholder -->
+      <div class="tool-image-left" style="flex: 1; min-width: 250px; max-width: 350px; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 100%; height: 100%; border-radius: 20px; background-color: #111; box-shadow: 0 0 25px #FFD700; display:flex; align-items:center; justify-content:center;">
+          <img src="images/tool_placeholder.png" alt="Your Image Here" style="max-width: 90%; border-radius: 15px;">
         </div>
-        <!-- Skill Card -->
-        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+      </div>
+
+      <!-- Right: Vertical Skill Cards -->
+      <div class="tool-cards-right" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 40px; position: relative;">
+
+        <!-- Python -->
+        <div class="tool-card" style="background-color: #111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative;">
           <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Python Programming</h3>
           <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Go-to programming language for data analysis, visualization, modeling & ML</p>
         </div>
-      </div>
 
-      <!-- Power BI Row -->
-      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
-        <!-- Image Placeholder -->
-        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
-          <img src="images/powerbi_icon.png" alt="Power BI" style="width:60px; height:60px;">
-        </div>
-        <!-- Skill Card -->
-        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+        <!-- Power BI -->
+        <div class="tool-card" style="background-color: #111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative;">
           <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">Power BI / Tableau</h3>
           <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Business Intelligence tools for insightful dashboards & visualizations</p>
         </div>
-      </div>
 
-      <!-- SQL Row -->
-      <div class="tool-row" style="display: flex; align-items: center; gap: 30px;">
-        <!-- Image Placeholder -->
-        <div class="tool-image" style="width: 120px; height: 120px; background-color: #111; border-radius: 20px; box-shadow: 0 0 20px #FFD700; display:flex; align-items:center; justify-content:center;">
-          <img src="images/sql_icon.png" alt="SQL" style="width:60px; height:60px;">
-        </div>
-        <!-- Skill Card -->
-        <div class="tool-card" style="flex:1; background-color:#111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding:20px; position: relative;">
+        <!-- SQL -->
+        <div class="tool-card" style="background-color: #111; border-radius: 20px; box-shadow: 0 0 25px #FFD700; padding: 20px; position: relative;">
           <h3 style="color:#fff; font-family:'Montserrat', sans-serif; font-size:1.5rem; margin-bottom:10px;">SQL</h3>
           <p style="color:#fff; font-family:'Agrandir', sans-serif; font-size:1rem;">Efficient data extraction & querying, also used with BigQuery & Snowflake</p>
         </div>
+
+        <!-- Electric Waves Canvas -->
+        <canvas id="verticalWavesCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+
       </div>
-
-      <!-- Connecting Electric Waves -->
-      <canvas id="wavesCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
-
     </div>
   </div>
 </article>
 
-<!-- CSS for subtle glow and waves -->
+<!-- CSS for glow effects -->
 <style>
   .tool-card:hover {
     box-shadow: 0 0 35px #FFD700, 0 0 50px #FFD700 inset;
     transition: 0.4s;
   }
-
-  .tool-image img {
-    transition: transform 0.3s;
-  }
-  .tool-image:hover img {
-    transform: scale(1.2);
-  }
 </style>
 
-<!-- JS for electrifying connecting waves -->
+<!-- JS for vertical electrifying waves -->
 <script>
-  const canvas = document.getElementById('wavesCanvas');
-  const ctx = canvas.getContext('2d');
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
+  const canvasV = document.getElementById('verticalWavesCanvas');
+  const ctxV = canvasV.getContext('2d');
 
-  function drawWave(x1, y1, x2, y2, color, timeOffset) {
+  function resizeCanvasV() {
+    canvasV.width = canvasV.offsetWidth;
+    canvasV.height = canvasV.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvasV);
+  resizeCanvasV();
+
+  function drawWaveV(x1, y1, x2, y2, color, timeOffset) {
     const amplitude = 10;
     const frequency = 0.02;
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    for(let x = 0; x <= (x2-x1); x++) {
-      const y = amplitude * Math.sin((x+Date.now()*0.5+timeOffset) * frequency);
-      ctx.lineTo(x1 + x, y1 + y);
+    ctxV.strokeStyle = color;
+    ctxV.lineWidth = 2;
+    ctxV.beginPath();
+    for(let y = 0; y <= (y2-y1); y++) {
+      const x = amplitude * Math.sin((y + Date.now()*0.5 + timeOffset) * frequency);
+      ctxV.lineTo(x1 + x, y1 + y);
     }
-    ctx.stroke();
+    ctxV.stroke();
   }
 
-  function animate() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    const rows = document.querySelectorAll('.tool-row');
-    rows.forEach((row,index)=>{
-      const left = row.querySelector('.tool-image').getBoundingClientRect();
-      const right = row.querySelector('.tool-card').getBoundingClientRect();
-      const x1 = left.right - row.offsetParent.getBoundingClientRect().left;
-      const y1 = left.top + left.height/2 - row.offsetParent.getBoundingClientRect().top;
-      const x2 = right.left - row.offsetParent.getBoundingClientRect().left;
-      const y2 = right.top + right.height/2 - row.offsetParent.getBoundingClientRect().top;
-      drawWave(x1,y1,x2,y2,'red',index*100);
+  function animateV() {
+    ctxV.clearRect(0,0,canvasV.width,canvasV.height);
+    const rows = document.querySelectorAll('.tool-card');
+    const imageBlock = document.querySelector('.tool-image-left div');
+    const imageRect = imageBlock.getBoundingClientRect();
+    const containerTop = imageBlock.offsetParent.getBoundingClientRect().top;
+
+    rows.forEach((card,index)=>{
+      const cardRect = card.getBoundingClientRect();
+      const x1 = imageRect.right - imageBlock.offsetParent.getBoundingClientRect().left;
+      const y1 = imageRect.top + imageRect.height/2 - containerTop;
+      const x2 = cardRect.left - card.offsetParent.getBoundingClientRect().left;
+      const y2 = cardRect.top + cardRect.height/2 - containerTop;
+      drawWaveV(x1,y1,x2,y2,'red',index*100);
     });
-    requestAnimationFrame(animate);
+
+    requestAnimationFrame(animateV);
   }
-  animate();
+  animateV();
 </script>
 
 
