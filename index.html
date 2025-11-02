@@ -54,102 +54,241 @@
 				</ul>
 			</nav>
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img class="image-profile" src="images/data_velho_rishi_optimized.png" alt="Rishi Kesari" /></span>
+		<!-- ===== Hero: Data Cosmos (particles + electric aura + typing intro) ===== -->
+<article id="top" class="wrapper style1" style="position: relative; overflow: hidden; background-color: #000;">
+  <div class="container" style="position: relative; z-index: 3; padding: 40px 0;">
 
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							
-<header>
-  <h2>
-    Hei, I'm <strong>Rishikesh Kesari</strong>— 
-    <span class="data-velho-neon">A Data Velho</span>
-  </h2>
-</header>
+    <div class="row" style="align-items: center;">
+      <!-- Left: profile image with aura -->
+      <div class="col-4 col-5-large col-12-medium" style="display:flex; align-items:center; justify-content:center;">
+        <div class="profile-aura">
+          <img class="image-profile" src="images/data_velho_rishi_optimized.png" alt="Rishi Kesari" />
+        </div>
+      </div>
 
-<style>
-.data-velho-neon {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color: #ff1744; /* cherry red */
-  text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744, 0 0 20px #ff1744;
-  animation: pulseNeon 2s infinite alternate, bounce 1.8s ease-in-out infinite, colorShift 6s infinite linear;
-  display: inline-block;
-}
+      <!-- Right: intro + typing + CTA -->
+      <div class="col-8 col-7-large col-12-medium" style="color:#fff;">
+        <header>
+          <h1 class="hero-title" style="margin:0 0 12px 0; font-family: 'Montserrat', sans-serif; font-size:2rem; color:#E6F7FF;">
+            Hei, I'm <strong style="color:#ffffff;">Rishikesh Kesari</strong>
+            <span style="display:block; margin-top:6px; font-size:1.05rem; color:#AEE9FF;">
+              — <span id="typed-role" aria-live="polite"></span>
+            </span>
+          </h1>
+        </header>
 
-/* glow pulse */
-@keyframes pulseNeon {
-  0% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor; }
-  50% { text-shadow: 0 0 15px currentColor, 0 0 25px currentColor, 0 0 40px currentColor; }
-  100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor; }
-}
+        <p style="font-family: Caladea, serif; color:#DDEFF7; max-width:720px; line-height:1.5; margin-top:18px;">
+          I don’t just crunch numbers — I uncover stories hidden in data and turn them into insights that drive decisions. I blend <strong>technical thinking</strong>, <strong>business acumen</strong> and a spark of <strong>creativity</strong>, all powered by curiosity and a love for exploration.
+        </p>
 
-/* bounce */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
+        <p style="margin-top:18px;">
+          <a href="#tool" class="button large scrolly" style="background: linear-gradient(90deg,#00CFFF,#0066FF); box-shadow: 0 6px 18px rgba(0,120,255,0.12); border-radius:8px; color:#ffffff; padding:12px 18px; text-decoration:none; font-family:'Montserrat',sans-serif;">Learn what tools I use</a>
+        </p>
+      </div>
+    </div>
+  </div>
 
-/* color shift: cherry red → yellow → green → cyan → pink → purple → back to cherry red */
-@keyframes colorShift {
-  0%   { color: #ff1744; }   /* cherry red */
-  17%  { color: #ffff00; }   /* yellow */
-  34%  { color: #00ff7f; }   /* green */
-  51%  { color: #00ffff; }   /* cyan */
-  68%  { color: #ff00ff; }   /* pink */
-  85%  { color: #9b30ff; }   /* purple */
-  100% { color: #ff1744; }   /* back to cherry red */
-}
-</style>
+  <!-- particle canvas (background layer) -->
+  <canvas id="heroParticles" style="position:absolute; inset:0; z-index:1; display:block;"></canvas>
 
-<p style="font-family: Caladea, serif;">
-    As an analyst, I don’t just crunch numbers— I uncover the stories hidden in data 
-    and turn them into insights that fuel smart decisions! My work blends 
-    <strong>technical thinking</strong>, <strong>business acumen</strong>, and a spark of 
-    <strong>creativity</strong>. Whether I’m coding a solution, visualizing trends, or solving 
-    a complex business problem, creativity is the core in everything I do.
-    <br><br>
-    Imagine a world map etched into your mind- ready to recall facts, histories, 
-    and insights from every corner of the globe. That’s me: a 
-    <strong>human encyclopedia powered by curiosity</strong> and a love for exploration.
-    <br><br>
-    <!-- Call-to-action line wrapped in span -->
-    <span class="cta-glow">
-        <strong>Explore my work, assess my skills, and get a skilled analyst in your team to elevate your data game 🔥 palkata nyt!</strong>
-    </span>
-</p>
+  <!-- faint vignette/glow overlay to unify background -->
+  <div style="position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(0,30,60,0.45), rgba(0,0,0,0.9)); z-index:2; pointer-events:none;"></div>
 
-<p style="font-family: 'Comic Sans MS', cursive, sans-serif; font-style: italic; font-weight: bold;">
-    My life is purpose-driven, and I do what I love & I love what I do ~
-</p>
+  <!-- inline CSS for aura + small responsive tweaks -->
+  <style>
+    /* Profile aura wrapper */
+    .profile-aura {
+      width: 220px;
+      height: 220px;
+      border-radius: 28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position: relative;
+      z-index: 4;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 40px rgba(0,120,255,0.06);
+      transition: transform 0.35s ease;
+    }
 
-<!-- CSS for the call-to-action glow effect -->
-<style>
-.cta-glow {
-    color: #ff0080; /* bright pink, can change */
-    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080;
-    animation: pulseCTA 1.5s infinite alternate;
-    display: inline-block;
-}
+    .profile-aura img.image-profile {
+      width: 88%;
+      height: auto;
+      border-radius: 14px;
+      display:block;
+      position: relative;
+      z-index: 6;
+      transform-origin: center center;
+      transition: transform 0.35s ease;
+    }
 
-@keyframes pulseCTA {
-    0% { text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080; }
-    50% { text-shadow: 0 0 15px #ff0080, 0 0 25px #ff0080, 0 0 40px #ff0080; }
-    100% { text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080; }
-}
-</style>
+    /* glowing animated aura using pseudo elements */
+    .profile-aura::before,
+    .profile-aura::after {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 30px;
+      z-index: 3;
+      pointer-events: none;
+    }
 
-       
-							
-							<a href="#tool" class="button large scrolly">Learn about what tools I use</a>
-						</div>
-					</div>
-				</div>
-			</article>
+    /* soft cyan glow */
+    .profile-aura::before {
+      box-shadow: 0 0 40px rgba(0,200,255,0.12), 0 0 120px rgba(0,150,255,0.06);
+      filter: blur(8px);
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.4s ease;
+    }
+
+    /* animated electric ring */
+    .profile-aura::after {
+      background: conic-gradient(from 120deg, rgba(0,220,255,0.0), rgba(0,220,255,0.12), rgba(0,120,255,0.06), rgba(0,220,255,0.0));
+      mix-blend-mode: screen;
+      animation: auraRotate 6s linear infinite;
+      opacity: 0.9;
+      transform: rotate(0deg) scale(1);
+    }
+
+    @keyframes auraRotate {
+      to { transform: rotate(360deg) scale(1); }
+    }
+
+    /* hover micro-interaction */
+    .profile-aura:hover { transform: translateY(-6px) scale(1.02); }
+    .profile-aura:hover img { transform: scale(1.03); }
+
+    /* Typed role styling fallback (cursor) */
+    #typed-role { font-weight:600; color:#B8F2FF; font-family:'Montserrat',sans-serif; }
+    #typed-role::after { content: "|"; margin-left:6px; opacity:0.9; animation: blink 1s steps(2) infinite; }
+    @keyframes blink { 50% { opacity: 0 } }
+
+    /* responsive tweaks */
+    @media (max-width: 900px) {
+      .profile-aura { width: 180px; height: 180px; }
+      .profile-aura::before, .profile-aura::after { inset: -12px; border-radius: 22px; }
+    }
+    @media (max-width: 640px) {
+      .row { flex-direction: column; gap: 18px; }
+      .col-4, .col-8 { width: 100%; }
+      .profile-aura { margin: 0 auto 8px; }
+    }
+  </style>
+
+  <!-- inline JS: particles + typing (no external libs) -->
+  <script>
+    ;(function(){
+      /* ---------- Particles: subtle floating dots + soft lines ---------- */
+      const canvas = document.getElementById('heroParticles');
+      const ctx = canvas.getContext('2d', { alpha: true });
+      const DPR = Math.max(1, window.devicePixelRatio || 1);
+
+      function resize() {
+        canvas.width = canvas.offsetWidth * DPR;
+        canvas.height = canvas.offsetHeight * DPR;
+        ctx.setTransform(DPR,0,0,DPR,0,0);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      // settings
+      const NUM = Math.round(window.innerWidth / 40); // responsive count
+      const particles = [];
+      for (let i=0;i<NUM;i++){
+        particles.push({
+          x: Math.random() * canvas.offsetWidth,
+          y: Math.random() * canvas.offsetHeight,
+          r: Math.random()*1.6 + 0.4,
+          vx: (Math.random()-0.5) * 0.15,
+          vy: (Math.random()*0.25 + 0.02) * -0.3, // slowly drift up
+          alpha: Math.random()*0.6 + 0.15
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0,0, canvas.width/DPR, canvas.height/DPR);
+
+        // subtle vignette behind content (very faint)
+        // circles
+        for (let p of particles){
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -10) p.x = canvas.offsetWidth + 10;
+          if (p.x > canvas.offsetWidth + 10) p.x = -10;
+          if (p.y < -10) p.y = canvas.offsetHeight + 10;
+          if (p.y > canvas.offsetHeight + 10) p.y = -10;
+
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(150,230,255,' + p.alpha + ')';
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+          ctx.fill();
+        }
+
+        // faint connecting lines (only between close particles)
+        for (let i=0;i<particles.length;i++){
+          for (let j=i+1;j<particles.length;j++){
+            const a = particles[i], b = particles[j];
+            const dx = a.x - b.x, dy = a.y - b.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 120) {
+              const alpha = (1 - dist/120) * 0.06;
+              ctx.strokeStyle = 'rgba(120,200,255,' + alpha + ')';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+
+      /* ---------- Typing effect (no library) ---------- */
+      const roles = ['A Data Velho', 'Analyst', 'Problem Solver', 'Creative Thinker'];
+      const el = document.getElementById('typed-role');
+      let roleIdx = 0, charIdx = 0, deleting = false;
+      const typeSpeed = 80, deleteSpeed = 40, pauseAfter = 1400;
+
+      function tick(){
+        const current = roles[roleIdx];
+        if (!deleting) {
+          charIdx++;
+          el.textContent = current.slice(0, charIdx);
+          if (charIdx === current.length) {
+            deleting = true;
+            setTimeout(tick, pauseAfter);
+            return;
+          }
+        } else {
+          charIdx--;
+          el.textContent = current.slice(0, charIdx);
+          if (charIdx === 0) {
+            deleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+          }
+        }
+        const timeout = deleting ? deleteSpeed : typeSpeed;
+        setTimeout(tick, timeout);
+      }
+      setTimeout(tick, 600);
+
+      /* ---------- small perf: pause particles when tab hidden ---------- */
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden) {
+          // stop drawing by not requesting frames - easiest is to rely on requestAnimationFrame auto pause on hidden tabs
+        }
+      });
+    })();
+  </script>
+</article>
+
 		
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 
 <!-- Elegant Tools Section -->
@@ -262,6 +401,10 @@
 }
 </style>
 
+
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
+
 		
 		<!-- Portfolio -->
 			<article id="portfolio" class="wrapper style3">
@@ -325,6 +468,8 @@
 
 
 		
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 <!-- Meet Me Section -->
 <article id="meet-me" class="wrapper" style="text-align:center; padding:60px 0;">
@@ -411,6 +556,9 @@
     </div>
   </div>
 </article>
+
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 		
 <!-- Beyond Data Section -->
@@ -525,7 +673,9 @@
   </div>
 </article>
 
-
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
+		
 		<!-- Skills Section -->
 <!-- Skills Section -->
 <article id="skills" class="wrapper">
