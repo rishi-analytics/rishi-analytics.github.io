@@ -54,35 +54,33 @@
 				</ul>
 			</nav>
 
-		<!-- ===== Hero: Data Cosmos v2 ===== -->
+		<!-- ===== Hero: Data Cosmos v3 ===== -->
 <article id="top" class="wrapper style1" style="position: relative; overflow: hidden; background-color: #000;">
   <div class="container" style="position: relative; z-index: 3; padding: 40px 0;">
-
     <div class="row" style="align-items: center;">
-      <!-- Left: profile image with aura -->
+      <!-- Left: image (rounded rectangular) -->
       <div class="col-4 col-5-large col-12-medium" style="display:flex; align-items:center; justify-content:center;">
         <div class="profile-aura">
           <img class="image-profile" src="images/data_velho_rishi_optimized.png" alt="Rishi Kesari" />
         </div>
       </div>
 
-      <!-- Right: intro text -->
+      <!-- Right: text -->
       <div class="col-8 col-7-large col-12-medium" style="color:#fff;">
         <header>
-          <h1 class="hero-title" style="margin:0 0 16px 0; font-family: 'Montserrat', sans-serif; font-weight:600; color:#ffffff;">
-            Hei, I'm <strong style="color:#ffffff;">Rishikesh Kesari</strong>
+          <h1 class="hero-title" style="margin:0 0 16px 0; font-family: 'Sora', sans-serif; font-weight:600;">
+            Hei, I'm <strong>Rishikesh Kesari</strong>
             <br>
             <span id="typed-role" style="font-weight:400; font-size:1.05rem;"></span>
           </h1>
         </header>
 
-        <p style="font-family: 'Agrandir', 'Montserrat', sans-serif; color:#ffffff; line-height:1.6; font-weight:300; max-width:720px; margin-top:18px;">
+        <p style="font-family:'Agrandir','Montserrat',sans-serif; color:#ffffff; line-height:1.6; font-weight:300; max-width:720px; margin-top:18px;">
           As an analyst, I don’t just crunch numbers — I uncover the stories hidden in data 
           and turn them into insights that drive smart decisions! Whether I’m coding a solution 
           or solving a problem, <strong>creativity</strong> is the core in everything I do.
         </p>
 
-        <!-- Sleek Button -->
         <p style="margin-top:24px;">
           <a href="#portfolio" class="see-work-btn">See My Work</a>
         </p>
@@ -90,143 +88,132 @@
     </div>
   </div>
 
-  <!-- colorful particle bubble background -->
+  <!-- Bubbles canvas -->
   <canvas id="cosmosBubbles" style="position:absolute; inset:0; z-index:1;"></canvas>
 
-  <!-- faint glow overlay -->
+  <!-- Glow overlay -->
   <div style="position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(0,30,60,0.4), rgba(0,0,0,0.9)); z-index:2; pointer-events:none;"></div>
 
   <!-- CSS -->
   <style>
     .profile-aura {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+      width: 260px;
+      height: 260px;
+      border-radius: 24px;
+      overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle, rgba(0,255,255,0.1), rgba(0,0,0,0.4));
+      background: rgba(0,255,255,0.05);
       box-shadow: 0 0 25px rgba(0,200,255,0.15);
       transition: transform 0.35s ease;
     }
-
     .profile-aura img {
-      width: 88%;
-      height: auto;
-      border-radius: 50%;
-      position: relative;
-      z-index: 4;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
       transition: transform 0.35s ease;
     }
-
-    .profile-aura:hover { transform: scale(1.05); }
+    .profile-aura:hover { transform: scale(1.03); }
     .profile-aura:hover img { transform: scale(1.05); }
 
-    /* Sleek button */
     .see-work-btn {
       display:inline-block;
       color:#fff;
-      border: 1px solid #00CFFF;
-      padding: 10px 20px;
-      border-radius: 8px;
+      border:1px solid #00CFFF;
+      padding:10px 20px;
+      border-radius:8px;
       text-decoration:none;
-      font-family: 'Montserrat', sans-serif;
+      font-family:'Montserrat',sans-serif;
       font-weight:400;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0,200,255,0.2);
+      transition:all 0.3s ease;
+      box-shadow:0 0 10px rgba(0,200,255,0.2);
     }
-
     .see-work-btn:hover {
-      background: linear-gradient(90deg, #00CFFF, #0099FF);
-      box-shadow: 0 0 20px rgba(0,200,255,0.6);
-      color: #fff;
+      background:linear-gradient(90deg,#00CFFF,#0099FF);
+      box-shadow:0 0 20px rgba(0,200,255,0.6);
+      color:#fff;
     }
 
-    /* Typed text */
     #typed-role::after {
       content: "|";
       margin-left:6px;
       animation: blink 1s steps(2) infinite;
       opacity: 0.9;
     }
-    @keyframes blink { 50% { opacity: 0 } }
+    @keyframes blink { 50% { opacity:0; } }
 
-    /* responsive tweaks */
-    @media (max-width: 900px) {
-      .profile-aura { width: 180px; height: 180px; }
+    @media (max-width:900px){
+      .profile-aura{width:200px;height:200px;}
     }
-    @media (max-width: 640px) {
-      .row { flex-direction: column; gap: 18px; }
-      .profile-aura { margin: 0 auto 8px; }
-      .see-work-btn { margin-top: 10px; }
+    @media (max-width:640px){
+      .row{flex-direction:column;gap:18px;}
+      .profile-aura{margin:0 auto 8px;}
+      .see-work-btn{margin-top:10px;}
     }
   </style>
 
-  <!-- JS for bubbles + typing -->
+  <!-- JS -->
   <script>
-    // Typing effect
-    const roles = ['Data Analyst', 'Data Velho', 'Problem Solver', 'Creative Thinker'];
+    // --- Typed effect ---
+    const roles = ['Data Analyst','Data Velho','Problem Solver','Creative Thinker'];
     const el = document.getElementById('typed-role');
-    let i = 0, j = 0, deleting = false;
-    function typeEffect() {
+    let i=0,j=0,deleting=false;
+    function typeEffect(){
       const text = roles[i];
-      if (!deleting) {
-        el.textContent = text.slice(0, j++);
-        if (j > text.length + 5) deleting = true;
-      } else {
-        el.textContent = text.slice(0, j--);
-        if (j < 0) { deleting = false; i = (i + 1) % roles.length; }
-      }
-      setTimeout(typeEffect, deleting ? 50 : 100);
+      if(!deleting){el.textContent = text.slice(0,j++); if(j>text.length+5) deleting=true;}
+      else{el.textContent=text.slice(0,j--); if(j<0){deleting=false; i=(i+1)%roles.length;}}
+      setTimeout(typeEffect,deleting?50:100);
     }
     typeEffect();
 
-    // Bubbles (colorful floating)
-    const canvas = document.getElementById('cosmosBubbles');
-    const ctx = canvas.getContext('2d');
-    let W, H;
-    const bubbles = [];
-    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
+    // --- Bubble background ---
+    (function(){
+      const canvas = document.getElementById('cosmosBubbles');
+      const ctxB = canvas.getContext('2d');
+      let W, H;
+      const bubblesArr = [];
+      const colors = ['#00FFFF','#FF00FF','#FFD700','#00FF7F','#FF6347','#1E90FF'];
 
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
+      function resizeCanvas(){
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize',resizeCanvas);
+      resizeCanvas();
 
-    for (let i = 0; i < 60; i++) {
-      bubbles.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 4 + 2,
-        c: colors[Math.floor(Math.random() * colors.length)],
-        vy: Math.random() * -0.5 - 0.2,
-        alpha: Math.random() * 0.6 + 0.3
-      });
-    }
+      for(let i=0;i<60;i++){
+        bubblesArr.push({
+          x:Math.random()*W,
+          y:Math.random()*H,
+          r:Math.random()*4+2,
+          c:colors[Math.floor(Math.random()*colors.length)],
+          vy:Math.random()*-0.5-0.2,
+          alpha:Math.random()*0.6+0.3
+        });
+      }
 
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      bubbles.forEach(b => {
-        b.y += b.vy;
-        if (b.y < -10) b.y = H + 10;
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctx.fillStyle = `${b.c}${Math.floor(b.alpha * 255).toString(16)}`;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = b.c;
-        ctx.fill();
-        ctx.closePath();
-      });
-      requestAnimationFrame(draw);
-    }
-    draw();
+      function animateBubbles(){
+        ctxB.clearRect(0,0,W,H);
+        bubblesArr.forEach(b=>{
+          b.y+=b.vy;
+          if(b.y<-10) b.y=H+10;
+          ctxB.beginPath();
+          ctxB.arc(b.x,b.y,b.r,0,Math.PI*2);
+          ctxB.fillStyle=b.c;
+          ctxB.globalAlpha=b.alpha;
+          ctxB.shadowBlur=10;
+          ctxB.shadowColor=b.c;
+          ctxB.fill();
+        });
+        requestAnimationFrame(animateBubbles);
+      }
+      animateBubbles();
+    })();
   </script>
 </article>
-
-
 		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
