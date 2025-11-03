@@ -322,49 +322,74 @@
     typeEffect();
 
     // --- Bubble background ---
-    (function(){
-      const canvas = document.getElementById('cosmosBubbles');
-      const ctxB = canvas.getContext('2d');
-      let W, H;
-      const bubblesArr = [];
-      const colors = ['#00FFFF','#FF00FF','#FFD700','#00FF7F','#FF6347','#1E90FF'];
+    <!-- Bubbles canvas inside your hero/intro section -->
+<canvas id="cosmosBubbles"></canvas>
 
-      function resizeCanvas(){
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize',resizeCanvas);
-      resizeCanvas();
+<script>
+(function(){
+  const canvas = document.getElementById('cosmosBubbles');
+  const ctxB = canvas.getContext('2d');
+  let W, H;
 
-      for(let i=0;i<60;i++){
-        bubblesArr.push({
-          x:Math.random()*W,
-          y:Math.random()*H,
-          r:Math.random()*10+5,
-          c:colors[Math.floor(Math.random()*colors.length)],
-          vy:Math.random()*-0.3-0.1,
-          alpha:Math.random()*0.2+0.1
-        });
-      }
+  const bubblesArr = [];
+  const colors = ['#00FFFF','#FF00FF','#FFD700','#00FF7F','#FF6347','#1E90FF'];
 
-      function animateBubbles(){
-        ctxB.clearRect(0,0,W,H);
-        bubblesArr.forEach(b=>{
-          b.y+=b.vy;
-          if(b.y<-10) b.y=H+10;
-          ctxB.beginPath();
-          ctxB.arc(b.x,b.y,b.r,0,Math.PI*2);
-          ctxB.fillStyle=b.c;
-          ctxB.globalAlpha=b.alpha;
-          ctxB.shadowBlur=10;
-          ctxB.shadowColor=b.c;
-          ctxB.fill();
-        });
-        requestAnimationFrame(animateBubbles);
-      }
-      animateBubbles();
-    })();
-  </script>
+  // Resize canvas to match the hero section
+  function resizeCanvas(){
+    const heroSection = document.querySelector('.intro-section'); // your hero wrapper
+    W = canvas.width = heroSection.offsetWidth;
+    H = canvas.height = heroSection.offsetHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Create bubbles
+  for(let i=0; i<60; i++){
+    bubblesArr.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 15 + 8,          // bigger bubbles
+      c: colors[Math.floor(Math.random() * colors.length)],
+      vy: Math.random() * -0.4 - 0.1,    // slower rise
+      alpha: Math.random() * 0.2 + 0.2    // semi-transparent, water-like
+    });
+  }
+
+  function animateBubbles(){
+    ctxB.clearRect(0,0,W,H);
+    bubblesArr.forEach(b => {
+      b.y += b.vy;
+      if(b.y < -20) b.y = H + 20;
+
+      ctxB.beginPath();
+      ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+
+      ctxB.fillStyle = b.c;
+      ctxB.globalAlpha = b.alpha;
+
+      ctxB.shadowBlur = 12;      // subtle glow
+      ctxB.shadowColor = b.c;
+
+      ctxB.fill();
+    });
+    requestAnimationFrame(animateBubbles);
+  }
+
+  animateBubbles();
+})();
+</script>
+
+<style>
+#cosmosBubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ensures clicks pass through */
+  z-index: 1;           /* behind your hero text */
+}
+</style>
 </article>
 		
 <!-- Glowing Full-Width Separator -->
