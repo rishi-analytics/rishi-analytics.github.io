@@ -163,8 +163,64 @@
 }
 </style>
 
+		/* See My Work Button */
 		
+<p class="hero-button">
+  <a href="#portfolio" class="see-work-btn">See My Work</a>
+</p>
 
+		<style>
+		/* Button wrapper to center on small screens */
+.hero-button {
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* See My Work Button */
+.see-work-btn {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 24px; /* size of the button */
+  border: 1px solid rgba(255, 204, 0, 0.6);
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  background: rgba(255, 204, 0, 0.05); /* transparent yellow tint */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.4);
+  animation: softPulse 3s ease-in-out infinite;
+}
+
+/* Hover effect */
+.see-work-btn:hover {
+  background: rgba(255, 204, 0, 0.15); /* gentle glow */
+  color: #000;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.5), 0 0 20px rgba(255, 204, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Gentle pulsing glow animation */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .see-work-btn {
+    width: 80%; /* button stretches on small screens */
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+}
+</style>
 
 
 
