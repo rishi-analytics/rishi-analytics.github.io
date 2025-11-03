@@ -175,36 +175,65 @@
 }
 	
 </style>
-    /* See My Work Button */
-    .see-work-btn {
-      display: inline-block;
-      font-family: 'Manrope', sans-serif;
-      color: #fff;
-      text-decoration: none;
-      padding: 6px 18px;
-      border: 1px solid rgba(255, 204, 0, 0.6);
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.8px;
-      background: rgba(255, 204, 0, 0.05);
-      transition: all 0.3s ease;
-      box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
-      animation: softPulse 3s ease-in-out infinite;
-    }
 
-    .see-work-btn:hover {
-      background: rgba(255, 204, 0, 0.15);
-      color: #000;
-      box-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.3);
-      transform: translateY(-2px);
-    }
+		  <p style="margin-top:24px;">
+          <a href="#portfolio" class="see-work-btn">See My Work</a>
+        </p>
+      </div>
+    </div>
+  </div>
 
-    @keyframes softPulse {
-      0%, 100% { box-shadow: 0 0 6px rgba(255, 204, 0, 0.25); }
-      50% { box-shadow: 0 0 12px rgba(255, 204, 0, 0.5); }
-    }
-  </style>
+	<!-- css for button -->
+<p style="margin-top:24px;">
+  <a href="#portfolio" class="see-work-btn">See My Work</a>
+</p>
+
+<style>
+	
+/* See My Work Button */
+.see-work-btn {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 16px; /* slightly smaller size */
+  border: 1px solid rgba(255, 204, 0, 0.6);
+  padding: 10px 24px;
+  border: 1px solid #ffcc00;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  background: rgba(255, 204, 0, 0.05); /* transparent yellow tint */
+  background: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.25);
+  animation: softPulse 3s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.4);
+}
+
+.see-work-btn:hover {
+  background: rgba(255, 204, 0, 0.15);
+  color: #000;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 204, 0, 0.3);
+  background: rgba(255, 204, 0, 0.2); /* gentle transparent yellow */
+  color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Gentle pulsing glow animation */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+  }
+}
+</style>
+
 
 
 
