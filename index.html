@@ -170,6 +170,27 @@
     font-size: 0.8rem;
   }
 }
+
+/* === FIX BUTTON CLICK ISSUE === */
+.intro-section {
+  position: relative;
+  z-index: 5;
+}
+
+.see-work-btn {
+  position: relative;
+  z-index: 6;
+}
+
+/* Make sure the background canvas or overlays stay behind */
+#bubbles,
+canvas,
+.overlay {
+  position: absolute;
+  z-index: 1 !important;
+  pointer-events: none; /* ensures clicks pass through */
+}
+
 </style>
 
 
@@ -579,7 +600,7 @@
   <div class="container medium fade-in">
     <header>
       <h2 class="glow-title"> Let’s Meet Rishi</h2>
-      <p>Get to know the person behind the data— a snapshot of my personality + creativity 😎</p>
+      <p>Know the person behind the data— a snapshot of my personality + creativity 😎</p>
     </header>
     
     <div class="row">
