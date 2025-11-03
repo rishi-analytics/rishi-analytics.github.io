@@ -136,30 +136,46 @@
   </div>
 
 	<!-- css for button -->
-	<style>
+<p style="margin-top:24px;">
+  <a href="#portfolio" class="see-work-btn">See My Work</a>
+</p>
+
+<style>
 .see-work-btn {
   display: inline-block;
   font-family: 'Manrope', sans-serif;
   color: #fff;
   text-decoration: none;
-  padding: 6px 18px; /* smaller size */
-  border: 1px solid #ffcc00;
-  border-radius: 25px;
-  font-size: 0.9rem; /* slightly smaller font */
+  padding: 8px 20px; /* slightly smaller size */
+  border: 1px solid rgba(255, 204, 0, 0.6);
+  border-radius: 30px;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.8px;
-  background: transparent;
+  background: rgba(255, 204, 0, 0.05); /* transparent yellow tint */
   transition: all 0.3s ease;
-  box-shadow: 0 0 4px rgba(255, 204, 0, 0.3); /* subtle glow */
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.25);
+  animation: softPulse 3s ease-in-out infinite;
 }
 
 .see-work-btn:hover {
-  background: #ffcc00;
+  background: rgba(255, 204, 0, 0.15);
   color: #000;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.6), 0 0 16px rgba(255, 204, 0, 0.4); /* lighter glow */
-  transform: translateY(-1px); /* softer hover motion */
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 204, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Gentle pulsing glow animation */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+  }
 }
 </style>
+
 
 
   <!-- Bubbles canvas -->
