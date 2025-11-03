@@ -1,8 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	analysis by Rishi
-
--->
+<!--analysis by Rishi-->
 
 
 <html>
@@ -66,7 +63,7 @@
       </div>
     
   <!-- Right: text -->
-      <div class="col-8 col-7-large col-12-medium" style="color:#fff;">
+      <div class="col-8 col-7-large col-12-medium" style="color:#ffffff;">
         <header>
           <h1 class="hero-title" style="margin:0 0 16px 0; font-family: 'Manrope', sans-serif; font-weight:500; letter-spacing:1.5px;">
             Hei, I'm Rishikesh Kesari
@@ -76,6 +73,29 @@
         </header>
 
 		  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+		  <-- !hero titles css -->
+			  
+		  <style>
+#typed-role {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff66, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowShift 4s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+@keyframes glowShift {
+  0% { filter: brightness(1.2); }
+  50% { filter: brightness(1.6); }
+  100% { filter: brightness(1.2); }
+}
+</style>
+
 		  
 		  <style>
 /* Hero heading font & style */
@@ -105,7 +125,7 @@
         <p style="font-family:'Agrandir','Montserrat',sans-serif; color:#ffffff; line-height:1.6; font-weight:300; max-width:720px; margin-top:18px;">
           As an analyst, I don’t just crunch numbers — I uncover the stories hidden in data 
           and turn them into insights that drive smart decisions! Whether I’m coding a solution 
-          or solving a problem, <strong>creativity</strong> is the core in everything I do.
+          or solving a problem, creativity is the core in everything I do.
         </p>
 
         <p style="margin-top:24px;">
@@ -114,6 +134,33 @@
       </div>
     </div>
   </div>
+
+	<!-- css for button -->
+	<style>
+.see-work-btn {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1px solid #ffcc00;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  background: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.4);
+}
+
+.see-work-btn:hover {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+  transform: translateY(-2px);
+}
+</style>
+
 
   <!-- Bubbles canvas -->
   <canvas id="cosmosBubbles" style="position:absolute; inset:0; z-index:1;"></canvas>
