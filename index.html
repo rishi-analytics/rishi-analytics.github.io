@@ -300,77 +300,84 @@
     }
   </style>
 
-  <!-- JS -->
-  <script>
-	  
-	  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-    // --- Typed effect ---
-    const roles = ['Data Analyst','Data Velho','Problem Solver','Creative'];
-    const el = document.getElementById('typed-role');
-    let i=0,j=0,deleting=false;
-    function typeEffect(){
-      const text = roles[i];
-      if(!deleting){el.textContent = text.slice(0,j++); if(j>text.length+5) deleting=true;}
-      else{el.textContent=text.slice(0,j--); if(j<0){deleting=false; i=(i+1)%roles.length;}}
-      setTimeout(typeEffect,deleting?50:100);
-    }
-    typeEffect();
-
-    // --- Bubble background ---
+ <!-- JS -->
 <script>
-(function() {
+  // --- Smooth Scroll ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // --- Typed effect ---
+  const roles = ['Data Analyst','Data Velho','Problem Solver','Creative'];
+  const el = document.getElementById('typed-role');
+  let i = 0, j = 0, deleting = false;
+  function typeEffect() {
+    const text = roles[i];
+    if (!deleting) {
+      el.textContent = text.slice(0, j++);
+      if (j > text.length + 5) deleting = true;
+    } else {
+      el.textContent = text.slice(0, j--);
+      if (j < 0) {
+        deleting = false;
+        i = (i + 1) % roles.length;
+      }
+    }
+    setTimeout(typeEffect, deleting ? 50 : 100);
+  }
+  typeEffect();
+
+  // --- Bubble background ---
+  (function() {
     const canvas = document.getElementById('cosmosBubbles');
+    if (!canvas) return; // prevent error if canvas not found
     const ctxB = canvas.getContext('2d');
     let W, H;
     const bubblesArr = [];
     const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
 
     function resizeCanvas() {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
     }
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
     for (let i = 0; i < 60; i++) {
-        bubblesArr.push({
-            x: Math.random() * W,
-            y: Math.random() * H,
-            r: Math.random() * 10 + 5,
-            c: colors[Math.floor(Math.random() * colors.length)],
-            vy: Math.random() * -0.3 - 0.1,
-            alpha: Math.random() * 0.2 + 0.1
-        });
+      bubblesArr.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 10 + 5,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        vy: Math.random() * -0.3 - 0.1,
+        alpha: Math.random() * 0.25 + 0.15
+      });
     }
 
     function animateBubbles() {
-        ctxB.clearRect(0, 0, W, H);
-        bubblesArr.forEach(b => {
-            b.y += b.vy;
-            if (b.y < -10) b.y = H + 10;
+      ctxB.clearRect(0, 0, W, H);
+      bubblesArr.forEach(b => {
+        b.y += b.vy;
+        if (b.y < -10) b.y = H + 10;
 
-            ctxB.beginPath();
-            ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-            ctxB.fillStyle = b.c;
-            ctxB.globalAlpha = b.alpha;
-            ctxB.shadowBlur = 10;
-            ctxB.shadowColor = b.c;
-            ctxB.fill();
-        });
-
-        requestAnimationFrame(animateBubbles);
+        ctxB.beginPath();
+        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctxB.fillStyle = b.c;
+        ctxB.globalAlpha = b.alpha;
+        ctxB.shadowBlur = 10;
+        ctxB.shadowColor = b.c;
+        ctxB.fill();
+      });
+      requestAnimationFrame(animateBubbles);
     }
 
     animateBubbles();
-})();
+  })();
 </script>
 		</article>
 				
