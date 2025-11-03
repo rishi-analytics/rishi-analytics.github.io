@@ -62,124 +62,33 @@
         </div>
       </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		
-  <!-- Right: text -->
-      <div class="col-8 col-7-large col-12-medium" style="color:#FFD700;">
+  <!-- Hero Section -->
+<article id="top" class="wrapper style1" style="position:relative; overflow:hidden; background:#000;">
+  
+  <!-- Bubble Canvas -->
+  <canvas id="cosmosBubbles" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></canvas>
+  
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="row">
+      <!-- Profile Image -->
+      <div class="col-4 col-5-large col-12-medium">
+        <span class="image fit" style="border-radius: 20px; overflow:hidden;">
+          <img class="image-profile" src="images/data_velho_rishi_optimized.png" alt="Rishi Kesari" />
+        </span>
+      </div>
+
+      <!-- Text Content -->
+      <div class="col-8 col-7-large col-12-medium" style="position:relative; z-index:1;">
         <header>
-          <h1 class="hero-title" style="margin:0 0 16px 0; font-family: 'Manrope', sans-serif; font-weight:500; letter-spacing:1.5px;">
-            Hei, I'm Rishikesh Kesari
+          <h1 class="hero-title">
+            Hei, I'm <strong>Rishikesh Kesari</strong>
             <br>
-            <span id="typed-role" style="font-weight:400; font-size:1.05rem;"></span>
+            <span id="typed-role"></span>
           </h1>
         </header>
 
-		  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-		  <!-- hero titles css -->
-			  
-		  <style>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		
-<!-- Right: Intro Text -->
-<div class="col-8 col-7-large col-12-medium intro-section">
-  <header>
-    <h1 class="hero-title">
-      Hei, I'm <span class="highlight-name">Rishikesh Kesari</span>
-      <br>
-      <span id="typed-role"></span>
-    </h1>
-  </header>
-
-  <p class="intro-body">
-    As an analyst, I don’t just crunch numbers- I uncover the stories hidden in data
-    and turn them into insights that drive smart decisions! Whether I’m coding a solution
-    or solving a problem, creativity is the core in everything I do!
-  </p>
-
-  <p style="margin-top:24px;">
-    <a href="#portfolio" class="see-work-btn">See My Work</a>
-  </p>
-</div>
-
-<!-- CSS -->
-<style>
-/* Hero Heading */
-.hero-title {
-  margin: 0 0 16px 0;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  font-size: 2.5rem;
-  color: #ffd700; /* soft yellow */
-  line-height: 1.2;
-}
-
-/* Highlight your name */
-.highlight-name {
-  font-weight: 700;
-  color: #ffcc00;
-}
-
-/* Typewriter Roles */
-#typed-role {
-  display: inline-block;
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  font-size: 1.5rem;
-  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff66, #00ffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glowShift 4s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-}
-
-@keyframes glowShift {
-  0% { filter: brightness(1.2); }
-  50% { filter: brightness(1.6); }
-  50% { filter: brightness(1.5); }
-  100% { filter: brightness(1.2); }
-}
-</style>
-
-		  
-		  <style>
-/* Hero/intro heading font & style */
-#top h2 {
-/* Body Text */
-.intro-body {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600; /* balanced — not too bold, not too light */
-  letter-spacing: 1px; /* adds breathing room */
-  color: FFD700; /* pure white for contrast on black bg */
-  text-transform: none; /* keeps natural casing */
-  line-height: 1.3;
-  font-size: 2.2rem; /* adjust based on your layout */
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-#top h2 strong {
-  font-weight: 700; /* emphasize your name slightly */
-  color: #ffcc00; /* subtle yellow highlight */
-}
-
-#top h2:hover {
-  color: #ffe; /* soft white on hover */
-  text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-top: 16px;
-}
-</style>
-
-
-        <p style="font-family:'Agrandir','Montserrat',sans-serif; color:#ffffff; line-height:1.6; font-weight:300; max-width:720px; margin-top:18px;">
-          As an analyst, I don’t just crunch numbers- I uncover the stories hidden in data 
+        <p class="hero-body">
+          As an analyst, I don’t just crunch numbers — I uncover the stories hidden in data 
           and turn them into insights that drive smart decisions! Whether I’m coding a solution 
           or solving a problem, creativity is the core in everything I do.
         </p>
@@ -191,55 +100,88 @@
     </div>
   </div>
 
-	<!-- css for button -->
-<p style="margin-top:24px;">
-  <a href="#portfolio" class="see-work-btn">See My Work</a>
-</p>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* See My Work Button */
-.see-work-btn {
-  display: inline-block;
-  font-family: 'Manrope', sans-serif;
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 16px; /* slightly smaller size */
-  border: 1px solid rgba(255, 204, 0, 0.6);
-  padding: 10px 24px;
-  border: 1px solid #ffcc00;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  background: rgba(255, 204, 0, 0.05); /* transparent yellow tint */
-  background: transparent;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.25);
-  animation: softPulse 3s ease-in-out infinite;
-  box-shadow: 0 0 6px rgba(255, 204, 0, 0.4);
-}
+  <!-- Hero CSS -->
+  <style>
+    /* Hero Heading */
+    .hero-title {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      line-height: 1.3;
+      color: #FFD700; /* bright gold */
+      margin: 0 0 16px 0;
+      text-shadow: 0 0 6px #FFD700, 0 0 12px #FFD700;
+    }
 
-.see-work-btn:hover {
-  background: rgba(255, 204, 0, 0.15);
-  color: #000;
-  box-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 204, 0, 0.3);
-  background: rgba(255, 204, 0, 0.2); /* gentle transparent yellow */
-  color: #ffd700;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
-  transform: translateY(-2px);
-}
+    .hero-title strong {
+      color: #FFCC00; /* subtle yellow for name */
+      font-weight: 700;
+    }
 
-/* Gentle pulsing glow animation */
-@keyframes softPulse {
-  0%, 100% {
-    box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
-  }
-}
-</style>
+    /* Typewriter Roles */
+    #typed-role {
+      display: inline-block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff66, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(255,255,255,0.3); /* bright glow */
+      animation: glowShift 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowShift {
+      0% { filter: brightness(1.4); }
+      50% { filter: brightness(1.8); }
+      100% { filter: brightness(1.4); }
+    }
+
+    /* Hero Body */
+    .hero-body {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #ffffff;
+      max-width: 720px;
+      margin-top: 18px;
+    }
+
+    /* See My Work Button */
+    .see-work-btn {
+      display: inline-block;
+      font-family: 'Manrope', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 18px;
+      border: 1px solid rgba(255, 204, 0, 0.6);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      background: rgba(255, 204, 0, 0.05);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+      animation: softPulse 3s ease-in-out infinite;
+    }
+
+    .see-work-btn:hover {
+      background: rgba(255, 204, 0, 0.15);
+      color: #000;
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    @keyframes softPulse {
+      0%, 100% { box-shadow: 0 0 6px rgba(255, 204, 0, 0.25); }
+      50% { box-shadow: 0 0 12px rgba(255, 204, 0, 0.5); }
+    }
+  </style>
 
 
 
