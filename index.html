@@ -266,13 +266,23 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: left; /* or center if you want full center */
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* use center if you want full centering */
+  align-items: flex-start;
   justify-content: center;
-  gap: 1rem;
-  padding-left: 1rem; /* adjust if it feels too left-aligned */
+  gap: 0.5rem; /* tighter spacing */
+  padding-left: 1rem;
+}
+
+.hero-title {
+  margin-bottom: 0.3rem; /* reduce bottom space under title */
+}
+
+.hero-body {
+  margin-top: 0.3rem; /* reduce top space before paragraph */
+  max-width: 720px;
+  line-height: 1.4;
 }
 
 /* Adjust for smaller screens */
