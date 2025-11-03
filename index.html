@@ -67,15 +67,16 @@
         </div>
       </div>
 
- <!-- Right: text -->
-<div class="col-8 col-7-large col-12-medium">
+<!-- Right: text -->
+<div class="col-8 col-7-large col-12-medium hero-content">
   <header>
-    <h1 class="hero-title">
-      Hei, I'm <span class="highlight-name">Rishi</span>
+    <h1 class="hero-title glow-text">
+      Hei <span class="wave">👋</span>, I'm <span class="highlight-name">Rishi</span>
       <br>
       <span id="typed-role"></span>
     </h1>
   </header>
+</div>
 
   <p class="hero-body">
     As an analyst, I don’t just crunch numbers — I uncover the stories hidden in data
@@ -90,6 +91,7 @@
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 		
 <!-- CSS for Hero -->
 <style>
@@ -214,7 +216,53 @@
   color: #fff;
   text-align: left;
 }
-	
+
+	/* --- Sleek neon glow for hero text --- */
+.glow-text {
+  font-family: 'Poppins', sans-serif; /* Slim & modern */
+  font-weight: 300;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff;
+  }
+  to {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff;
+  }
+}
+
+/* --- Animated waving hand --- */
+.wave {
+  display: inline-block;
+  animation: wave-hand 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-hand {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+
 </style>
 
   <!-- CSS -->
