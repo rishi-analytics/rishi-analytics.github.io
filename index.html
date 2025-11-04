@@ -683,29 +683,237 @@
 </script>
 
 		
-<header style="margin-bottom:60px;">
-  <h2 style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:2.5rem; color:#ffffff; text-shadow:0 0 20px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; animation: glowPulse 2s infinite alternate;">
-    Here’s some of my data analysis projects 🙂
-  </h2>
-  <p style="font-family:'Agrandir', serif; color:#eaeaea; font-size:1rem;">Click any project to explore details & GitHub repo</p>
-</header>
+<!-- Portfolio Section -->
+<article id="portfolio" style="position:relative; overflow:hidden; padding:100px 0; background: radial-gradient(circle at center, #000000 60%, #0a0a0a 100%);">
+  
+  <!-- Bubbles canvas -->
+  <canvas id="portfolioBubbles"></canvas>
+
+  <div class="container" style="max-width:1200px; margin:auto; text-align:center; position:relative; z-index:2;">
+    
+    <!-- Section Heading -->
+    <header style="margin-bottom:60px;">
+      <h2 style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:2.5rem; color:#ffffff; text-shadow:0 0 20px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; animation: glowPulse 2s infinite alternate;">
+        Here’s some of my data analysis projects 🙂
+      </h2>
+      <p style="font-family:'Agrandir', serif; color:#eaeaea; font-size:1rem;">Click any project to explore details & GitHub repo</p>
+    </header>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px;">
+      
+      <!-- Project Card Template -->
+      <div class="project-card">
+        <a href="https://github.com/rishi-analytics/Clash_Royale_Game_Analysis?tab=readme-ov-file#super-cell-interview-puzzle" target="_blank">
+          <img src="images/clash_royale.jpeg" alt="Game Data Analysis">
+          <h3>Game Data Analysis</h3>
+        </a>
+        <p>SuperCell clash royale game data analysis</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://github.com/rishi-analytics/big-data-analysis-using-pyspark?tab=readme-ov-file#using-pyspark-for-big-data-analytics" target="_blank">
+          <img src="images/PySpark_Project_Thumnail.jpeg" alt="Big Data Analysis">
+          <h3>Big Data Analysis</h3>
+        </a>
+        <p>Big data analysis of 13M+ music records using PySpark</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://github.com/rishi-analytics/Machine-Learning-With-PySpark/tree/main?tab=readme-ov-file#preventing-customer-churn-through-machine-learning" target="_blank">
+          <img src="images/churn.png" alt="Churn Prediction">
+          <h3>Churn Prediction</h3>
+        </a>
+        <p>Data-driven churn insights powered by PySpark Machine Learning</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://github.com/rishi-analytics/ESG-Specialization-Project-Portfolio?tab=readme-ov-file#esg-for-all--coursera-specialization-portfolio" target="_blank">
+          <img src="images/file_000000004e00620e958212641480943d (1).png" alt="ESG Analysis">
+          <h3>ESG Analysis Project</h3>
+        </a>
+        <p>ESG Data Analysis for Sustainable Business Decisions</p>
+      </div>
+
+      <div class="project-card">
+        <a href="#">
+          <img src="images/nlp_teaser (1).gif" alt="Upcoming Project">
+          <h3>Valmistaja Data Velho Rishi</h3>
+        </a>
+        <p>A New project unleashing! Stay Tuned🔥</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://github.com/rishi-analytics" target="_blank">
+          <img src="images/logo.jpeg" alt="More Projects">
+          <h3>More Projects</h3>
+        </a>
+        <p>Click here to check out more insightful projects made by me!</p>
+      </div>
+
+    </div>
+
+    <!-- Scroll Button -->
+    <footer style="margin-top:60px;">
+      <p style="color:#eaeaea; font-family:'Agrandir', serif;">Check out my skills</p>
+      <a href="#skills" class="scroll-button">Skill Set</a>
+    </footer>
+  </div>
+</article>
 
 <style>
+/* Glow animation for heading */
 @keyframes glowPulse {
   0% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
   50% { text-shadow: 0 0 25px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; }
   100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
 }
 
-/* Project card links */
-.project-card a {
-  text-decoration: none; /* keep image/title clickable only */
+/* --- Portfolio Card Styling --- */
+.project-card {
+  background: #001f3f;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 25px rgba(0, 160, 255, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(0, 160, 255, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:600;
+  color:#ffffff;
+  margin-bottom:8px;
 }
 
 .project-card p {
-  pointer-events: none; /* disable clicking on description */
+  font-family:'Agrandir', serif;
+  font-size:0.9rem;
+  color:#eaeaea;
+  margin:0;
+  pointer-events:none; /* disable clicking */
+}
+
+/* Hover Animation */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 50px rgba(0,160,255,0.8);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0,160,255,0.7);
+}
+
+/* Fade-in on scroll */
+.projects-grid {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width:1024px){
+  .projects-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width:768px){
+  .projects-grid{
+    grid-template-columns: 1fr;
+    gap:30px;
+  }
+}
+
+/* --- Canvas bubbles --- */
+#portfolioBubbles {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* --- Scroll Button --- */
+.scroll-button {
+  display:inline-block;
+  padding:18px 35px;
+  font-family:'Montserrat', sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  color:#ffffff;
+  background: linear-gradient(90deg, #00aaff, #001f3f);
+  border-radius:50px;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  box-shadow: 0 0 15px #00aaff;
+  animation: pulseGlow 2s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #00aaff, 0 0 60px #00ffff;
+}
+
+/* Glowing pulse animation for button */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 15px #00aaff; }
+  50% { box-shadow: 0 0 25px #00aaff, 0 0 45px #00ffff; }
+  100% { box-shadow: 0 0 15px #00aaff; }
 }
 </style>
+
+<script>
+// --- Bubble background for Portfolio Section ---
+(function() {
+  const canvas = document.getElementById('portfolioBubbles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  const bubbles = [];
+  const colors = ['#00FFFF','#FF00FF','#FFD700','#00FF7F','#1E90FF','#FF6347'];
+
+  function resizeCanvas() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  for(let i=0;i<60;i++){
+    bubbles.push({
+      x:Math.random()*W,
+      y:Math.random()*H,
+      r:Math.random()*8+4,
+      c:colors[Math.floor(Math.random()*colors.length)],
+      vy:Math.random()*-0.15-0.05,
+      alpha:Math.random()*0.25+0.1
+    });
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    bubbles.forEach(b=>{
+     
 		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
