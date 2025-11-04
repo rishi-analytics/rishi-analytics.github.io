@@ -682,7 +682,6 @@
 })();
 </script>
 
-		
 <!-- Portfolio Section -->
 <article id="portfolio" style="position:relative; overflow:hidden; padding:100px 0; background: radial-gradient(circle at center, #000000 60%, #0a0a0a 100%);">
   
@@ -690,12 +689,8 @@
   <canvas id="portfolioBubbles"></canvas>
 
   <div class="container" style="max-width:1200px; margin:auto; text-align:center; position:relative; z-index:2;">
-    
-    <!-- Section Heading -->
     <header style="margin-bottom:60px;">
-      <h2 style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:2.5rem; color:#ffffff; text-shadow:0 0 20px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; animation: glowPulse 2s infinite alternate;">
-        Here’s some of my data analysis projects 🙂
-      </h2>
+      <h2 style="font-family:'Montserrat', sans-serif; font-weight:700; font-size:2.5rem; color:#00aaff; text-shadow:0 0 20px #001f3f;">Here’s some of my data analysis projects 🙂</h2>
       <p style="font-family:'Agrandir', serif; color:#eaeaea; font-size:1rem;">Click any project to explore details & GitHub repo</p>
     </header>
 
@@ -707,68 +702,60 @@
         <a href="https://github.com/rishi-analytics/Clash_Royale_Game_Analysis?tab=readme-ov-file#super-cell-interview-puzzle" target="_blank">
           <img src="images/clash_royale.jpeg" alt="Game Data Analysis">
           <h3>Game Data Analysis</h3>
+          <p>SuperCell clash royale game data analysis</p>
         </a>
-        <p>SuperCell clash royale game data analysis</p>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/rishi-analytics/big-data-analysis-using-pyspark?tab=readme-ov-file#using-pyspark-for-big-data-analytics" target="_blank">
           <img src="images/PySpark_Project_Thumnail.jpeg" alt="Big Data Analysis">
           <h3>Big Data Analysis</h3>
+          <p>Big data analysis of 13M+ music records using PySpark</p>
         </a>
-        <p>Big data analysis of 13M+ music records using PySpark</p>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/rishi-analytics/Machine-Learning-With-PySpark/tree/main?tab=readme-ov-file#preventing-customer-churn-through-machine-learning" target="_blank">
           <img src="images/churn.png" alt="Churn Prediction">
           <h3>Churn Prediction</h3>
+          <p>Data-driven churn insights powered by PySpark Machine Learning</p>
         </a>
-        <p>Data-driven churn insights powered by PySpark Machine Learning</p>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/rishi-analytics/ESG-Specialization-Project-Portfolio?tab=readme-ov-file#esg-for-all--coursera-specialization-portfolio" target="_blank">
           <img src="images/file_000000004e00620e958212641480943d (1).png" alt="ESG Analysis">
           <h3>ESG Analysis Project</h3>
+          <p>ESG Data Analysis for Sustainable Business Decisions</p>
         </a>
-        <p>ESG Data Analysis for Sustainable Business Decisions</p>
       </div>
 
       <div class="project-card">
         <a href="#">
           <img src="images/nlp_teaser (1).gif" alt="Upcoming Project">
           <h3>Valmistaja Data Velho Rishi</h3>
+          <p>A New project unleashing! Stay Tuned🔥</p>
         </a>
-        <p>A New project unleashing! Stay Tuned🔥</p>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/rishi-analytics" target="_blank">
           <img src="images/logo.jpeg" alt="More Projects">
           <h3>More Projects</h3>
+          <p>Click here to check out more insightful projects made by me!</p>
         </a>
-        <p>Click here to check out more insightful projects made by me!</p>
       </div>
 
     </div>
 
-    <!-- Scroll Button -->
     <footer style="margin-top:60px;">
       <p style="color:#eaeaea; font-family:'Agrandir', serif;">Check out my skills</p>
-      <a href="#skills" class="scroll-button">Skill Set</a>
+      <a href="#skills" class="button large scrolly">Skill Set</a>
     </footer>
   </div>
 </article>
 
 <style>
-/* Glow animation for heading */
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
-  50% { text-shadow: 0 0 25px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; }
-  100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
-}
-
 /* --- Portfolio Card Styling --- */
 .project-card {
   background: #001f3f;
@@ -798,7 +785,6 @@
   font-size:0.9rem;
   color:#eaeaea;
   margin:0;
-  pointer-events:none; /* disable clicking */
 }
 
 /* Hover Animation */
@@ -849,36 +835,23 @@
   z-index:1;
   pointer-events:none;
 }
-
-/* --- Scroll Button --- */
-.scroll-button {
-  display:inline-block;
-  padding:18px 35px;
-  font-family:'Montserrat', sans-serif;
-  font-weight:700;
-  font-size:1.1rem;
-  color:#ffffff;
-  background: linear-gradient(90deg, #00aaff, #001f3f);
-  border-radius:50px;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  box-shadow: 0 0 15px #00aaff;
-  animation: pulseGlow 2s infinite alternate;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* --- Disable desc clickable --- */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
+  50% { text-shadow: 0 0 25px #ffffff, 0 0 40px #ccccff, 0 0 60px #ffffff; }
+  100% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ccccff, 0 0 30px #ffffff; }
 }
 
-.scroll-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #00aaff, 0 0 60px #00ffff;
+/* Project card links */
+.project-card a {
+  text-decoration: none; /* keep image/title clickable only */
 }
 
-/* Glowing pulse animation for button */
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 15px #00aaff; }
-  50% { box-shadow: 0 0 25px #00aaff, 0 0 45px #00ffff; }
-  100% { box-shadow: 0 0 15px #00aaff; }
+.project-card p {
+  pointer-events: none; /* disable clicking on description */
 }
+
+
 </style>
 
 <script>
@@ -913,7 +886,23 @@
   function animate(){
     ctx.clearRect(0,0,W,H);
     bubbles.forEach(b=>{
-     
+      b.y+=b.vy;
+      if(b.y<-10)b.y=H+10;
+      b.x += Math.sin(b.y/50)*0.2; // subtle horizontal drift
+
+      ctx.beginPath();
+      ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+      ctx.fillStyle=b.c;
+      ctx.globalAlpha=b.alpha;
+      ctx.shadowBlur=10;
+      ctx.shadowColor=b.c;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>     
 		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
