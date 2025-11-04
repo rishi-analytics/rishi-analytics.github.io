@@ -653,89 +653,125 @@
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 <!-- Meet Me Section -->
-<article id="meet-me" class="wrapper" style="text-align:center; padding:60px 0;">
+<article id="meet-me" class="wrapper">
 
   <style>
     /* --- Meet Me Section Styling --- */
     #meet-me {
-      background: radial-gradient(circle at center, #0b0b0b 20%, #000000 90%);
-      color: #f0f0f0;
-      padding: 80px 0;
-      text-align: center;
+      background: linear-gradient(135deg, #050505 10%, #0c0c0c 50%, #111 90%);
+      color: #f5f5f5;
+      padding: 100px 0;
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Subtle animated light gradient background */
+    #meet-me::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.05), transparent 70%),
+                  radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.07), transparent 80%);
+      animation: slowGlow 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes slowGlow {
+      from { transform: scale(1) rotate(0deg); opacity: 0.9; }
+      to { transform: scale(1.1) rotate(3deg); opacity: 1; }
     }
 
     .glow-title {
       font-family: "Oswald", sans-serif;
-      color: #ffcc00;
-      text-shadow: 0 0 10px #ffdd33, 0 0 20px #ffaa00, 0 0 30px #ffaa00;
-      animation: glowPulse 2s infinite alternate;
-      letter-spacing: 1px;
+      font-size: 2.2rem;
+      color: #ffd84a;
+      text-shadow: 0 0 12px #ffea80, 0 0 25px #ffaa00;
+      animation: glowPulse 2.5s infinite alternate;
     }
 
     @keyframes glowPulse {
-      0% { text-shadow: 0 0 5px #ffdd33, 0 0 10px #ffaa00, 0 0 20px #ffaa00; }
-      50% { text-shadow: 0 0 20px #ffdd33, 0 0 30px #ffaa00, 0 0 40px #ff8800; }
-      100% { text-shadow: 0 0 10px #ffdd33, 0 0 20px #ffaa00, 0 0 30px #ffaa00; }
+      0% { text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00; }
+      100% { text-shadow: 0 0 25px #ffd84a, 0 0 40px #ff8800; }
     }
 
-    .fade-in {
+    #meet-me .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-card {
+      flex: 1 1 400px;
+      max-width: 480px;
+      text-align: left;
+      padding: 20px;
+      border-left: 3px solid #00ffff;
+      animation: fadeInUp 1.2s ease-out forwards;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1.5s ease-out forwards;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* --- Remove white box & style video --- */
-    #meet-me .box.style1 {
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
-      border: none;
+    .intro-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #d8d8d8;
     }
 
     #meet-me iframe {
-      width: 85%;
-      height: 480px;
+      flex: 1 1 480px;
+      width: 100%;
+      height: 360px;
       border: none;
       border-radius: 16px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      animation: fadeInUp 1.5s ease-out forwards;
+      opacity: 0;
     }
 
     #meet-me iframe:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 45px rgba(255, 215, 0, 0.6);
+      transform: scale(1.04);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+    }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(40px); }
+    }
+
+    /* Responsive layout fix */
+    @media (max-width: 768px) {
+      .intro-card, #meet-me iframe {
+        text-align: center;
+        max-width: 100%;
+      }
+      .intro-card {
+        border-left: none;
+        border-top: 3px solid #00ffff;
+        padding-top: 25px;
+      }
     }
   </style>
 
-  <div class="container medium fade-in">
-    <header>
-      <h2 class="glow-title"> Let’s Meet Rishi</h2>
-      <p>Know the person behind the data— a snapshot of my personality + creativity 😎</p>
-    </header>
-    
-    <div class="row">
-      <div class="col-12">
-        <section class="box style1">
-          <div class="content">
-            <iframe 
-              src="https://www.youtube.com/embed/Bv3D1wxcPk0" 
-              title="Video Interview" 
-              allowfullscreen>
-            </iframe>
-          </div>
-        </section>
-      </div>
+  <div class="container content-wrapper">
+    <div class="intro-card">
+      <h2 class="glow-title">Let’s Meet Rishi</h2>
+      <p>
+        Know the person behind the data— a snapshot of my personality + creativity 😎
+      </p>
     </div>
+
+    <iframe 
+      src="https://www.youtube.com/embed/Bv3D1wxcPk0"
+      title="Video Interview"
+      allowfullscreen>
+    </iframe>
   </div>
+
 </article>
 
 <!-- Glowing Full-Width Separator -->
