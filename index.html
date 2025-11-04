@@ -399,7 +399,7 @@
   });
 
   // --- Typed effect ---
-  const roles = ['Data Analyst','Data Velho','Problem Solver','Creative'];
+  const roles = ['Data Velho','Business Analyst','Data Analyst','ESG Analyst','Problem Solver','Creative'];
   const el = document.getElementById('typed-role');
   let i = 0, j = 0, deleting = false;
   function typeEffect() {
@@ -451,7 +451,8 @@
       bubblesArr.forEach(b => {
         b.y += b.vy;
         if (b.y < -10) b.y = H + 10;
-
+		b.x += Math.sin(b.y / 50) * 0.2;
+		  
         ctxB.beginPath();
         ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
         ctxB.fillStyle = b.c;
