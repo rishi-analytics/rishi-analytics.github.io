@@ -472,39 +472,46 @@
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 
-<!-- Elegant Tools Section -->
-<article id="tools" style="background-color:#000; padding:100px 0; position:relative;">
-  <div class="container" style="text-align:center; position:relative;">
+<!-- Revamped Tools Section -->
+<article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
+  <div class="container" style="text-align:center;">
 
     <!-- Section Heading -->
-    <header style="margin-bottom:60px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.2rem;">Primary Tools I Use</h2>
-      <p style="font-family:'Agrandir',serif; color:#ffffff; font-size:1rem;">Efficient and elegant tools for data mastery</p>
+    <header style="margin-bottom:70px;">
+      <h2 style="font-family:'Montserrat',sans-serif; color:#ffd700; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.5);">
+        Primary Tools I Use
+      </h2>
+      <p style="font-family:'Comic Sans MS', cursive; color:#ffffff; font-size:1.05rem;">
+        Efficient and elegant tools for data mastery ⚡
+      </p>
     </header>
 
     <!-- Glowing Layout -->
-    <div class="glow-layout" style="position:relative; display:flex; justify-content:center; align-items:center; gap:80px; padding:60px 40px; border-radius:30px; box-shadow: 0 0 60px rgba(255,215,0,0.6);">
-
+    <div class="glow-layout">
+      
       <!-- Python Card -->
       <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" alt="Python Logo">
         <h3 class="tool-title">Python</h3>
         <p class="tool-desc">Data manipulation, visualization & ML</p>
       </div>
 
-      <!-- Wave 1 -->
-      <div class="electric-wave"></div>
+      <!-- Connecting Wave -->
+      <div class="golden-wave"></div>
 
       <!-- Power BI Card -->
       <div class="tool-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="60" alt="Power BI Logo">
         <h3 class="tool-title">Power BI</h3>
         <p class="tool-desc">Interactive dashboards & BI visualizations</p>
       </div>
 
-      <!-- Wave 2 -->
-      <div class="electric-wave"></div>
+      <!-- Connecting Wave -->
+      <div class="golden-wave"></div>
 
       <!-- SQL Card -->
       <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="60" alt="SQL Logo">
         <h3 class="tool-title">SQL</h3>
         <p class="tool-desc">Querying & managing relational databases</p>
       </div>
@@ -514,29 +521,38 @@
 </article>
 
 <style>
-/* Glowing Layout */
+/* --- Layout --- */
 .glow-layout {
-  background-color: rgba(255,215,0,0.05);
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
 }
 
-/* Cards */
+/* --- Tool Cards --- */
 .tool-card {
-  background-color: #0b0b0b;
+  background: #0b0b0b;
   border-radius: 20px;
   border: 2px solid #ffd700;
-  box-shadow: 0 0 20px rgba(255,215,0,0.5);
+  box-shadow: 0 0 25px rgba(255,215,0,0.4);
   padding: 40px 25px;
-  width: 220px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 230px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(255,215,0,0.8);
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 0 40px rgba(255,215,0,0.8);
 }
 
-/* Fonts */
+.tool-card img {
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
+}
+
+/* --- Text Styles --- */
 .tool-title {
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
@@ -547,36 +563,35 @@
 
 .tool-desc {
   font-family: 'Agrandir', serif;
-  color: #ffffff;
+  color: #eaeaea;
   font-size: 0.95rem;
   line-height: 1.4rem;
-  margin:0;
+  margin: 0;
 }
 
-/* Electric Waves */
-.electric-wave {
-  width: 60px;
+/* --- Golden Animated Waves --- */
+.golden-wave {
+  width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #ff0000, #ff4c4c, #ff0000);
+  background: linear-gradient(90deg, #ffcc00, #ffaa00, #ffcc00);
   border-radius: 2px;
-  box-shadow: 0 0 15px #ff0000, 0 0 25px #ff4c4c;
-  align-self: center;
-  animation: waveMove 1s linear infinite;
+  box-shadow: 0 0 20px rgba(255,215,0,0.7);
+  animation: waveFlow 1.2s ease-in-out infinite;
 }
 
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
+@keyframes waveFlow {
+  0% { opacity: 0.4; transform: scaleX(0.8); }
+  50% { opacity: 1; transform: scaleX(1.1); }
+  100% { opacity: 0.4; transform: scaleX(0.8); }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* --- Responsive --- */
+@media (max-width: 900px) {
   .glow-layout {
     flex-direction: column;
     gap: 50px;
   }
-  .electric-wave {
+  .golden-wave {
     display: none;
   }
 }
