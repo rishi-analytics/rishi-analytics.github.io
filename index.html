@@ -537,12 +537,12 @@
   position: relative;
 }
 
-/* --- Tool Cards --- */
+/* --- Tool Cards with Navy Glow --- */
 .tool-card {
   background: #0b0b0b;
   border-radius: 20px;
-  border: 2px solid #ffd700;
-  box-shadow: 0 0 35px rgba(255,215,0,0.7); /* Constant glow */
+  border: 2px solid #001f3f; /* changed from yellow to navy */
+  box-shadow: 0 0 35px rgba(0,31,63,0.7); /* navy glow instead of yellow */
   padding: 35px 20px;
   width: 200px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -550,14 +550,14 @@
 
 .tool-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 60px rgba(255,215,0,0.9);
+  box-shadow: 0 0 60px rgba(0,31,63,0.9); /* stronger navy glow on hover */
 }
 
 .tool-card img {
   margin-bottom: 18px;
-  filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
+  filter: drop-shadow(0 0 15px rgba(0,31,63,0.6)); /* navy glow on image */
 }
-
+	
 /* --- Text Styles --- */
 .tool-title {
   font-family: 'Montserrat', sans-serif;
