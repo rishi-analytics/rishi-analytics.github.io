@@ -469,9 +469,8 @@
 </script>
 		</article>
 				
-<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
-
+<!-- Simple Navy Glowing Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #001f3f; margin: 40px 0; border: none;"></div>
 
 <!-- ⚡ Revamped Tools Section with Constant Glow + Electric Waves -->
 <article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
@@ -682,6 +681,10 @@
 })();
 </script>
 
+		<!-- Simple Navy Glowing Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #001f3f; margin: 40px 0; border: none;"></div>
+
+
 <!-- Portfolio Section -->
 <article id="portfolio" style="position:relative; overflow:hidden; padding:100px 0; background: radial-gradient(circle at center, #000000 60%, #0a0a0a 100%);">
   
@@ -745,14 +748,12 @@
           <p>Click here to check out more insightful projects made by me!</p>
         </a>
       </div>
+		
+    <footer style="margin-top:60px; text-align:center;">
+  <p style="color:#eaeaea; font-family:'Agrandir', serif;">Check out my skills</p>
+  <a href="#skills" class="scroll-button">Skill Set</a>
+</footer>
 
-    </div>
-
-    <footer style="margin-top:60px;">
-      <p style="color:#eaeaea; font-family:'Agrandir', serif;">Check out my skills</p>
-      <a href="#skills" class="button large scrolly">Skill Set</a>
-    </footer>
-  </div>
 </article>
 
 <style>
@@ -851,6 +852,33 @@
   pointer-events: none; /* disable clicking on description */
 }
 
+.scroll-button {
+  display: inline-block;
+  padding: 18px 35px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #001f3f;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,160,255,0.7); /* outer glow */
+  animation: pulseOuterGlow 2s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0,160,255,0.9), 0 0 60px rgba(0,255,255,0.6);
+}
+
+@keyframes pulseOuterGlow {
+  0% { box-shadow: 0 0 15px rgba(0,160,255,0.7); }
+  50% { box-shadow: 0 0 30px rgba(0,160,255,0.8), 0 0 45px rgba(0,255,255,0.4); }
+  100% { box-shadow: 0 0 15px rgba(0,160,255,0.7); }
+}
 
 </style>
 
@@ -904,8 +932,8 @@
 })();
 </script>     
 		
-<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
+<!-- Simple Navy Glowing Separator -->
+<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #001f3f; margin: 40px 0; border: none;"></div>
 
 <!-- Meet Me Section -->
 <article id="meet-me" class="wrapper">
