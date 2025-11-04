@@ -439,9 +439,9 @@
       bubblesArr.push({
         x: Math.random() * W,
         y: Math.random() * H,
-        r: Math.random() * 10 + 5,
+        r: Math.random() * 5 + 2,
         c: colors[Math.floor(Math.random() * colors.length)],
-        vy: Math.random() * -0.3 - 0.1,
+        vy: Math.random() * -0.2 - 0.08,
         alpha: Math.random() * 0.25 + 0.15
       });
     }
@@ -650,10 +650,11 @@
     bubbles.push({
       x: Math.random() * W,
       y: Math.random() * H,
-      r: Math.random() * 10 + 5,
+      r: Math.random() * 5 + 2,
       c: colors[Math.floor(Math.random() * colors.length)],
-      vy: Math.random() * -0.3 - 0.1,
+      vy: Math.random() * -0.2 - 0.08,
       alpha: Math.random() * 0.25 + 0.15
+	
     });
   }
 
@@ -662,6 +663,8 @@
     bubbles.forEach(b => {
       b.y += b.vy;
       if (b.y < -10) b.y = H + 10;
+      b.x += Math.sin(b.y / 50) * 0.2;
+
 
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
