@@ -653,7 +653,7 @@
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 <!-- Meet Me Section -->
-<article id="meet-me" class="wrapper" style="margin:0; padding:0;">
+<article id="meet-me" class="wrapper">
 
   <style>
     /* --- Meet Me Section Styling --- */
@@ -665,11 +665,10 @@
       overflow: hidden;
       position: relative;
       width: 100%;
-      border-radius: 0;
-      margin: 0;
+      border-radius: 0; /* remove curved corners */
     }
 
-    /* subtle animated background */
+    /* Subtle animated light gradient background */
     #meet-me::before {
       content: "";
       position: absolute;
@@ -677,25 +676,11 @@
       background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.05), transparent 70%),
                   radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.07), transparent 80%);
       animation: slowGlow 12s infinite alternate ease-in-out;
-      z-index: 1; /* stays behind content */
     }
 
     @keyframes slowGlow {
-      from { transform: scale(1) rotate(0deg); opacity: 0.8; }
+      from { transform: scale(1) rotate(0deg); opacity: 0.9; }
       to { transform: scale(1.1) rotate(3deg); opacity: 1; }
-    }
-
-    .content-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      position: relative;
-      z-index: 2; /* ensures content appears above background */
-      flex-direction: row-reverse; /* reverse layout: video left, text right */
-      width: 90%;
-      margin: 0 auto;
     }
 
     .glow-title {
@@ -711,15 +696,25 @@
       100% { text-shadow: 0 0 25px #ffd84a, 0 0 40px #ff8800; }
     }
 
+    #meet-me .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+      flex-direction: row-reverse; /* reversed layout: video left, text right */
+    }
+
     .intro-card {
       flex: 1 1 400px;
-      max-width: 500px;
+      max-width: 480px;
       text-align: left;
       padding: 20px;
       border-left: 3px solid #00ffff;
-      opacity: 0;
       animation: fadeInUp 1.2s ease-out forwards;
-      animation-delay: 0.3s;
+      opacity: 0;
     }
 
     .intro-card p {
@@ -728,6 +723,7 @@
       color: #d8d8d8;
     }
 
+    /* Comic Sans tagline */
     .comic-tagline {
       font-family: "Comic Sans MS", "Comic Sans", cursive;
       color: #ffcc00;
@@ -736,7 +732,7 @@
       font-size: 1.1rem;
     }
 
-    iframe {
+    #meet-me iframe {
       flex: 1 1 480px;
       width: 100%;
       height: 360px;
@@ -744,34 +740,38 @@
       border-radius: 16px;
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
       transition: transform 0.6s ease, box-shadow 0.6s ease;
-      opacity: 0;
       animation: fadeInUp 1.5s ease-out forwards;
+      opacity: 0;
     }
 
-    iframe:hover {
+    #meet-me iframe:hover {
       transform: scale(1.04);
       box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(40px); }
     }
 
-    /* responsive layout fix */
+    /* Responsive layout fix */
     @media (max-width: 768px) {
-      .content-wrapper {
-        flex-direction: column;
+      .intro-card, #meet-me iframe {
+        text-align: center;
+        max-width: 100%;
       }
       .intro-card {
-        text-align: center;
         border-left: none;
         border-top: 3px solid #00ffff;
+        padding-top: 25px;
+      }
+      #meet-me .content-wrapper {
+        flex-direction: column;
       }
     }
   </style>
 
-  <div class="content-wrapper">
+  <div class="container content-wrapper">
     <iframe 
       src="https://www.youtube.com/embed/Bv3D1wxcPk0"
       title="Video Interview"
@@ -792,7 +792,6 @@
   </div>
 
 </article>
-
 
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
