@@ -661,10 +661,11 @@
       background: linear-gradient(135deg, #050505 10%, #0c0c0c 50%, #111 90%);
       color: #f5f5f5;
       padding: 100px 0;
-      border-radius: 20px;
       box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
       overflow: hidden;
       position: relative;
+      width: 100%;
+      border-radius: 0; /* remove curved corners */
     }
 
     /* Subtle animated light gradient background */
@@ -703,6 +704,7 @@
       gap: 40px;
       position: relative;
       z-index: 2;
+      flex-direction: row-reverse; /* reversed layout: video left, text right */
     }
 
     .intro-card {
@@ -719,6 +721,15 @@
       font-size: 1.05rem;
       line-height: 1.8;
       color: #d8d8d8;
+    }
+
+    /* Comic Sans tagline */
+    .comic-tagline {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
     }
 
     #meet-me iframe {
@@ -754,22 +765,30 @@
         border-top: 3px solid #00ffff;
         padding-top: 25px;
       }
+      #meet-me .content-wrapper {
+        flex-direction: column;
+      }
     }
   </style>
 
   <div class="container content-wrapper">
-    <div class="intro-card">
-      <h2 class="glow-title">Let’s Meet Rishi</h2>
-      <p>
-        Know the person behind the data— a snapshot of my personality + creativity 😎
-      </p>
-    </div>
-
     <iframe 
       src="https://www.youtube.com/embed/Bv3D1wxcPk0"
       title="Video Interview"
       allowfullscreen>
     </iframe>
+
+    <div class="intro-card">
+      <h2 class="glow-title">Let’s Meet Rishi</h2>
+      <p class="comic-tagline">
+        Know the person behind the data— a snapshot of my personality + creativity 😎
+      </p>
+      <p>
+        I’m Rishi — a data analyst with a creative streak.  
+        I love finding stories hidden in data, building modern visuals, and bringing insight to life through design.  
+        Here’s a quick glimpse into who I am beyond the numbers.
+      </p>
+    </div>
   </div>
 
 </article>
