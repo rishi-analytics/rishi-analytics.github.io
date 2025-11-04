@@ -472,13 +472,13 @@
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 
-<!-- Tools Section (Adjusted for Single Row) -->
+<!-- ⚡ Revamped Tools Section with Constant Glow + Electric Waves -->
 <article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
   <div class="container" style="text-align:center; max-width:1100px; margin:auto;">
 
     <!-- Section Heading -->
     <header style="margin-bottom:70px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffd700; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.5);">
+      <h2 style="font-family:'Montserrat',sans-serif; color:#ffd700; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.6);">
         Primary Tools I Use
       </h2>
       <p style="font-family:'Comic Sans MS', cursive; color:#ffffff; font-size:1.05rem;">
@@ -496,7 +496,10 @@
         <p class="tool-desc">Data manipulation, visualization & ML</p>
       </div>
 
-      <div class="golden-wave"></div>
+      <!-- Electric Wave 1 -->
+      <div class="electric-connector">
+        <div class="spark"></div>
+      </div>
 
       <!-- Power BI Card -->
       <div class="tool-card">
@@ -505,7 +508,10 @@
         <p class="tool-desc">Interactive dashboards & BI visualizations</p>
       </div>
 
-      <div class="golden-wave"></div>
+      <!-- Electric Wave 2 -->
+      <div class="electric-connector">
+        <div class="spark"></div>
+      </div>
 
       <!-- SQL Card -->
       <div class="tool-card">
@@ -527,6 +533,7 @@
   gap: 50px;
   padding: 60px 20px;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 /* --- Tool Cards --- */
@@ -534,7 +541,7 @@
   background: #0b0b0b;
   border-radius: 20px;
   border: 2px solid #ffd700;
-  box-shadow: 0 0 25px rgba(255,215,0,0.4);
+  box-shadow: 0 0 35px rgba(255,215,0,0.7); /* Constant glow */
   padding: 35px 20px;
   width: 200px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -542,7 +549,7 @@
 
 .tool-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 40px rgba(255,215,0,0.8);
+  box-shadow: 0 0 60px rgba(255,215,0,0.9);
 }
 
 .tool-card img {
@@ -567,20 +574,31 @@
   margin: 0;
 }
 
-/* --- Golden Animated Waves --- */
-.golden-wave {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #ffcc00, #ffaa00, #ffcc00);
+/* --- Electric Connectors --- */
+.electric-connector {
+  width: 80px;
+  height: 4px;
+  position: relative;
+  background: linear-gradient(90deg, #ffaa00, #ffcc00, #ffaa00);
   border-radius: 2px;
-  box-shadow: 0 0 20px rgba(255,215,0,0.7);
-  animation: waveFlow 1.4s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(255,215,0,0.8);
+  overflow: hidden;
 }
 
-@keyframes waveFlow {
-  0% { opacity: 0.4; transform: scaleX(0.8); }
-  50% { opacity: 1; transform: scaleX(1.1); }
-  100% { opacity: 0.4; transform: scaleX(0.8); }
+.spark {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  animation: sparkFlow 1.5s linear infinite;
+}
+
+@keyframes sparkFlow {
+  0% { left: -40%; opacity: 0; }
+  30% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
 }
 
 /* --- Responsive --- */
@@ -589,15 +607,11 @@
     flex-direction: column;
     gap: 45px;
   }
-  .golden-wave {
+  .electric-connector {
     display: none;
   }
 }
 </style>
-		
-<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
-
 		
 		<!-- Portfolio -->
 			<article id="portfolio" class="wrapper style3">
