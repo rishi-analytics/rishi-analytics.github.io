@@ -652,118 +652,146 @@
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
-<style>
-  /* --- Meet Me Section Styling --- */
-  #meet-me {
-    background: linear-gradient(135deg, #050505 10%, #0c0c0c 50%, #111 90%);
-    color: #f5f5f5;
-    padding: 100px 0;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    border-radius: 0; /* remove curved corners */
-  }
+<!-- Meet Me Section -->
+<article id="meet-me" class="wrapper" style="margin:0; padding:0;">
 
-  #meet-me::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.05), transparent 70%),
-                radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.07), transparent 80%);
-    animation: slowGlow 12s infinite alternate ease-in-out;
-  }
-
-  @keyframes slowGlow {
-    from { transform: scale(1) rotate(0deg); opacity: 0.9; }
-    to { transform: scale(1.1) rotate(3deg); opacity: 1; }
-  }
-
-  .glow-title {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.2rem;
-    color: #ffd84a;
-    text-shadow: 0 0 12px #ffea80, 0 0 25px #ffaa00;
-    animation: glowPulse 2.5s infinite alternate;
-  }
-
-  @keyframes glowPulse {
-    0% { text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00; }
-    100% { text-shadow: 0 0 25px #ffd84a, 0 0 40px #ff8800; }
-  }
-
-  #meet-me .content-wrapper {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-    z-index: 2;
-    flex-direction: row-reverse !important; /* FORCE video left, text right */
-  }
-
-  .intro-card {
-    flex: 1 1 400px;
-    max-width: 480px;
-    text-align: left;
-    padding: 20px;
-    border-left: 3px solid #00ffff;
-    animation: fadeInUp 1.2s ease-out forwards;
-    opacity: 0;
-  }
-
-  .intro-card p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #d8d8d8;
-  }
-
-  .comic-tagline {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-  }
-
-  #meet-me iframe {
-    flex: 1 1 480px;
-    width: 100%;
-    height: 360px;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    animation: fadeInUp 1.5s ease-out forwards;
-    opacity: 0;
-  }
-
-  #meet-me iframe:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
-  }
-
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-    from { opacity: 0; transform: translateY(40px); }
-  }
-
-  @media (max-width: 768px) {
-    .intro-card, #meet-me iframe {
-      text-align: center;
-      max-width: 100%;
+  <style>
+    /* --- Meet Me Section Styling --- */
+    #meet-me {
+      background: linear-gradient(135deg, #050505 10%, #0c0c0c 50%, #111 90%);
+      color: #f5f5f5;
+      padding: 100px 0;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
     }
+
+    /* subtle animated background */
+    #meet-me::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.05), transparent 70%),
+                  radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.07), transparent 80%);
+      animation: slowGlow 12s infinite alternate ease-in-out;
+      z-index: 1; /* stays behind content */
+    }
+
+    @keyframes slowGlow {
+      from { transform: scale(1) rotate(0deg); opacity: 0.8; }
+      to { transform: scale(1.1) rotate(3deg); opacity: 1; }
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 2; /* ensures content appears above background */
+      flex-direction: row-reverse; /* reverse layout: video left, text right */
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .glow-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 2.2rem;
+      color: #ffd84a;
+      text-shadow: 0 0 12px #ffea80, 0 0 25px #ffaa00;
+      animation: glowPulse 2.5s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00; }
+      100% { text-shadow: 0 0 25px #ffd84a, 0 0 40px #ff8800; }
+    }
+
     .intro-card {
-      border-left: none;
-      border-top: 3px solid #00ffff;
-      padding-top: 25px;
+      flex: 1 1 400px;
+      max-width: 500px;
+      text-align: left;
+      padding: 20px;
+      border-left: 3px solid #00ffff;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+      animation-delay: 0.3s;
     }
-    #meet-me .content-wrapper {
-      flex-direction: column !important; /* stack vertically on mobile */
+
+    .intro-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #d8d8d8;
     }
-  }
-</style>
+
+    .comic-tagline {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffea80, 0 0 20px #ffaa00;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    iframe {
+      flex: 1 1 480px;
+      width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    iframe:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* responsive layout fix */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      .intro-card {
+        text-align: center;
+        border-left: none;
+        border-top: 3px solid #00ffff;
+      }
+    }
+  </style>
+
+  <div class="content-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/Bv3D1wxcPk0"
+      title="Video Interview"
+      allowfullscreen>
+    </iframe>
+
+    <div class="intro-card">
+      <h2 class="glow-title">Let’s Meet Rishi</h2>
+      <p class="comic-tagline">
+        Know the person behind the data— a snapshot of my personality + creativity 😎
+      </p>
+      <p>
+        I’m Rishi — a data analyst with a creative streak.  
+        I love finding stories hidden in data, building modern visuals, and bringing insight to life through design.  
+        Here’s a quick glimpse into who I am beyond the numbers.
+      </p>
+    </div>
+  </div>
+
+</article>
 
 
 <!-- Glowing Full-Width Separator -->
