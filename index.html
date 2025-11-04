@@ -472,9 +472,9 @@
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 
-<!-- Revamped Tools Section -->
+<!-- Tools Section (Adjusted for Single Row) -->
 <article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
-  <div class="container" style="text-align:center; max-width:1200px; margin:auto;">
+  <div class="container" style="text-align:center; max-width:1100px; margin:auto;">
 
     <!-- Section Heading -->
     <header style="margin-bottom:70px;">
@@ -491,27 +491,25 @@
       
       <!-- Python Card -->
       <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" alt="Python Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="55" alt="Python Logo">
         <h3 class="tool-title">Python</h3>
         <p class="tool-desc">Data manipulation, visualization & ML</p>
       </div>
 
-      <!-- Connecting Wave -->
       <div class="golden-wave"></div>
 
       <!-- Power BI Card -->
       <div class="tool-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="60" alt="Power BI Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="55" alt="Power BI Logo">
         <h3 class="tool-title">Power BI</h3>
         <p class="tool-desc">Interactive dashboards & BI visualizations</p>
       </div>
 
-      <!-- Connecting Wave -->
       <div class="golden-wave"></div>
 
       <!-- SQL Card -->
       <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="60" alt="SQL Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="55" alt="SQL Logo">
         <h3 class="tool-title">SQL</h3>
         <p class="tool-desc">Querying & managing relational databases</p>
       </div>
@@ -526,10 +524,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 70px;
+  gap: 50px;
   padding: 60px 20px;
-  flex-wrap: nowrap; /* force one row */
-  overflow-x: auto; /* prevents layout breaking on smaller screens */
+  flex-wrap: nowrap;
 }
 
 /* --- Tool Cards --- */
@@ -538,20 +535,18 @@
   border-radius: 20px;
   border: 2px solid #ffd700;
   box-shadow: 0 0 25px rgba(255,215,0,0.4);
-  padding: 40px 25px;
-  width: 230px;
-  min-width: 230px;
+  padding: 35px 20px;
+  width: 200px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  flex-shrink: 0;
 }
 
 .tool-card:hover {
-  transform: translateY(-8px) rotateX(5deg);
+  transform: translateY(-8px);
   box-shadow: 0 0 40px rgba(255,215,0,0.8);
 }
 
 .tool-card img {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   filter: drop-shadow(0 0 15px rgba(255,215,0,0.6));
 }
 
@@ -560,27 +555,26 @@
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
   font-weight: 600;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
 .tool-desc {
   font-family: 'Agrandir', serif;
   color: #eaeaea;
-  font-size: 0.95rem;
-  line-height: 1.4rem;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
   margin: 0;
 }
 
 /* --- Golden Animated Waves --- */
 .golden-wave {
-  width: 80px;
-  height: 4px;
+  width: 60px;
+  height: 3px;
   background: linear-gradient(90deg, #ffcc00, #ffaa00, #ffcc00);
   border-radius: 2px;
   box-shadow: 0 0 20px rgba(255,215,0,0.7);
-  animation: waveFlow 1.2s ease-in-out infinite;
-  flex-shrink: 0;
+  animation: waveFlow 1.4s ease-in-out infinite;
 }
 
 @keyframes waveFlow {
@@ -593,14 +587,14 @@
 @media (max-width: 900px) {
   .glow-layout {
     flex-direction: column;
-    gap: 50px;
+    gap: 45px;
   }
   .golden-wave {
     display: none;
   }
 }
 </style>
-
+		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff004c, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
