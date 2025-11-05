@@ -1452,45 +1452,103 @@ window.addEventListener('resize', () => {
 
 
 
-<!-- 🌌 Social Section -->
+<!-- 🌐 Social Section -->
 <article id="contact-me" class="wrapper" style="background-color:#0b0b0b; margin:0; padding:60px 0; text-align:center; position:relative; overflow:hidden;">
 
-  <div class="col-12 social-section" style="margin:0; padding:0;">
-    <h3 style="color:#fff; margin-bottom:25px; font-family:'Montserrat',sans-serif; font-size:1.8rem;">Find me on ...</h3>
+  <!-- Floating Bubbles Canvas -->
+  <canvas id="socialBubbles"></canvas>
+
+  <div class="col-12 social-section" style="margin:0; padding:0; position:relative; z-index:2;">
+    <h3 style="color:#fff; margin-bottom:25px; font-family:'Montserrat', sans-serif;">Find me on ...</h3>
     <ul class="social" style="list-style:none; padding:0; margin:0; display:flex; justify-content:center; gap:25px;">
-      <li><a href="https://www.linkedin.com/in/rishikesh-kesari/" target="_blank" class="icon brands fa-linkedin-in social-icon"></a></li>
-      <li><a href="mailto:rishkesari5@gmail.com" target="_blank" class="icon brands fa-google social-icon"></a></li>
-      <li><a href="https://github.com/rishi-analytics" target="_blank" class="icon brands fa-github social-icon"></a></li>
-      <li><a href="https://www.instagram.com/rish.5k?igsh=bmJvYXJjYzBqNTZ5" target="_blank" class="icon brands fa-instagram social-icon"></a></li>
-      <li><a href="https://www.snapchat.com/add/kuzey_5k?share_id=YBYBJw6MFMc&locale=en-US" target="_blank" class="icon brands fa-snapchat-ghost social-icon"></a></li>
+      <li><a href="https://www.linkedin.com/in/rishikesh-kesari/" target="_blank" class="icon brands fa-linkedin-in social-icon" style="color:#ffffff; font-size:1.8rem;"></a></li>
+      <li><a href="mailto:rishkesari5@gmail.com" target="_blank" class="icon brands fa-google social-icon" style="color:#ffffff; font-size:1.8rem;"></a></li>
+      <li><a href="https://github.com/rishi-analytics" target="_blank" class="icon brands fa-github social-icon" style="color:#ffffff; font-size:1.8rem;"></a></li>
+      <li><a href="https://www.instagram.com/rish.5k?igsh=bmJvYXJjYzBqNTZ5" target="_blank" class="icon brands fa-instagram social-icon" style="color:#ffffff; font-size:1.8rem;"></a></li>
+      <li><a href="https://www.snapchat.com/add/kuzey_5k?share_id=YBYBJw6MFMc&locale=en-US" target="_blank" class="icon brands fa-snapchat-ghost social-icon" style="color:#ffffff; font-size:1.8rem;"></a></li>
     </ul>
   </div>
 </article>
 
 <style>
-  /* 🌌 Social Icons Styling */
-  #contact-me .social-icon {
-    color: #ffffff;
-    font-size: 1.9rem;
-    transition: all 0.3s ease;
-    text-shadow: 0 0 10px rgba(0, 0, 50, 0.5);
+  /* Glowing Hover Effects for Social Icons */
+  .social-icon {
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
   }
 
-  #contact-me .social-icon:hover {
-    color: #001a66; /* deep navy-blue */
-    text-shadow: 0 0 12px #001a66, 0 0 25px #0033cc;
-    transform: scale(1.2);
-  }
+  .fa-linkedin-in:hover { color: #0e76a8; filter: drop-shadow(0 0 15px #0e76a8); }
+  .fa-google:hover { color: #ea4335; filter: drop-shadow(0 0 15px #ea4335); }
+  .fa-github:hover { color: #f0f6fc; filter: drop-shadow(0 0 15px #f0f6fc); }
+  .fa-instagram:hover { color: #e4405f; filter: drop-shadow(0 0 15px #e4405f); }
+  .fa-snapchat-ghost:hover { color: #fffc00; filter: drop-shadow(0 0 15px #fffc00); }
 
-  /* Spacing for smaller screens */
-  @media screen and (max-width: 768px) {
-    #contact-me .social {
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+  /* Bubble Canvas Layer */
+  #socialBubbles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
   }
 </style>
 
+<script>
+(function() {
+  const canvas = document.getElementById("socialBubbles");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  let W, H;
+  const bubbles = [];
+  const colors = [
+    "rgba(0,191,255,0.8)",  // cyan-blue
+    "rgba(255,20,147,0.7)", // pink
+    "rgba(255,215,0,0.7)",  // gold
+    "rgba(138,43,226,0.7)", // purple
+    "rgba(60,179,113,0.7)"  // green
+  ];
+
+  function resizeCanvas() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  for (let i = 0; i < 45; i++) {
+    bubbles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 6 + 2,
+      vy: Math.random() * -0.4 - 0.1,
+      alpha: Math.random() * 0.3 + 0.2,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    bubbles.forEach(b => {
+      b.y += b.vy;
+      if (b.y < -10) b.y = H + 10;
+      b.x += Math.sin(b.y / 40) * 0.3;
+
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fillStyle = b.color;
+      ctx.globalAlpha = b.alpha;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = b.color;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+</script>
 
 <!-- glowing line -->
 		
