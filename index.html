@@ -1471,17 +1471,41 @@ window.addEventListener('resize', () => {
 </article>
 
 <style>
-  /* Glowing Hover Effects for Social Icons */
+  /* --- Social Icon Styling --- */
   .social-icon {
     transition: all 0.4s ease;
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
   }
 
-  .fa-linkedin-in:hover { color: #0e76a8; filter: drop-shadow(0 0 15px #0e76a8); }
-  .fa-google:hover { color: #ea4335; filter: drop-shadow(0 0 15px #ea4335); }
-  .fa-github:hover { color: #f0f6fc; filter: drop-shadow(0 0 15px #f0f6fc); }
-  .fa-instagram:hover { color: #e4405f; filter: drop-shadow(0 0 15px #e4405f); }
-  .fa-snapchat-ghost:hover { color: #fffc00; filter: drop-shadow(0 0 15px #fffc00); }
+  /* LinkedIn - Bright Blue Glow */
+  .fa-linkedin-in:hover {
+    color: #0e76a8;
+    filter: drop-shadow(0 0 20px #0e76a8) drop-shadow(0 0 35px #33bfff);
+  }
+
+  /* Gmail - Deep Red Glow */
+  .fa-google:hover {
+    color: #ff4136;
+    filter: drop-shadow(0 0 20px #ff4136) drop-shadow(0 0 35px #ff725c);
+  }
+
+  /* GitHub - Cool White Glow */
+  .fa-github:hover {
+    color: #f0f6fc;
+    filter: drop-shadow(0 0 20px #f0f6fc) drop-shadow(0 0 35px #d1e0ff);
+  }
+
+  /* Instagram - Bright Pink Glow */
+  .fa-instagram:hover {
+    color: #ff0080; /* bright pink */
+    filter: drop-shadow(0 0 25px #ff0080) drop-shadow(0 0 45px #ff4dc4);
+  }
+
+  /* Snapchat - Bright Yellow Glow */
+  .fa-snapchat-ghost:hover {
+    color: #ffff00; /* bright yellow */
+    filter: drop-shadow(0 0 25px #ffff00) drop-shadow(0 0 45px #ffea00);
+  }
 
   /* Bubble Canvas Layer */
   #socialBubbles {
@@ -1492,6 +1516,42 @@ window.addEventListener('resize', () => {
     z-index: 1;
     pointer-events: none;
   }
+	/* --- Social Icon Styling --- */
+.social-icon {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 8px rgba(0,0,128,0.4)); /* constant subtle navy-blue glow */
+}
+
+/* LinkedIn - Bright Blue Glow */
+.fa-linkedin-in:hover {
+  color: #0e76a8;
+  filter: drop-shadow(0 0 20px #0e76a8) drop-shadow(0 0 35px #33bfff);
+}
+
+/* Gmail - Deep Red Glow */
+.fa-google:hover {
+  color: #ff4136;
+  filter: drop-shadow(0 0 20px #ff4136) drop-shadow(0 0 35px #ff725c);
+}
+
+/* GitHub - Cool White Glow */
+.fa-github:hover {
+  color: #f0f6fc;
+  filter: drop-shadow(0 0 20px #f0f6fc) drop-shadow(0 0 35px #d1e0ff);
+}
+
+/* Instagram - Bright Pink Glow */
+.fa-instagram:hover {
+  color: #ff0080;
+  filter: drop-shadow(0 0 25px #ff0080) drop-shadow(0 0 45px #ff4dc4);
+}
+
+/* Snapchat - Bright Yellow Glow */
+.fa-snapchat-ghost:hover {
+  color: #ffff00;
+  filter: drop-shadow(0 0 25px #ffff00) drop-shadow(0 0 45px #ffea00);
+}
+
 </style>
 
 <script>
@@ -1549,6 +1609,7 @@ window.addEventListener('resize', () => {
   animate();
 })();
 </script>
+
 
 <!-- glowing line -->
 		
