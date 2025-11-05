@@ -1113,116 +1113,115 @@
 </article>	
 
 <style>
-    /* Beyond Data Styling */
-    #beyond-data h2 {
-      font-size: 2.5rem;
-      color: #00bfff; /* cyan-blue */
-      text-shadow: 0 0 12px rgba(0,191,255,0.8), 0 0 25px rgba(0,102,204,0.6);
-      animation: glowPulse 2.5s infinite alternate;
-      font-family: 'Montserrat', sans-serif;
-    }
+  /* Beyond Data Styling */
+  #beyond-data h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0,191,255,0.4), 0 0 30px rgba(0,102,255,0.3);
+    animation: glowPulse 2.5s infinite alternate;
+    font-family: 'Montserrat', sans-serif;
+  }
 
-    #beyond-data p {
-      font-family: 'Comic Sans MS', cursive;
-      color: #ddd;
-      margin-bottom: 50px;
-      font-size: 1.2rem;
-    }
+  #beyond-data p {
+    font-family: 'Comic Sans MS', cursive;
+    color: #ddd;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+  }
 
-    @keyframes glowPulse {
-      0% { text-shadow: 0 0 5px #00bfff, 0 0 10px #0077ff; }
-      100% { text-shadow: 0 0 25px #00ffff, 0 0 40px #0099ff; }
-    }
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 5px rgba(0,191,255,0.3), 0 0 10px rgba(0,102,255,0.3); }
+    100% { text-shadow: 0 0 25px rgba(0,191,255,0.5), 0 0 40px rgba(0,102,255,0.5); }
+  }
 
+  .data-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+  }
+
+  .data-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(0,191,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(0,191,255,0.3);
+    padding: 25px;
+    width: 270px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .data-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 45px rgba(0,191,255,0.8);
+  }
+
+  .data-card img {
+    border-radius: 15px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 15px rgba(0,191,255,0.4));
+  }
+
+  .data-card:hover img {
+    transform: scale(1.06);
+  }
+
+  .data-card h3 {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .data-card a.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: 1px solid #00bfff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0,191,255,0.5);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .data-card a.button:hover {
+    background: linear-gradient(90deg, #00bfff, #0077ff);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0,191,255,0.8);
+  }
+
+  @media screen and (max-width: 768px) {
     .data-cards {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-      z-index: 2;
-      position: relative;
+      flex-direction: column;
+      align-items: center;
     }
+  }
 
-    .data-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 2px solid rgba(0,191,255,0.6);
-      border-radius: 20px;
-      box-shadow: 0 0 35px rgba(0,191,255,0.3); /* constant glow */
-      padding: 25px;
-      width: 320px;
-      transition: all 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
+  #cosmosBubbles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
 
-    .data-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 45px rgba(0,191,255,0.8);
-    }
+  #beyond-data .container {
+    position: relative;
+    z-index: 2;
+  }
+</style>
 
-    .data-card img {
-      border-radius: 15px;
-      max-width: 100%;
-      height: auto;
-      transition: transform 0.4s ease;
-      filter: drop-shadow(0 0 15px rgba(0,191,255,0.4));
-    }
-
-    .data-card:hover img {
-      transform: scale(1.06);
-    }
-
-    .data-card h3 {
-      margin-top: 15px;
-      color: #00e5ff;
-      font-size: 1.4rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .data-card a.button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 8px 18px;
-      border: 1px solid #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 0 10px rgba(0,191,255,0.5);
-    }
-
-    .data-card a.button:hover {
-      background: #00bfff;
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(0,191,255,0.8);
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      .data-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    /* Bubbles Layer */
-    #cosmosBubbles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    #beyond-data .container {
-      position: relative;
-      z-index: 2;
-    }
-  </style>
-		
-	<script>
+<script>
 (function() {
-  const canvas = document.getElementById("beyondBubbles");
+  const canvas = document.getElementById("cosmosBubbles");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   let W, H;
@@ -1258,7 +1257,7 @@
       ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
       ctx.fillStyle = color;
       ctx.globalAlpha = b.alpha;
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 12;
       ctx.shadowColor = "#0040ff";
       ctx.fill();
     });
