@@ -1086,7 +1086,7 @@
 <article id="beyond-data" class="wrapper" style="padding: 80px 0; background: radial-gradient(circle at center, #050505 20%, #000000 90%); color: #fff; text-align: center; position: relative; overflow: hidden;">
 
   <!-- Bubbles canvas -->
-  <canvas id="cosmosBubbles"></canvas>
+  <canvas id="beyondBubbles"></canvas>
 	
   <div class="container">
     <header>
@@ -1110,15 +1110,13 @@
       </div>
     </div>
   </div>
-</article>	
+</article>
 
 <style>
   /* Beyond Data Styling */
   #beyond-data h2 {
     font-size: 2.5rem;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(0,191,255,0.4), 0 0 30px rgba(0,102,255,0.3);
-    animation: glowPulse 2.5s infinite alternate;
+    color: #ffffff; /* clean white */
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -1127,11 +1125,6 @@
     color: #ddd;
     margin-bottom: 50px;
     font-size: 1.2rem;
-  }
-
-  @keyframes glowPulse {
-    0% { text-shadow: 0 0 5px rgba(0,191,255,0.3), 0 0 10px rgba(0,102,255,0.3); }
-    100% { text-shadow: 0 0 25px rgba(0,191,255,0.5), 0 0 40px rgba(0,102,255,0.5); }
   }
 
   .data-cards {
@@ -1147,9 +1140,9 @@
     background: rgba(255, 255, 255, 0.06);
     border: 2px solid rgba(0,191,255,0.6);
     border-radius: 20px;
-    box-shadow: 0 0 35px rgba(0,191,255,0.3);
+    box-shadow: 0 0 35px rgba(0,191,255,0.4); /* constant soft glow */
     padding: 25px;
-    width: 270px;
+    width: 300px;
     transition: all 0.4s ease;
     backdrop-filter: blur(10px);
   }
@@ -1173,11 +1166,12 @@
 
   .data-card h3 {
     margin-top: 15px;
-    color: #ffffff;
+    color: #00e5ff;
     font-size: 1.4rem;
     font-family: 'Montserrat', sans-serif;
   }
 
+  /* Restore older button style */
   .data-card a.button {
     display: inline-block;
     margin-top: 15px;
@@ -1188,15 +1182,15 @@
     border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 0 10px rgba(0,191,255,0.5);
-    background: rgba(0, 0, 0, 0.2);
   }
 
   .data-card a.button:hover {
-    background: linear-gradient(90deg, #00bfff, #0077ff);
+    background: #00bfff;
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(0,191,255,0.8);
+    box-shadow: 0 0 20px rgba(0,191,255,0.8);
   }
 
+  /* Responsive */
   @media screen and (max-width: 768px) {
     .data-cards {
       flex-direction: column;
@@ -1204,7 +1198,8 @@
     }
   }
 
-  #cosmosBubbles {
+  /* Bubbles Layer */
+  #beyondBubbles {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1221,12 +1216,20 @@
 
 <script>
 (function() {
-  const canvas = document.getElementById("cosmosBubbles");
+  const canvas = document.getElementById("beyondBubbles");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   let W, H;
   const bubbles = [];
-  const color = "rgba(0, 102, 255, 0.8)"; // soft navy glow
+
+  // colorful tones for consistency
+  const colors = [
+    "rgba(255, 0, 102, 0.6)",   // pink-red
+    "rgba(0, 191, 255, 0.6)",   // blue
+    "rgba(255, 255, 0, 0.5)",   // yellow
+    "rgba(0, 255, 128, 0.5)",   // green
+    "rgba(255, 102, 255, 0.6)"  // magenta
+  ];
 
   function resizeCanvas() {
     W = canvas.width = canvas.offsetWidth;
@@ -1236,13 +1239,14 @@
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
-  for (let i = 0; i < 45; i++) {
+  for (let i = 0; i < 50; i++) {
     bubbles.push({
       x: Math.random() * W,
       y: Math.random() * H,
       r: Math.random() * 5 + 2,
-      vy: Math.random() * -0.4 - 0.1,
-      alpha: Math.random() * 0.3 + 0.2
+      vy: Math.random() * -0.5 - 0.1,
+      alpha: Math.random() * 0.4 + 0.3,
+      color: colors[Math.floor(Math.random() * colors.length)]
     });
   }
 
@@ -1251,14 +1255,14 @@
     bubbles.forEach(b => {
       b.y += b.vy;
       if (b.y < -10) b.y = H + 10;
-      b.x += Math.sin(b.y / 50) * 0.2;
+      b.x += Math.sin(b.y / 40) * 0.3;
 
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = color;
+      ctx.fillStyle = b.color;
       ctx.globalAlpha = b.alpha;
       ctx.shadowBlur = 12;
-      ctx.shadowColor = "#0040ff";
+      ctx.shadowColor = b.color;
       ctx.fill();
     });
     requestAnimationFrame(animate);
