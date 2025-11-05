@@ -1082,117 +1082,90 @@
 
 
 
-		<!-- 🌌 Beyond Data Section -->
-<article id="beyond-data" class="wrapper" style="padding: 80px 0; background: radial-gradient(circle at center, #050505 20%, #000000 90%); color: #fff; text-align: center; position: relative; overflow: hidden;">
+		<!-- Beyond Data Section -->
+<article id="beyond-data" class="wrapper" style="padding: 80px 0; background: transparent; color: #fff; text-align: center; position: relative; overflow: hidden;">
 
-  <!-- Bubbles canvas -->
-  <canvas id="cosmosBubbles"></canvas>
+  <!-- Bubbles Canvas (Global Bubbles Behind All Sections) -->
+  <canvas id="cosmosBubbles" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
 
   <style>
     /* Beyond Data Styling */
     #beyond-data h2 {
       font-size: 2.5rem;
-      color: #00bfff; /* cyan-blue */
-      text-shadow: 0 0 12px rgba(0,191,255,0.8), 0 0 25px rgba(0,102,204,0.6);
-      animation: glowPulse 2.5s infinite alternate;
-      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      text-shadow: 0 0 8px #9ecfff, 0 0 20px #3f88ff;
+      animation: steadyGlow 3s infinite alternate;
+    }
+
+    @keyframes steadyGlow {
+      0% { text-shadow: 0 0 5px #9ecfff, 0 0 10px #3f88ff; }
+      100% { text-shadow: 0 0 15px #9ecfff, 0 0 25px #1e90ff; }
     }
 
     #beyond-data p {
-      font-family: 'Comic Sans MS', cursive;
-      color: #ddd;
-      margin-bottom: 50px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #ccc;
+      margin-bottom: 40px;
       font-size: 1.2rem;
-    }
-
-    @keyframes glowPulse {
-      0% { text-shadow: 0 0 5px #00bfff, 0 0 10px #0077ff; }
-      100% { text-shadow: 0 0 25px #00ffff, 0 0 40px #0099ff; }
     }
 
     .data-cards {
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: 40px;
       flex-wrap: wrap;
-      z-index: 2;
-      position: relative;
     }
 
     .data-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 2px solid rgba(0,191,255,0.6);
-      border-radius: 20px;
-      box-shadow: 0 0 35px rgba(0,191,255,0.3); /* constant glow */
-      padding: 25px;
-      width: 320px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0, 64, 255, 0.4);
+      padding: 20px;
+      width: 260px; /* Reduced size */
       transition: all 0.4s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .data-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 45px rgba(0,191,255,0.8);
+      backdrop-filter: blur(8px);
     }
 
     .data-card img {
-      border-radius: 15px;
+      border-radius: 12px;
       max-width: 100%;
       height: auto;
-      transition: transform 0.4s ease;
-      filter: drop-shadow(0 0 15px rgba(0,191,255,0.4));
-    }
-
-    .data-card:hover img {
-      transform: scale(1.06);
     }
 
     .data-card h3 {
       margin-top: 15px;
-      color: #00e5ff;
-      font-size: 1.4rem;
-      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      font-size: 1.3rem;
+      text-shadow: 0 0 8px #cde4ff;
     }
 
     .data-card a.button {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 12px;
       padding: 8px 18px;
-      border: 1px solid #00bfff;
+      background: linear-gradient(90deg, #005eff, #00bfff);
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 0 10px rgba(0,191,255,0.5);
+      border-radius: 25px;
+      border: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 10px rgba(0, 128, 255, 0.8);
+      transition: all 0.3s ease;
     }
 
     .data-card a.button:hover {
-      background: #00bfff;
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(0,191,255,0.8);
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(0, 128, 255, 1);
+      background: linear-gradient(90deg, #00bfff, #007bff);
     }
 
-    /* Responsive */
     @media screen and (max-width: 768px) {
       .data-cards {
         flex-direction: column;
         align-items: center;
       }
-    }
-
-    /* Bubbles Layer */
-    #cosmosBubbles {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    #beyond-data .container {
-      position: relative;
-      z-index: 2;
     }
   </style>
 
@@ -1218,60 +1191,7 @@
       </div>
     </div>
   </div>
-	<script>
-// --- Bubble background for Tools Section ---
-(function() {
-  const canvas = document.getElementById('toolsBubbles');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  const bubbles = [];
-  const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
-
-  function resizeCanvas() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  for (let i = 0; i < 60; i++) {
-    bubbles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 5 + 2,
-      c: colors[Math.floor(Math.random() * colors.length)],
-      vy: Math.random() * -0.2 - 0.08,
-      alpha: Math.random() * 0.25 + 0.15
-	
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    bubbles.forEach(b => {
-      b.y += b.vy;
-      if (b.y < -10) b.y = H + 10;
-      b.x += Math.sin(b.y / 50) * 0.2;
-
-
-      ctx.beginPath();
-      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = b.c;
-      ctx.globalAlpha = b.alpha;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = b.c;
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-})();
-</script>
 </article>
-
 
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
