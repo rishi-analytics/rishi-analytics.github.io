@@ -472,217 +472,6 @@
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
-<!-- ⚡ Revamped Tools Section with Constant Glow + Electric Waves -->
-<article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
- <canvas id="toolsBubbles"></canvas>
- <div class="container" style="text-align:center; max-width:1100px; margin:auto;">
-
-    <!-- Section Heading -->
-    <header style="margin-bottom:70px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.6);">
-        Primary Tools I Use
-      </h2>
-      <p style="font-family:'Comic Sans MS', cursive; color:#ffffff; font-size:1.05rem;">
-        Efficient and elegant tools for data mastery ⚡
-      </p>
-    </header>
-
-    <!-- Glowing Layout -->
-    <div class="glow-layout">
-      
-      <!-- Python Card -->
-      <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="55" alt="Python Logo">
-        <h3 class="tool-title">Python</h3>
-        <p class="tool-desc">Data manipulation, visualization & ML</p>
-      </div>
-
-      <!-- Electric Wave 1 -->
-      <div class="electric-connector">
-        <div class="spark"></div>
-      </div>
-
-      <!-- Power BI Card -->
-      <div class="tool-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="55" alt="Power BI Logo">
-        <h3 class="tool-title">Power BI</h3>
-        <p class="tool-desc">Interactive dashboards & BI visualizations</p>
-      </div>
-
-      <!-- Electric Wave 2 -->
-      <div class="electric-connector">
-        <div class="spark"></div>
-      </div>
-
-      <!-- SQL Card -->
-      <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="55" alt="SQL Logo">
-        <h3 class="tool-title">SQL</h3>
-        <p class="tool-desc">Querying & managing relational databases</p>
-      </div>
-
-    </div>
-  </div>
-</article>
-
-<style>
-/* --- Layout --- */
-.glow-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding: 60px 20px;
-  flex-wrap: nowrap;
-  position: relative;
-}
-
-/* --- Tool Cards with Bright Navy Glow --- */
-.tool-card {
-  background: #0b0b0b;
-  border-radius: 20px;
-  border: 2px solid #003366; /* brighter navy for visibility */
-  box-shadow: 0 0 35px rgba(0,102,204,0.7); /* brighter navy glow */
-  padding: 35px 20px;
-  width: 200px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 60px rgba(0,102,204,0.9); /* stronger glow on hover */
-}
-
-.tool-card img {
-  margin-bottom: 18px;
-  filter: drop-shadow(0 0 15px rgba(0,102,204,0.6)); /* navy glow on image */
-}
-	
-/* --- Text Styles --- */
-.tool-title {
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.tool-desc {
-  font-family: 'Agrandir', serif;
-  color: #eaeaea;
-  font-size: 0.9rem;
-  line-height: 1.3rem;
-  margin: 0;
-}
-
-/* --- Electric Connectors --- */
-.electric-connector {
-  width: 80px;
-  height: 4px;
-  position: relative;
-  background: linear-gradient(90deg, #ffaa00, #ffcc00, #ffaa00);
-  border-radius: 2px;
-  box-shadow: 0 0 25px rgba(255,215,0,0.8);
-  overflow: hidden;
-}
-
-.spark {
-  position: absolute;
-  top: 0;
-  left: -20%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
-  animation: sparkFlow 1.5s linear infinite;
-}
-
-@keyframes sparkFlow {
-  0% { left: -40%; opacity: 0; }
-  30% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .glow-layout {
-    flex-direction: column;
-    gap: 45px;
-  }
-  .electric-connector {
-    display: none;
-  }
-}
-	/* Bubbles for Tools Section */
-#toolsBubbles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#tools .container {
-  position: relative;
-  z-index: 2;
-}
-</style>
-
-		<script>
-// --- Bubble background for Tools Section ---
-(function() {
-  const canvas = document.getElementById('toolsBubbles');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  const bubbles = [];
-  const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
-
-  function resizeCanvas() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  for (let i = 0; i < 60; i++) {
-    bubbles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 5 + 2,
-      c: colors[Math.floor(Math.random() * colors.length)],
-      vy: Math.random() * -0.2 - 0.08,
-      alpha: Math.random() * 0.25 + 0.15
-	
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    bubbles.forEach(b => {
-      b.y += b.vy;
-      if (b.y < -10) b.y = H + 10;
-      b.x += Math.sin(b.y / 50) * 0.2;
-
-
-      ctx.beginPath();
-      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = b.c;
-      ctx.globalAlpha = b.alpha;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = b.c;
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-})();
-</script>
-
-		<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
 <!-- Portfolio Section -->
 <article id="portfolio" style="position:relative; overflow:hidden; padding:100px 0; background: radial-gradient(circle at center, #000000 60%, #0a0a0a 100%);">
@@ -931,7 +720,219 @@
   }
   animate();
 })();
-</script>     
+</script>    
+
+<!-- Glowing Full-Width Separator -->
+<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>		
+
+<!-- ⚡ Revamped Tools Section with Constant Glow + Electric Waves -->
+<article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
+ <canvas id="toolsBubbles"></canvas>
+ <div class="container" style="text-align:center; max-width:1100px; margin:auto;">
+
+    <!-- Section Heading -->
+    <header style="margin-bottom:70px;">
+      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.6);">
+        Primary Tools I Use
+      </h2>
+      <p style="font-family:'Comic Sans MS', cursive; color:#ffffff; font-size:1.05rem;">
+        Efficient and elegant tools for data mastery ⚡
+      </p>
+    </header>
+
+    <!-- Glowing Layout -->
+    <div class="glow-layout">
+      
+      <!-- Python Card -->
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="55" alt="Python Logo">
+        <h3 class="tool-title">Python</h3>
+        <p class="tool-desc">Data manipulation, visualization & ML</p>
+      </div>
+
+      <!-- Electric Wave 1 -->
+      <div class="electric-connector">
+        <div class="spark"></div>
+      </div>
+
+      <!-- Power BI Card -->
+      <div class="tool-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="55" alt="Power BI Logo">
+        <h3 class="tool-title">Power BI</h3>
+        <p class="tool-desc">Interactive dashboards & BI visualizations</p>
+      </div>
+
+      <!-- Electric Wave 2 -->
+      <div class="electric-connector">
+        <div class="spark"></div>
+      </div>
+
+      <!-- SQL Card -->
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="55" alt="SQL Logo">
+        <h3 class="tool-title">SQL</h3>
+        <p class="tool-desc">Querying & managing relational databases</p>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+<style>
+/* --- Layout --- */
+.glow-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 20px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+/* --- Tool Cards with Bright Navy Glow --- */
+.tool-card {
+  background: #0b0b0b;
+  border-radius: 20px;
+  border: 2px solid #003366; /* brighter navy for visibility */
+  box-shadow: 0 0 35px rgba(0,102,204,0.7); /* brighter navy glow */
+  padding: 35px 20px;
+  width: 200px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(0,102,204,0.9); /* stronger glow on hover */
+}
+
+.tool-card img {
+  margin-bottom: 18px;
+  filter: drop-shadow(0 0 15px rgba(0,102,204,0.6)); /* navy glow on image */
+}
+	
+/* --- Text Styles --- */
+.tool-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.tool-desc {
+  font-family: 'Agrandir', serif;
+  color: #eaeaea;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin: 0;
+}
+
+/* --- Electric Connectors --- */
+.electric-connector {
+  width: 80px;
+  height: 4px;
+  position: relative;
+  background: linear-gradient(90deg, #ffaa00, #ffcc00, #ffaa00);
+  border-radius: 2px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.8);
+  overflow: hidden;
+}
+
+.spark {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  animation: sparkFlow 1.5s linear infinite;
+}
+
+@keyframes sparkFlow {
+  0% { left: -40%; opacity: 0; }
+  30% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .glow-layout {
+    flex-direction: column;
+    gap: 45px;
+  }
+  .electric-connector {
+    display: none;
+  }
+}
+	/* Bubbles for Tools Section */
+#toolsBubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#tools .container {
+  position: relative;
+  z-index: 2;
+}
+</style>
+
+		<script>
+// --- Bubble background for Tools Section ---
+(function() {
+  const canvas = document.getElementById('toolsBubbles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  const bubbles = [];
+  const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
+
+  function resizeCanvas() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  for (let i = 0; i < 60; i++) {
+    bubbles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 5 + 2,
+      c: colors[Math.floor(Math.random() * colors.length)],
+      vy: Math.random() * -0.2 - 0.08,
+      alpha: Math.random() * 0.25 + 0.15
+	
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    bubbles.forEach(b => {
+      b.y += b.vy;
+      if (b.y < -10) b.y = H + 10;
+      b.x += Math.sin(b.y / 50) * 0.2;
+
+
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fillStyle = b.c;
+      ctx.globalAlpha = b.alpha;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = b.c;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+</script>
 		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
