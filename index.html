@@ -1354,78 +1354,90 @@
 		
 		<style>
 
+/* ===== GLOBAL BACKGROUND ===== */
+body {
+  background: #000 !important;
+  color: #fff;
+}
+
+/* ===== SKILLS SECTION ===== */
+#skills {
+  background: #000 !important;
+  padding: 60px 0;
+}
+
+/* TITLE */
+#skills h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* ===== MATRIX LAYOUT ===== */
 .skills-matrix {
   display: flex;
-  gap: 40px;
-  margin-top: 50px;
-  justify-content: center;   /* IMPORTANT */
+  gap: 25px;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 1100px;         /* keeps it centered nicely */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1100px;
+  margin: 50px auto 0 auto;
 }
-.skills-matrix {
-  gap: 25px;   /* smaller spacing = tighter layout */
-}
-/* IMPORTANT: no card look */
+
+/* ===== COLUMN ===== */
 .skills-col {
   flex: 1;
   background: transparent;
   padding: 0;
   border: none;
   box-shadow: none;
-  text-align: left;
 }
 
-/* headings */
-			#skills h2 {
-  text-align: center;
-  color: #ffffff;
-  width: 100%;
-  margin: 0 auto;
-}
+/* COLUMN HEADINGS */
 .skills-col h3 {
-  color: #ffffff;        /* white instead of red */
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 15px;
   font-size: 1.1rem;
   font-weight: 600;
-	
+  margin-bottom: 15px;
 }
-}
-			.skills-col {
-  flex: 1;
-  text-align: center;   /* IMPORTANT: aligns everything inside */
-}
-/* list */
+
+/* LIST */
 .skills-col ul {
+  list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left;   /* IMPORTANT */
 }
 
+/* SKILLS ITEMS */
 .skills-col li {
-  list-style: none;
-  margin: 8px 0;
   text-align: left;
-}
-
-/* optional subtle hover (very minimal) */
-.skills-col li:hover {
-  opacity: 1;
-  color: #ffffff;
-  transform: translateX(3px);
+  margin: 8px 0;
+  opacity: 0.85;
   transition: 0.2s;
 }
-			body {
-  background: #000000;
-  color: #ffffff;
+
+/* hover effect */
+.skills-col li:hover {
+  opacity: 1;
+  transform: translateX(3px);
 }
-			body, #skills {
-  background: #000 !important;
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .skills-matrix {
+    flex-wrap: wrap;
+  }
+
+  .skills-col {
+    flex: 1 1 45%;
+  }
 }
-	
+
+@media (max-width: 500px) {
+  .skills-col {
+    flex: 1 1 100%;
+  }
 }
 
 </style>
