@@ -1324,11 +1324,12 @@
       <h3>Data Analytics</h3>
       <ul>
         <li>MS Excel</li>
+		  <li>DataBricks</li>
         <li>BigQuery</li>
         <li>Snowflake</li>
         <li>SAP</li>
         <li>MS Azure</li>
-        <li>Agile Dev</li>
+        
       </ul>
     </div>
 
@@ -1336,6 +1337,8 @@
       <h3>Business Intelligence</h3>
       <ul>
         <li>Power BI</li>
+		  <li>Tableau</li>
+		  <li>Looker Studio</li>
       </ul>
     </div>
 
@@ -1354,10 +1357,9 @@
 		
 		<style>
 
-/* ===== GLOBAL BACKGROUND ===== */
 body {
   background: #000 !important;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* ===== SKILLS SECTION ===== */
@@ -1366,11 +1368,13 @@ body {
   padding: 60px 0;
 }
 
-/* TITLE */
+/* MAIN TITLE */
 #skills h2 {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 /* ===== MATRIX LAYOUT ===== */
@@ -1379,51 +1383,51 @@ body {
   gap: 25px;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
   max-width: 1100px;
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* ===== COLUMN ===== */
 .skills-col {
   flex: 1;
-  background: transparent;
-  padding: 0;
-  border: none;
-  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* KEY FIX: alignment consistency */
 }
 
 /* COLUMN HEADINGS */
 .skills-col h3 {
   color: #ffffff;
-  text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.25rem;   /* increased */
   font-weight: 600;
   margin-bottom: 15px;
+  text-align: left;
 }
 
-/* LIST */
+/* SKILLS LIST */
 .skills-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* SKILLS ITEMS */
+/* SKILL ITEMS */
 .skills-col li {
-  text-align: left;
   margin: 8px 0;
+  font-size: 1.05rem;   /* increased */
   opacity: 0.85;
+  text-align: left;
   transition: 0.2s;
 }
 
-/* hover effect */
+/* HOVER EFFECT */
 .skills-col li:hover {
   opacity: 1;
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .skills-matrix {
     flex-wrap: wrap;
