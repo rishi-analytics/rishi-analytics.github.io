@@ -1303,7 +1303,9 @@
 		
 		<div class="skills-columns">
 
-  <!-- Column 1 -->
+
+			 <!-- Skill Section -->
+			<!-- Column 1 -->
   <div class="skills-col">
     <h3>Programming Languages</h3>
     <ul>
@@ -1349,130 +1351,74 @@
   </div>
 
 </div>
-
-  <!-- Starfield Background -->
-  <canvas id="stars-canvas"></canvas>
-</article>
-
-<style>
-#skills {
+<!-- Skill CSS -->
+  .skills-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
   position: relative;
-  padding: 60px 0;
-  background: #0b0b0b;
-  color: #ffffff;
-  text-align: center;
-  overflow: hidden;
-}
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 40px;
   z-index: 1;
-  position: relative;
 }
 
-.skill-bubble {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #5dade2, #ff6ec7);
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
+/* Keep 4 columns unless screen is small */
+@media (max-width: 900px) {
+  .skills-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .skills-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-col {
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(255, 0, 80, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.skills-col:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 0, 80, 0.6);
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.25);
+}
+
+.skills-col h3 {
+  color: #ff4d6d;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
   text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(255,255,255,0.4), inset 0 0 10px rgba(0,0,0,0.3);
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.skill-bubble:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 25px rgba(255,255,255,0.7), inset 0 0 15px rgba(0,0,0,0.4);
-  background: radial-gradient(circle at 30% 30%, #ff6ec7, #5dade2);
+.skills-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+.skills-col li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  text-align: center;
 }
 
-/* Canvas for stars */
-#stars-canvas {
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+/* subtle divider line */
+.skills-col li:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 6px auto 0;
+  width: 60%;
 }
-	
-#skills h2 {
-  color: #b266ff; /* or try #ff0066 for a red glow */
-  text-shadow: 0 0 10px #ff0066, 0 0 20px #ff3399, 0 0 30px #ff66cc;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 1px;
-  animation: glowPulse 2s infinite alternate;
-}
-
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 5px #ff0066, 0 0 10px #ff3399, 0 0 20px #ff66cc; }
-  50% { text-shadow: 0 0 20px #ff99cc, 0 0 30px #ff66ff, 0 0 40px #ff33cc; }
-  100% { text-shadow: 0 0 10px #ff0066, 0 0 20px #ff3399, 0 0 30px #ff66cc; }
-}
-
-</style>
-
-<script>
-const canvas = document.getElementById('stars-canvas');
-const ctx = canvas.getContext('2d');
-canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
-
-const stars = [];
-const numStars = 150;
-
-for (let i = 0; i < numStars; i++) {
-  stars.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 1.5 + 0.5,
-    speed: Math.random() * 0.5 + 0.2,
-    alpha: Math.random() * 0.8 + 0.2
-  });
-}
-
-function animateStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  stars.forEach(star => {
-    star.y -= star.speed;
-    if (star.y < 0) star.y = canvas.height;
-    ctx.globalAlpha = star.alpha;
-    ctx.fillStyle = '#ffffff';
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animateStars);
-}
-
-animateStars();
-
-window.addEventListener('resize', () => {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-});
-</script>
 
 		
 		<!-- Glowing Full-Width Separator -->
