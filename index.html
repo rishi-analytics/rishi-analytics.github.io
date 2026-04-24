@@ -1379,6 +1379,12 @@
 }
 
 /* headings */
+			#skills h2 {
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+}
 .skills-col h3 {
   color: #ffffff;        /* white instead of red */
   text-align: center;
@@ -1386,18 +1392,20 @@
   font-size: 1.1rem;
   font-weight: 600;
 }
-			
+			.skills-col {
+  flex: 1;
+  text-align: center;   /* IMPORTANT: aligns everything inside */
+}
 /* list */
 .skills-col ul {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .skills-col li {
+  list-style: none;
   margin: 8px 0;
-  font-size: 0.95rem;
-  opacity: 0.85;
+  text-align: center;
 }
 
 /* optional subtle hover (very minimal) */
