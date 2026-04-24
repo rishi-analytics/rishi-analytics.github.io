@@ -1316,6 +1316,7 @@
       <h3>Programming Languages</h3>
       <ul>
         <li>Python</li>
+		  <li>R</li>
         <li>SQL</li>
       </ul>
     </div>
@@ -1373,14 +1374,14 @@ body {
   text-align: center;
   color: #ffffff;
   margin-bottom: 40px;
-  font-size: 4rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 /* ===== MATRIX LAYOUT ===== */
 .skills-matrix {
   display: flex;
-  gap: 25px;
+  gap: 45px;
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
@@ -1447,26 +1448,34 @@ body {
   position: relative;
 }
 
-/* glowing divider between columns */
+.skills-matrix {
+  align-items: stretch; /* IMPORTANT: makes all columns equal height */
+}
+
+.skills-col {
+  position: relative;
+}
+
+/* full-height divider */
 .skills-col:not(:last-child)::after {
   content: "";
   position: absolute;
   right: -12px;
-  top: 10%;
-  height: 80%;
-  width: 1px;
+  top: 0;
+  bottom: 0;  /* KEY FIX */
+  width: 1.5px;
+}
+			.skills-col:not(:last-child)::after {
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(255, 0, 80, 0.35),
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 0, 80, 0.35),
+    rgba(0, 170, 255, 0.4),
+    rgba(0, 170, 255, 0.8),
+    rgba(0, 170, 255, 0.4),
     transparent
   );
-  box-shadow: 0 0 8px rgba(255, 0, 80, 0.25);
-}
-			.skills-col h3 {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
 }
 
 </style>
