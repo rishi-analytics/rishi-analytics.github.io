@@ -1373,7 +1373,7 @@ body {
   text-align: center;
   color: #ffffff;
   margin-bottom: 40px;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -1399,7 +1399,7 @@ body {
 /* COLUMN HEADINGS */
 .skills-col h3 {
   color: #ffffff;
-  font-size: 1.25rem;   /* increased */
+  font-size: 1.45rem;   /* increased */
   font-weight: 600;
   margin-bottom: 15px;
   text-align: left;
@@ -1415,7 +1415,7 @@ body {
 /* SKILL ITEMS */
 .skills-col li {
   margin: 8px 0;
-  font-size: 1.05rem;   /* increased */
+  font-size: 1.25rem;   /* increased */
   opacity: 0.85;
   text-align: left;
   transition: 0.2s;
@@ -1442,6 +1442,31 @@ body {
   .skills-col {
     flex: 1 1 100%;
   }
+}
+			.skills-col {
+  position: relative;
+}
+
+/* glowing divider between columns */
+.skills-col:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 0, 80, 0.35),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 0, 80, 0.35),
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(255, 0, 80, 0.25);
+}
+			.skills-col h3 {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
 }
 
 </style>
