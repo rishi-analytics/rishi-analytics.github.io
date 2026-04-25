@@ -82,12 +82,12 @@
     and turn them into insights that drive smart decisions! Whether I’m coding a solution 
     or solving a problem, creativity is reflected in everything I do🔥
   </p>
-
-  <p style="margin-top:24px;">
-    <a href="#portfolio" class="see-work-btn">See My Work</a>
-  </p>
+	
+<div class="btn-group" style="margin-top:24px;">
+  <a href="#portfolio" class="btn btn-work">See My Work</a>
+  <a href="https://data-velho-rishi.my.canva.site/" class="btn btn-story">Read My Story</a>
 </div>
-
+		
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -136,44 +136,77 @@
   margin-top: 18px;
 }
 
-.see-work-btn {
+/* ===== BUTTON GROUP (side by side) ===== */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* ===== BASE BUTTON STYLE ===== */
+.btn {
   display: inline-block;
   font-family: 'Manrope', sans-serif;
   color: #fff;
   text-decoration: none;
   padding: 6px 18px;
-  border: 1px solid rgba(255, 204, 0, 0.6);
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.8px;
-  background: rgba(255, 204, 0, 0.05);
   transition: all 0.3s ease;
-  box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
   animation: softPulse 3s ease-in-out infinite;
 }
 
-.see-work-btn:hover {
+/* ===== SEE MY WORK (YELLOW) ===== */
+.btn-work {
+  border: 1px solid rgba(255, 204, 0, 0.6);
+  background: rgba(255, 204, 0, 0.05);
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+}
+
+.btn-work:hover {
   background: rgba(255, 204, 0, 0.15);
   color: #000;
   box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
   transform: translateY(-2px);
 }
 
+/* ===== READ MY STORY (BLUE) ===== */
+.btn-story {
+  border: 1px solid rgba(0, 170, 255, 0.6);
+  background: rgba(0, 170, 255, 0.05);
+  box-shadow: 0 0 6px rgba(0, 170, 255, 0.25);
+}
+
+.btn-story:hover {
+  background: rgba(0, 170, 255, 0.15);
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ===== SOFT PULSE ANIMATION (neutral glow) ===== */
 @keyframes softPulse {
   0%, 100% {
-    box-shadow: 0 0 6px rgba(255, 204, 0, 0.25);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
   }
   50% {
-    box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
   }
 }
 
-/* Make button responsive on smaller screens */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
-  .see-work-btn {
+  .btn {
     padding: 5px 14px;
     font-size: 0.8rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -1484,7 +1517,56 @@ body {
 }
 
 </style>
-	
+	<script>
+		  // --- Bubble background ---
+  (function() {
+    const canvas = document.getElementById('cosmosBubbles');
+    if (!canvas) return; // prevent error if canvas not found
+    const ctxB = canvas.getContext('2d');
+    let W, H;
+    const bubblesArr = [];
+    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
+
+    function resizeCanvas() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 60; i++) {
+      bubblesArr.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 5 + 2,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        vy: Math.random() * -0.2 - 0.08,
+        alpha: Math.random() * 0.25 + 0.15
+      });
+    }
+
+    function animateBubbles() {
+      ctxB.clearRect(0, 0, W, H);
+      bubblesArr.forEach(b => {
+        b.y += b.vy;
+        if (b.y < -10) b.y = H + 10;
+		b.x += Math.sin(b.y / 50) * 0.2;
+		  
+        ctxB.beginPath();
+        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctxB.fillStyle = b.c;
+        ctxB.globalAlpha = b.alpha;
+        ctxB.shadowBlur = 10;
+        ctxB.shadowColor = b.c;
+        ctxB.fill();
+      });
+      requestAnimationFrame(animateBubbles);
+    }
+
+    animateBubbles();
+  })();
+</script>
 		
 		<!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
