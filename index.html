@@ -911,7 +911,7 @@
   pointer-events: none;
 }
 
-#tools .container {
+#tools.container {
   position: relative;
   z-index: 2;
 }
@@ -1520,14 +1520,27 @@ body {
   box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
 }
   /* Bubble Canvas Layer */
-  #cosmosBubbles {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-  }
+  #skills {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+/* Bubble Canvas Layer */
+#cosmosBubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;          /* BEHIND content */
+  pointer-events: none;
+}
+
+/* bring content above canvas */
+#skills .container {
+  position: relative;
+  z-index: 1;
+}
 </style>
 	<script>
 		  // --- Bubble background ---
