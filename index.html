@@ -1591,6 +1591,13 @@ body {
 
     animateBubbles();
   })();
+		window.addEventListener('load', function() {
+  const canvas = document.getElementById('cosmosBubbles');
+  if (!canvas) return;
+
+  const ctxB = canvas.getContext('2d');
+  ...
+});
 </script>
 		
 		<!-- Glowing Full-Width Separator -->
