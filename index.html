@@ -1542,63 +1542,7 @@ body {
   z-index: 1;
 }
 </style>
-	<script>
-		  // --- Bubble background ---
-  (function() {
-    const canvas = document.getElementById('cosmosBubbles');
-    if (!canvas) return; // prevent error if canvas not found
-    const ctxB = canvas.getContext('2d');
-    let W, H;
-    const bubblesArr = [];
-    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
 
-    function resizeCanvas() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    for (let i = 0; i < 60; i++) {
-      bubblesArr.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 5 + 2,
-        c: colors[Math.floor(Math.random() * colors.length)],
-        vy: Math.random() * -0.2 - 0.08,
-        alpha: Math.random() * 0.25 + 0.15
-      });
-    }
-
-    function animateBubbles() {
-      ctxB.clearRect(0, 0, W, H);
-      bubblesArr.forEach(b => {
-        b.y += b.vy;
-        if (b.y < -10) b.y = H + 10;
-		b.x += Math.sin(b.y / 50) * 0.2;
-		  
-        ctxB.beginPath();
-        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctxB.fillStyle = b.c;
-        ctxB.globalAlpha = b.alpha;
-        ctxB.shadowBlur = 10;
-        ctxB.shadowColor = b.c;
-        ctxB.fill();
-      });
-      requestAnimationFrame(animateBubbles);
-    }
-
-    animateBubbles();
-  })();
-		window.addEventListener('load', function() {
-  const canvas = document.getElementById('cosmosBubbles');
-  if (!canvas) return;
-
-  const ctxB = canvas.getContext('2d');
-  ...
-});
-</script>
 		
 		<!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
@@ -1833,3 +1777,53 @@ body {
 
 	</body>
 </html>
+	<script>
+		  // --- Bubble background ---
+  (function() {
+    const canvas = document.getElementById('cosmosBubbles');
+    if (!canvas) return; // prevent error if canvas not found
+    const ctxB = canvas.getContext('2d');
+    let W, H;
+    const bubblesArr = [];
+    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
+
+    function resizeCanvas() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 60; i++) {
+      bubblesArr.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 5 + 2,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        vy: Math.random() * -0.2 - 0.08,
+        alpha: Math.random() * 0.25 + 0.15
+      });
+    }
+
+    function animateBubbles() {
+      ctxB.clearRect(0, 0, W, H);
+      bubblesArr.forEach(b => {
+        b.y += b.vy;
+        if (b.y < -10) b.y = H + 10;
+		b.x += Math.sin(b.y / 50) * 0.2;
+		  
+        ctxB.beginPath();
+        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctxB.fillStyle = b.c;
+        ctxB.globalAlpha = b.alpha;
+        ctxB.shadowBlur = 10;
+        ctxB.shadowColor = b.c;
+        ctxB.fill();
+      });
+      requestAnimationFrame(animateBubbles);
+    }
+
+    animateBubbles();
+  })();
+</script>
