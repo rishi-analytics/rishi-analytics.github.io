@@ -341,7 +341,7 @@
 	  
 .profile-aura {
   width: 250px;
-  height: 250px;
+  height: 270px;
   position: relative;
   overflow: hidden;
   border-radius: 28px;
@@ -396,12 +396,33 @@
   100% { opacity: 0; }
 }
 	  /* frame glow */
-	  .profile-aura {
-  box-shadow:
-    0 0 25px rgba(255, 60, 60, 0.15),
-    0 0 60px rgba(255, 60, 60, 0.08);
+
+@keyframes bluePulse {
+  0% {
+    box-shadow:
+      0 0 12px rgba(0, 200, 255, 0.30),
+      0 0 30px rgba(0, 180, 255, 0.20),
+      0 0 60px rgba(0, 120, 255, 0.12);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px rgba(0, 220, 255, 0.45),
+      0 0 45px rgba(0, 180, 255, 0.30),
+      0 0 80px rgba(0, 120, 255, 0.22);
+  }
+
+  100% {
+    box-shadow:
+      0 0 12px rgba(0, 200, 255, 0.30),
+      0 0 30px rgba(0, 180, 255, 0.20),
+      0 0 60px rgba(0, 120, 255, 0.12);
+  }
 }
-	  animation: pulseGlow 5s ease-in-out infinite;
+	  .profile-aura {
+  animation: bluePulse 4s ease-in-out infinite;
+}
+
   </style>
 
  <!-- JS -->
