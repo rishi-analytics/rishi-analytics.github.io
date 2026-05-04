@@ -59,11 +59,10 @@
     <div class="row" style="align-items: center;">
 
       <!-- Left: profile image with aura -->
-      <div class="col-4 col-5-large col-12-medium" style="display:flex; align-items:center; justify-content:center;">
-        <div class="profile-aura">
-          <img class="image-profile" src="images/data_velho_rishi_optimized.png" alt="Rishi Kesari" />
-        </div>
-      </div>
+<div class="profile-aura">
+  <img class="image-profile img-a" src="images/cv5pic.jpg" alt="Rishi Kesari" />
+  <img class="image-profile img-b" src="images/data_velho_rishi_optimized.png" alt="Ghibli Style" />
+</div>
 
 <!-- Right: text -->
 <div class="col-8 col-7-large col-12-medium hero-content">
@@ -336,86 +335,91 @@
 </style>
 
   <!-- CSS -->
-    <!-- inline CSS for aura + small responsive tweaks -->
+    <!-- inline CSS for IMAGE/PFP aura + small responsive tweaks -->
   <style>
-    /* Profile aura wrapper */
-    .profile-aura {
-      width: 220px;
-      height: 220px;
-      border-radius: 28px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position: relative;
-      z-index: 4;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow: 0 10px 40px rgba(0,120,255,0.06);
-      transition: transform 0.35s ease;
-    }
+   /* Stack images perfectly */
+.profile-aura img.image-profile {
+  position: absolute;
+  inset: 0;
+  width: 88%;
+  margin: auto;
+  border-radius: 14px;
+  transition: opacity 1.5s ease-in-out;
+}
 
-    .profile-aura img.image-profile {
-      width: 88%;
-      height: auto;
-      border-radius: 14px;
-      display:block;
-      position: relative;
-      z-index: 6;
-      transform-origin: center center;
-      transition: transform 0.35s ease;
-    }
+/* ensure container supports layering */
+.profile-aura {
+  position: relative;
+  overflow: hidden;
+}
 
-    /* glowing animated aura using pseudo elements */
-    .profile-aura::before,
-    .profile-aura::after {
-      content: "";
-      position: absolute;
-      inset: -14px;
-      border-radius: 30px;
-      z-index: 3;
-      pointer-events: none;
-    }
+/* top layers */
+.img-a {
+  animation: fadeA 8s infinite;
+}
 
-    /* soft cyan glow */
-    .profile-aura::before {
-      box-shadow: 0 0 40px rgba(0,200,255,0.12), 0 0 120px rgba(0,150,255,0.06);
-      filter: blur(8px);
-      opacity: 1;
-      transform: scale(1);
-      transition: all 0.4s ease;
-    }
+.img-b {
+  animation: fadeB 8s infinite;
+}
 
-    /* animated electric ring */
-    .profile-aura::after {
-      background: conic-gradient(from 120deg, rgba(0,220,255,0.0), rgba(0,220,255,0.12), rgba(0,120,255,0.06), rgba(0,220,255,0.0));
-      mix-blend-mode: screen;
-      animation: auraRotate 6s linear infinite;
-      opacity: 0.9;
-      transform: rotate(0deg) scale(1);
-    }
+/* smooth crossfade */
+@keyframes fadeA {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0; }
+  95%  { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-    @keyframes auraRotate {
-      to { transform: rotate(360deg) scale(1); }
-    }
+@keyframes fadeB {
+  0%   { opacity: 0; }
+  45%  { opacity: 0; }
+  50%  { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+	  
+	  /* Stack images perfectly */
+.profile-aura img.image-profile {
+  position: absolute;
+  inset: 0;
+  width: 88%;
+  margin: auto;
+  border-radius: 14px;
+  transition: opacity 1.5s ease-in-out;
+}
 
-    /* hover micro-interaction */
-    .profile-aura:hover { transform: translateY(-6px) scale(1.02); }
-    .profile-aura:hover img { transform: scale(1.03); }
+/* ensure container supports layering */
+.profile-aura {
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Typed role styling fallback (cursor) */
-    #typed-role { font-weight:600; color:#B8F2FF; font-family:'Montserrat',sans-serif; }
-    #typed-role::after { content: "|"; margin-left:6px; opacity:0.9; animation: blink 1s steps(2) infinite; }
-    @keyframes blink { 50% { opacity: 0 } }
+/* top layers */
+.img-a {
+  animation: fadeA 8s infinite;
+}
 
-    /* responsive tweaks */
-    @media (max-width: 900px) {
-      .profile-aura { width: 180px; height: 180px; }
-      .profile-aura::before, .profile-aura::after { inset: -12px; border-radius: 22px; }
-    }
-    @media (max-width: 640px) {
-      .row { flex-direction: column; gap: 18px; }
-      .col-4, .col-8 { width: 100%; }
-      .profile-aura { margin: 0 auto 8px; }
-    }
+.img-b {
+  animation: fadeB 8s infinite;
+}
+
+/* smooth crossfade */
+@keyframes fadeA {
+  0%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0; }
+  95%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeB {
+  0%   { opacity: 0; }
+  45%  { opacity: 0; }
+  50%  { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { opacity: 0; }
+}
   </style>
 
  <!-- JS -->
