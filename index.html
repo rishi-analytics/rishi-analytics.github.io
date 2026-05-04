@@ -338,96 +338,53 @@
     <!-- inline CSS for IMAGE/PFP aura + small responsive tweaks -->
   <style>
    /* Stack images perfectly */
-.profile-aura {
-  width: 600px;
-  height: 600px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 	  
-.profile-aura img.image-profile {
-  width: 88%;
-  height: 88%;
-  object-fit: cover;
-  border-radius: 14px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .profile-aura {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
   min-width: 220px;
   min-height: 220px;
 }
 
-/* top layers */
-.img-a {
-  animation: fadeA 8s infinite;
-}
-
-.img-b {
-  animation: fadeB 8s infinite;
-}
-
-/* smooth crossfade */
-@keyframes fadeA {
-  0%   { opacity: 1; }
-  45%  { opacity: 1; }
-  50%  { opacity: 0; }
-  95%  { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeB {
-  0%   { opacity: 0; }
-  45%  { opacity: 0; }
-  50%  { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-	  
-	  /* Stack images perfectly */
+/* shared image styling */
 .profile-aura img.image-profile {
   position: absolute;
-  inset: 0;
-  width: 88%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
   border-radius: 14px;
-  transition: opacity 1.5s ease-in-out;
 }
 
-/* ensure container supports layering */
-.profile-aura {
-  position: relative;
-  overflow: hidden;
-}
-
-/* top layers */
+/* crossfade layers */
 .img-a {
-  animation: fadeA 8s infinite;
+  animation: fadeA 10s infinite;
+  opacity: 1;
 }
 
 .img-b {
-  animation: fadeB 8s infinite;
+  animation: fadeB 10s infinite;
+  opacity: 0;
 }
 
 /* smooth crossfade */
 @keyframes fadeA {
-  0%   { opacity: 1; }
-  45%  { opacity: 1; }
-  50%  { opacity: 0; }
-  95%  { opacity: 0; }
+  0% { opacity: 1; }
+  45% { opacity: 1; }
+  50% { opacity: 0; }
+  95% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @keyframes fadeB {
-  0%   { opacity: 0; }
-  45%  { opacity: 0; }
-  50%  { opacity: 1; }
-  95%  { opacity: 1; }
+  0% { opacity: 0; }
+  45% { opacity: 0; }
+  50% { opacity: 1; }
+  95% { opacity: 1; }
   100% { opacity: 0; }
 }
   </style>
