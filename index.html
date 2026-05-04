@@ -338,13 +338,24 @@
     <!-- inline CSS for IMAGE/PFP aura + small responsive tweaks -->
   <style>
    /* Stack images perfectly */
+.profile-aura {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+	  
 .profile-aura img.image-profile {
-  position: absolute;
-  inset: 0;
   width: 88%;
-  margin: auto;
+  height: 88%;
+  object-fit: cover;
   border-radius: 14px;
-  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ensure container supports layering */
