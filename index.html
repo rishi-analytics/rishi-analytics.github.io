@@ -775,250 +775,530 @@
     <!-- Header -->
     <header class="journey-header">
       <h2>Learning & Analytical Journey</h2>
-      <p>Structured evolution through engineering, analytics, and AI driven systems thinking.</p>
+      <p>
+        Structured evolution through engineering, analytics, and AI driven systems thinking.
+      </p>
     </header>
 
-    <!-- DUAL COLUMNS -->
+    <!-- GRID -->
     <div class="journey-grid">
 
-      <!-- LEFT: EDUCATION -->
-      <div class="journey-column">
+      <!-- ========================================= -->
+      <!-- LEFT : EDUCATION TIMELINE -->
+      <!-- ========================================= -->
+
+      <div class="journey-column education-column">
+
         <h3 class="column-title">Academic Foundation</h3>
 
-        <div class="journey-card">
-          <div class="journey-icon">🎓</div>
-          <div>
-            <span class="journey-year">2015 - 2019</span>
+        <div class="education-timeline"></div>
+
+        <!-- SRM -->
+        <div class="journey-card education-card">
+
+          <div class="timeline-dot"></div>
+
+          <div class="journey-icon">
+            <img src="images/srm_logo.png" alt="SRM University">
+          </div>
+
+          <div class="journey-content">
+            <span class="journey-year">2015 – 2019</span>
+
             <h4>Bachelor's in Civil Engineering</h4>
-            <p>SRM University</p>
+
+            <p class="university-name">
+              SRM University
+            </p>
+
             <div class="skill-tags">
-              <span>Engineering Mathematics</span>
-              <span>Sustainability Concepts</span>
+              <span>Systems Thinking</span>
+              <span>Engineering Analysis</span>
               <span>Problem Solving</span>
             </div>
           </div>
+
         </div>
 
-        <div class="journey-card">
-          <div class="journey-icon">🎓</div>
-          <div>
-            <span class="journey-year">2021 - 2023</span>
+        <!-- OULU -->
+        <div class="journey-card education-card">
+
+          <div class="timeline-dot"></div>
+
+          <div class="journey-icon">
+            <img src="images/oulu_logo.png" alt="University of Oulu">
+          </div>
+
+          <div class="journey-content">
+
+            <span class="journey-year">2023 – 2025</span>
+
             <h4>Master's in Business Analytics</h4>
-            <p>University of Oulu</p>
+
+            <p class="university-name">
+              University of Oulu
+            </p>
+
             <div class="skill-tags">
-              <span>Data Analyticsspan>
+              <span>AI Systems</span>
               <span>Business Intelligence</span>
-              <span>Data-driven Decision Making</span>
+              <span>Analytics</span>
             </div>
           </div>
+
         </div>
+
       </div>
 
-      <!-- RIGHT: SPECIALIZATIONS -->
+      <!-- ========================================= -->
+      <!-- RIGHT : SPECIALIZATIONS -->
+      <!-- ========================================= -->
+
       <div class="journey-column">
+
         <h3 class="column-title">Specializations & Industry Learning</h3>
 
-        <div class="journey-card highlight">
-          <div class="journey-icon">🌍</div>
-          <div>
-            <span class="journey-year">ESG Analytics</span>
+        <!-- ESG -->
+        <div class="journey-card specialization-card">
+
+          <div class="journey-icon">
+            <img src="images/duke_logo.png" alt="Duke University">
+          </div>
+
+          <div class="journey-content">
+
+            <span class="journey-year">ESG & Sustainability</span>
+
             <h4>Sustainability & ESG Frameworks</h4>
-            <p>Duke University</p>
+
+            <p class="university-name">
+              Duke University
+            </p>
+
             <div class="skill-tags">
-              <span>Sustainability</span>
               <span>ESG</span>
+              <span>Sustainability</span>
               <span>Policy Systems</span>
             </div>
+
           </div>
+
         </div>
 
-        <div class="journey-card highlight">
-          <div class="journey-icon">📦</div>
-          <div>
-            <span class="journey-year">Supply Chain Data Analyst</span>
-            <h4>Supply Chain Professional Certificate</h4>
-            <p>Unilever</p>
+        <!-- SUPPLY CHAIN -->
+        <div class="journey-card specialization-card">
+
+          <div class="journey-icon">
+            <img src="images/unilever_logo.png" alt="Unilever">
+          </div>
+
+          <div class="journey-content">
+
+            <span class="journey-year">Supply Chain Analytics</span>
+
+            <h4>Operational & Strategic Analytics</h4>
+
+            <p class="university-name">
+              Unilever Case Analysis
+            </p>
+
             <div class="skill-tags">
               <span>Forecasting</span>
               <span>Operations</span>
-              <span>Strategy</span>
+              <span>Competitive Positioning</span>
             </div>
+
           </div>
+
         </div>
 
-        <div class="journey-card highlight">
-          <div class="journey-icon">⚡</div>
-          <div>
-            <span class="journey-year">Current</span>
+        <!-- CURRENT -->
+        <div class="journey-card specialization-card">
+
+          <div class="journey-icon">
+            <img src="images/ai_logo.png" alt="AI Systems">
+          </div>
+
+          <div class="journey-content">
+
+            <span class="journey-year">Current Exploration</span>
+
             <h4>AI & Intelligent Analytics Systems</h4>
-            <p>PySpark, AI assisted analytics, dashboard systems</p>
+
+            <p class="university-name">
+              Continuous Learning
+            </p>
+
             <div class="skill-tags">
               <span>PySpark</span>
               <span>AI Systems</span>
-              <span>Data Engineering</span>
+              <span>Interactive Analytics</span>
             </div>
+
           </div>
+
         </div>
 
       </div>
 
     </div>
+
   </div>
+
 </article>
 	
 	<style>
-		.journey-section {
-  padding: 120px 20px;
-  background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%);
-}
+		/* =========================================
+   JOURNEY SECTION
+========================================= */
 
-/* Header */
 .journey-section {
+  padding: 120px 20px;
   position: relative;
   overflow: hidden;
-  padding: 120px 20px;
-  background: radial-gradient(circle at center, #000000 45%, #0a0a0a 100%);
+
+  background:
+    radial-gradient(circle at center,
+    #000000 45%,
+    #0a0a0a 100%);
 }
 
-/* Background Glow */
-.journey-bg-glow {
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(0,200,255,0.12), transparent 70%);
-  top: -180px;
-  left: 50%;
-  transform: translateX(-50%);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 0;
+/* =========================================
+   SEPARATOR
+========================================= */
+
+.journey-separator {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #003366,
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px #00c8ff;
 }
 
-/* Header */
+/* =========================================
+   HEADER
+========================================= */
+
 .journey-header {
   text-align: center;
-  margin-bottom: 90px;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 80px;
 }
 
 .journey-header h2 {
   color: #ffffff;
+
+  font-size: 2.5rem;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.7rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-shadow: 0 0 18px rgba(0,200,255,0.35);
+
+  text-shadow:
+    0 0 10px rgba(0,200,255,0.25),
+    0 0 25px rgba(0,120,255,0.18);
 }
 
 .journey-header p {
-  color: #d7d7d7;
-  font-size: 1.05rem;
-  max-width: 760px;
+  color: #d0d0d0;
+
+  max-width: 720px;
   margin: auto;
-  line-height: 1.8;
+
+  line-height: 1.7;
 }
-/* GRID LAYOUT */
+
+/* =========================================
+   GRID
+========================================= */
+
 .journey-grid {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 60px;
-  max-width: 1100px;
+
+  max-width: 1150px;
   margin: auto;
 }
 
-.journey-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+/* =========================================
+   COLUMN TITLES
+========================================= */
 
 .column-title {
-  color: #00c8ff;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 12px rgba(0,200,255,0.3);
+  color: #8fe8ff;
+
+  margin-bottom: 28px;
+
+  font-size: 1.35rem;
+
+  text-shadow:
+    0 0 12px rgba(0,200,255,0.30);
 }
 
-/* CARD */
-.journey-card {
+/* =========================================
+   COLUMN
+========================================= */
+
+.journey-column {
+  position: relative;
+
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  background: rgba(12,12,12,0.75);
-  border: 1px solid rgba(0,200,255,0.15);
-  border-radius: 16px;
-  padding: 18px;
-  transition: all 0.35s ease;
+  flex-direction: column;
+
+  gap: 22px;
 }
+
+/* =========================================
+   EDUCATION TIMELINE
+========================================= */
+
+.education-column {
+  padding-left: 28px;
+}
+
+.education-timeline {
+  position: absolute;
+
+  left: 10px;
+  top: 70px;
+
+  width: 2px;
+  height: calc(100% - 90px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,200,255,0.9),
+      rgba(0,120,255,0.2)
+    );
+
+  box-shadow:
+    0 0 15px rgba(0,200,255,0.6);
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.journey-card {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(12,12,12,0.78);
+
+  border:
+    1px solid rgba(0,200,255,0.15);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border 0.35s ease;
+
+  box-shadow:
+    0 0 18px rgba(0,200,255,0.10),
+    0 0 40px rgba(0,120,255,0.08);
+}
+
+/* Hover */
 
 .journey-card:hover {
   transform: translateY(-6px);
-  border: 1px solid rgba(0,200,255,0.35);
-  box-shadow: 0 0 25px rgba(0,200,255,0.18);
+
+  border:
+    1px solid rgba(0,200,255,0.35);
+
+  box-shadow:
+    0 0 25px rgba(0,200,255,0.20),
+    0 0 60px rgba(0,120,255,0.14);
 }
 
-/* Highlight (right side more dynamic) */
-.journey-card.highlight {
-  border: 1px solid rgba(0,200,255,0.25);
-  box-shadow: 0 0 18px rgba(0,200,255,0.12);
+/* =========================================
+   SPECIALIZATION SIDE STRONGER GLOW
+========================================= */
+
+.specialization-card {
+  border:
+    1px solid rgba(0,200,255,0.22);
 }
+
+/* =========================================
+   TIMELINE DOTS
+========================================= */
+
+.timeline-dot {
+  position: absolute;
+
+  left: -28px;
+  top: 30px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #00c8ff;
+
+  box-shadow:
+    0 0 10px rgba(0,200,255,0.9),
+    0 0 25px rgba(0,200,255,0.6);
+
+  animation: pulseDot 3s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+   ICONS
+========================================= */
 
 .journey-icon {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
+
+  min-width: 54px;
+
   border-radius: 14px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,200,255,0.08);
-  border: 1px solid rgba(0,200,255,0.15);
+
+  background:
+    rgba(0,200,255,0.08);
+
+  border:
+    1px solid rgba(0,200,255,0.16);
+
+  box-shadow:
+    0 0 15px rgba(0,200,255,0.10);
 }
+
+.journey-icon img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 0 8px rgba(0,200,255,0.25));
+}
+
+/* =========================================
+   CONTENT
+========================================= */
 
 .journey-year {
   color: #00c8ff;
-  font-size: 0.8rem;
-  font-weight: 600;
+
+  font-size: 0.78rem;
+
   text-transform: uppercase;
+  letter-spacing: 1px;
+
+  font-weight: 600;
 }
 
 .journey-card h4 {
-  color: #fff;
-  margin: 5px 0;
+  color: #ffffff;
+
+  margin:
+    6px 0 6px;
+
   font-size: 1.05rem;
 }
 
-.journey-card p {
-  color: #cfcfcf;
-  font-size: 0.88rem;
-  margin-bottom: 10px;
+.university-name {
+  color: #8fdfff;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
 }
 
-/* TAGS */
+/* =========================================
+   TAGS
+========================================= */
+
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
+
   gap: 8px;
 }
 
 .skill-tags span {
-  font-size: 0.75rem;
   padding: 5px 10px;
+
   border-radius: 999px;
-  background: rgba(0,200,255,0.08);
-  border: 1px solid rgba(0,200,255,0.15);
+
+  background:
+    rgba(0,200,255,0.08);
+
+  border:
+    1px solid rgba(0,200,255,0.15);
+
   color: #b8ecff;
+
+  font-size: 0.74rem;
+
+  transition: 0.3s ease;
 }
 
 .skill-tags span:hover {
-  background: rgba(0,200,255,0.18);
+  background:
+    rgba(0,200,255,0.18);
+
+  box-shadow:
+    0 0 15px rgba(0,200,255,0.18);
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE
+========================================= */
+
 @media (max-width: 900px) {
+
   .journey-grid {
     grid-template-columns: 1fr;
   }
+
+  .education-column {
+    padding-left: 22px;
+  }
+
 }
 </style>
 
