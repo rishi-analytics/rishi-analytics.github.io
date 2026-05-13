@@ -764,9 +764,6 @@
 })();
 </script>    
 
-# Learning & Analytical Journey Section
-
-```html
 <!-- Glowing Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #003366, transparent); box-shadow: 0 0 15px #00c8ff; margin: 0; border: none;"></div>
 
@@ -791,6 +788,32 @@
 
       <!-- Timeline Line -->
       <div class="timeline-line"></div>
+
+      <!-- Node 0 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">🏗️</div>
+
+          <div class="journey-content">
+            <span class="journey-year">Foundation</span>
+            <h3>Bachelor's in Civil Engineering</h3>
+            <h4>Engineering & Systems Thinking</h4>
+
+            <p>
+              Built a foundation in structured problem solving, systems thinking, sustainability concepts, and analytical reasoning.
+            </p>
+
+            <div class="skill-tags">
+              <span>Systems Thinking</span>
+              <span>Problem Solving</span>
+              <span>Sustainability</span>
+              <span>Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Node 1 -->
       <div class="journey-node">
@@ -873,16 +896,7 @@
     </div>
   </div>
 </article>
-```
-
----
-
-# CSS
-
-```css
-/* =========================================
-   Learning & Analytical Journey Section
-========================================= */
+	
 <style>
 .journey-section {
   position: relative;
@@ -991,12 +1005,12 @@
 /* Card */
 .journey-card {
   display: flex;
-  gap: 28px;
+  gap: 20px;
   align-items: flex-start;
-  background: rgba(12,12,12,0.85);
-  border: 1px solid rgba(0,200,255,0.2);
-  border-radius: 24px;
-  padding: 35px;
+  background: rgba(12,12,12,0.78);
+  border: 1px solid rgba(0,200,255,0.16);
+  border-radius: 20px;
+  padding: 24px;
   backdrop-filter: blur(8px);
   box-shadow:
     0 0 20px rgba(0,200,255,0.08),
@@ -1017,8 +1031,8 @@
 
 /* Icon */
 .journey-icon {
-  min-width: 72px;
-  height: 72px;
+  min-width: 58px;
+  height: 58px;
   border-radius: 18px;
   display: flex;
   align-items: center;
@@ -1032,7 +1046,7 @@
 /* Content */
 .journey-content h3 {
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   margin-bottom: 8px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -1045,10 +1059,10 @@
 }
 
 .journey-content p {
-  color: #d7d7d7;
-  line-height: 1.8;
-  margin-bottom: 22px;
-  font-size: 0.98rem;
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
 }
 
 .journey-year {
