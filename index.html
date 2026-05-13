@@ -792,8 +792,8 @@
             <h4>Bachelor's in Civil Engineering</h4>
             <p>SRM University</p>
             <div class="skill-tags">
-              <span>Systems Thinking</span>
-              <span>Engineering Analysis</span>
+              <span>Engineering Mathematics</span>
+              <span>Sustainability Concepts</span>
               <span>Problem Solving</span>
             </div>
           </div>
@@ -802,13 +802,13 @@
         <div class="journey-card">
           <div class="journey-icon">🎓</div>
           <div>
-            <span class="journey-year">2023 - 2025</span>
+            <span class="journey-year">2021 - 2023</span>
             <h4>Master's in Business Analytics</h4>
             <p>University of Oulu</p>
             <div class="skill-tags">
-              <span>AI Systems</span>
-              <span>Data Analytics</span>
+              <span>Data Analyticsspan>
               <span>Business Intelligence</span>
+              <span>Data-driven Decision Making</span>
             </div>
           </div>
         </div>
@@ -821,9 +821,9 @@
         <div class="journey-card highlight">
           <div class="journey-icon">🌍</div>
           <div>
-            <span class="journey-year">ESG</span>
+            <span class="journey-year">ESG Analytics</span>
             <h4>Sustainability & ESG Frameworks</h4>
-            <p>entity["organization","Duke University"]</p>
+            <p>Duke University</p>
             <div class="skill-tags">
               <span>Sustainability</span>
               <span>ESG</span>
@@ -835,9 +835,9 @@
         <div class="journey-card highlight">
           <div class="journey-icon">📦</div>
           <div>
-            <span class="journey-year">Supply Chain</span>
-            <h4>Supply Chain Analytics</h4>
-            <p>Unilever case-based analysis & forecasting</p>
+            <span class="journey-year">Supply Chain Data Analyst</span>
+            <h4>Supply Chain Professional Certificate</h4>
+            <p>Unilever</p>
             <div class="skill-tags">
               <span>Forecasting</span>
               <span>Operations</span>
@@ -865,6 +865,7 @@
     </div>
   </div>
 </article>
+	
 	<style>
 		.journey-section {
   padding: 120px 20px;
@@ -872,23 +873,51 @@
 }
 
 /* Header */
+.journey-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  background: radial-gradient(circle at center, #000000 45%, #0a0a0a 100%);
+}
+
+/* Background Glow */
+.journey-bg-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0,200,255,0.12), transparent 70%);
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
 .journey-header {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
+  position: relative;
+  z-index: 2;
 }
 
 .journey-header h2 {
-  color: #fff;
-  font-size: 2.4rem;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 18px;
   text-shadow: 0 0 18px rgba(0,200,255,0.35);
 }
 
 .journey-header p {
-  color: #cfcfcf;
-  max-width: 700px;
+  color: #d7d7d7;
+  font-size: 1.05rem;
+  max-width: 760px;
   margin: auto;
+  line-height: 1.8;
 }
-
 /* GRID LAYOUT */
 .journey-grid {
   display: grid;
@@ -1032,7 +1061,7 @@
             <h4>University of Oulu</h4>
 
             <p>
-              Focused on analytics, AI systems, business intelligence, and data driven decision making.
+              Focused on analytics, Data Modelling, business intelligence, and data-driven decision making.
             </p>
 
             <div class="skill-tags">
