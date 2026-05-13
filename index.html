@@ -1032,16 +1032,40 @@
 ========================================= */
 
 .column-title {
-  color: #8fe8ff;
+  position: relative;
 
-  margin-bottom: 28px;
+  width: fit-content;
 
-  font-size: 1.35rem;
+  margin:
+    0 auto 28px auto;
+
+  padding:
+    10px 22px;
+
+  border-radius: 999px;
+
+  color: #4da6ff;
+
+  font-size: 1.08rem;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  background:
+    rgba(0,40,90,0.28);
+
+  border:
+    1px solid rgba(0,102,204,0.25);
+
+  box-shadow:
+    0 0 16px rgba(0,102,204,0.18),
+    inset 0 0 12px rgba(0,102,204,0.08);
+
+  text-align: center;
 
   text-shadow:
-    0 0 12px rgba(0,200,255,0.30);
+    0 0 10px rgba(0,102,204,0.20);
 }
-
 /* =========================================
    COLUMN
 ========================================= */
@@ -1067,22 +1091,26 @@
   position: absolute;
 
   left: 10px;
-  top: 70px;
+
+  top: 85px;
+
+  bottom: 90px;
 
   width: 2px;
-  height: calc(100% - 90px);
 
   background:
     linear-gradient(
       to bottom,
       rgba(0,200,255,0.9),
-      rgba(0,120,255,0.2)
+      rgba(0,120,255,0.25)
     );
 
   box-shadow:
-    0 0 15px rgba(0,200,255,0.6);
+    0 0 15px rgba(0,200,255,0.5);
 }
-
+	.education-timeline {
+  left: -5px;
+}
 /* =========================================
    CARD
 ========================================= */
@@ -1144,8 +1172,9 @@
 .timeline-dot {
   position: absolute;
 
-  left: -28px;
-  top: 30px;
+  left: -35px;
+
+  top: 28px;
 
   width: 14px;
   height: 14px;
@@ -1158,24 +1187,9 @@
     0 0 10px rgba(0,200,255,0.9),
     0 0 25px rgba(0,200,255,0.6);
 
-  animation: pulseDot 3s infinite ease-in-out;
+  animation:
+    pulseDot 3s infinite ease-in-out;
 }
-
-@keyframes pulseDot {
-
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.15);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 /* =========================================
    ICONS
 ========================================= */
@@ -1302,75 +1316,7 @@
 }
 </style>
 
-	
-	<!-- Glowing Separator -->
-<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #003366, transparent); box-shadow: 0 0 15px #00c8ff; margin: 0; border: none;"></div>
 
-<!-- Learning & Analytical Journey -->
-<article id="journey" class="journey-section">
-
-  <!-- Animated Background Glow -->
-  <div class="journey-bg-glow"></div>
-
-  <div class="container">
-
-    <!-- Section Header -->
-    <header class="journey-header">
-      <h2>Learning & Analytical Journey</h2>
-      <p>
-        Continuous exploration through analytics, systems, AI, and structured problem solving.
-      </p>
-    </header>
-
-    <!-- Timeline Wrapper -->
-    <div class="journey-timeline">
-
-      <!-- Timeline Line -->
-      <div class="timeline-line"></div>
-
-      <!-- Node 1 -->
-      <div class="journey-node">
-        <div class="timeline-dot"></div>
-
-        <div class="journey-card">
-          <div class="journey-icon">🎓</div>
-
-          <div class="journey-content">
-            <span class="journey-year">2024</span>
-            <h3>Master's in Business Analytics</h3>
-            <h4>University of Oulu</h4>
-
-            <p>
-              Focused on analytics, Data Modelling, business intelligence, and data-driven decision making.
-            </p>
-
-            <div class="skill-tags">
-              <span>Analytics</span>
-              <span>AI</span>
-              <span>Business Intelligence</span>
-              <span>Data Systems</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Node 2 -->
-      <div class="journey-node">
-        <div class="timeline-dot"></div>
-
-        <div class="journey-card">
-          <div class="journey-icon">📊</div>
-
-          <div class="journey-content">
-            <span class="journey-year">Specializations</span>
-            <h3>Supply Chain Analytics</h3>
-            <h4>Professional Learning & Industry Exploration</h4>
-
-            <p>
-              Explored forecasting, operational analytics, industry analysis, and competitive strategy using real world analytical scenarios.
-            </p>
-
-</article>
 
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>		
