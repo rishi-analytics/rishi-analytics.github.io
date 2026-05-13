@@ -69,7 +69,7 @@
 <div class="col-8 col-7-large col-12-medium hero-content">
   <header>
     <h1 class="hero-title glow-text">
-      Hei <span class="wave">👋</span>, I'm <span class="highlight-name">Rishi</span>
+      Hei <span class="wave">👋</span>, I'm <span class="highlight-name">Rishi</span> 
       <br>
       <span id="typed-role"></span>
     </h1>
@@ -763,6 +763,426 @@
   animate();
 })();
 </script>    
+
+# Learning & Analytical Journey Section
+
+```html
+<!-- Glowing Separator -->
+<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #003366, transparent); box-shadow: 0 0 15px #00c8ff; margin: 0; border: none;"></div>
+
+<!-- Learning & Analytical Journey -->
+<article id="journey" class="journey-section">
+
+  <!-- Animated Background Glow -->
+  <div class="journey-bg-glow"></div>
+
+  <div class="container">
+
+    <!-- Section Header -->
+    <header class="journey-header">
+      <h2>Learning & Analytical Journey</h2>
+      <p>
+        Continuous exploration through analytics, systems, AI, and structured problem solving.
+      </p>
+    </header>
+
+    <!-- Timeline Wrapper -->
+    <div class="journey-timeline">
+
+      <!-- Timeline Line -->
+      <div class="timeline-line"></div>
+
+      <!-- Node 1 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">🎓</div>
+
+          <div class="journey-content">
+            <span class="journey-year">2024</span>
+            <h3>Master's in Business Analytics</h3>
+            <h4>University of Oulu</h4>
+
+            <p>
+              Focused on analytics, AI systems, business intelligence, and data driven decision making.
+            </p>
+
+            <div class="skill-tags">
+              <span>Analytics</span>
+              <span>AI</span>
+              <span>Business Intelligence</span>
+              <span>Data Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 2 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">📊</div>
+
+          <div class="journey-content">
+            <span class="journey-year">Specializations</span>
+            <h3>Supply Chain Analytics</h3>
+            <h4>Professional Learning & Industry Exploration</h4>
+
+            <p>
+              Explored forecasting, operational analytics, industry analysis, and competitive strategy using real world analytical scenarios.
+            </p>
+
+            <div class="skill-tags">
+              <span>Forecasting</span>
+              <span>Supply Chain</span>
+              <span>Strategy</span>
+              <span>Operations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 3 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">⚡</div>
+
+          <div class="journey-content">
+            <span class="journey-year">Current Exploration</span>
+            <h3>AI & Intelligent Analytics Systems</h3>
+            <h4>Continuous Learning</h4>
+
+            <p>
+              Currently exploring PySpark, AI assisted analytics, dashboard storytelling, and intelligent analytical systems.
+            </p>
+
+            <div class="skill-tags">
+              <span>PySpark</span>
+              <span>AI Systems</span>
+              <span>Visualization</span>
+              <span>Interactive Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+```
+
+---
+
+# CSS
+
+```css
+/* =========================================
+   Learning & Analytical Journey Section
+========================================= */
+<style>
+.journey-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px;
+  background: radial-gradient(circle at center, #000000 45%, #0a0a0a 100%);
+}
+
+/* Background Glow */
+.journey-bg-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0,200,255,0.12), transparent 70%);
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.journey-header {
+  text-align: center;
+  margin-bottom: 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-header h2 {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-shadow: 0 0 18px rgba(0,200,255,0.35);
+}
+
+.journey-header p {
+  color: #d7d7d7;
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* Timeline */
+.journey-timeline {
+  position: relative;
+  max-width: 950px;
+  margin: auto;
+  padding-left: 60px;
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 17px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,200,255,0.9), rgba(0,100,255,0.2));
+  box-shadow: 0 0 20px rgba(0,200,255,0.8);
+  border-radius: 10px;
+}
+
+/* Node */
+.journey-node {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -52px;
+  top: 42px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #00c8ff;
+  box-shadow:
+    0 0 10px rgba(0,200,255,0.9),
+    0 0 25px rgba(0,200,255,0.7),
+    0 0 45px rgba(0,200,255,0.5);
+  animation: pulseDot 3s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Card */
+.journey-card {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  background: rgba(12,12,12,0.85);
+  border: 1px solid rgba(0,200,255,0.2);
+  border-radius: 24px;
+  padding: 35px;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 20px rgba(0,200,255,0.08),
+    0 0 50px rgba(0,100,255,0.06);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border 0.4s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid rgba(0,200,255,0.45);
+  box-shadow:
+    0 0 30px rgba(0,200,255,0.18),
+    0 0 70px rgba(0,120,255,0.12);
+}
+
+/* Icon */
+.journey-icon {
+  min-width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: rgba(0,200,255,0.08);
+  border: 1px solid rgba(0,200,255,0.18);
+  box-shadow: 0 0 25px rgba(0,200,255,0.12);
+}
+
+/* Content */
+.journey-content h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content h4 {
+  color: #8fdfff;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.journey-content p {
+  color: #d7d7d7;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  font-size: 0.98rem;
+}
+
+.journey-year {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #00c8ff;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Skill Tags */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tags span {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(0,200,255,0.08);
+  border: 1px solid rgba(0,200,255,0.18);
+  color: #b8ecff;
+  font-size: 0.82rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+  background: rgba(0,200,255,0.16);
+  box-shadow: 0 0 18px rgba(0,200,255,0.22);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .journey-section {
+    padding: 90px 20px;
+  }
+
+  .journey-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .journey-timeline {
+    padding-left: 35px;
+  }
+
+  .timeline-dot {
+    left: -28px;
+  }
+
+  .journey-card {
+    flex-direction: column;
+    padding: 28px;
+  }
+
+  .journey-icon {
+    width: 65px;
+    height: 65px;
+  }
+}
+</style>
+
+	
+	<!-- Glowing Separator -->
+<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #003366, transparent); box-shadow: 0 0 15px #00c8ff; margin: 0; border: none;"></div>
+
+<!-- Learning & Analytical Journey -->
+<article id="journey" class="journey-section">
+
+  <!-- Animated Background Glow -->
+  <div class="journey-bg-glow"></div>
+
+  <div class="container">
+
+    <!-- Section Header -->
+    <header class="journey-header">
+      <h2>Learning & Analytical Journey</h2>
+      <p>
+        Continuous exploration through analytics, systems, AI, and structured problem solving.
+      </p>
+    </header>
+
+    <!-- Timeline Wrapper -->
+    <div class="journey-timeline">
+
+      <!-- Timeline Line -->
+      <div class="timeline-line"></div>
+
+      <!-- Node 1 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">🎓</div>
+
+          <div class="journey-content">
+            <span class="journey-year">2024</span>
+            <h3>Master's in Business Analytics</h3>
+            <h4>University of Oulu</h4>
+
+            <p>
+              Focused on analytics, AI systems, business intelligence, and data driven decision making.
+            </p>
+
+            <div class="skill-tags">
+              <span>Analytics</span>
+              <span>AI</span>
+              <span>Business Intelligence</span>
+              <span>Data Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 2 -->
+      <div class="journey-node">
+        <div class="timeline-dot"></div>
+
+        <div class="journey-card">
+          <div class="journey-icon">📊</div>
+
+          <div class="journey-content">
+            <span class="journey-year">Specializations</span>
+            <h3>Supply Chain Analytics</h3>
+            <h4>Professional Learning & Industry Exploration</h4>
+
+            <p>
+              Explored forecasting, operational analytics, industry analysis, and competitive strategy using real world analytical scenarios.
+            </p>
+
+</article>
 
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>		
