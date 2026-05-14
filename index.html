@@ -1144,7 +1144,7 @@
 
   position: absolute;
 
-  left: 20px;
+  left: 10px;
 
   top: 90px;
 
@@ -1190,10 +1190,10 @@
 
   top: 26px;
 
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 
-  border-radius: 50%;
+  border-radius: 30%;
 
   background: #00aaff;
 
@@ -1378,119 +1378,76 @@
    BUBBLE BACKGROUND
 ========================================= */
 
+
+
+ /* Canvas for bubbles only within journey section */
 #journeyBubbles {
-
   position: absolute;
-
-  top: 0;
-  left: 0;
-
+  inset: 0;
   width: 100%;
   height: 100%;
-
   z-index: 1;
-
   pointer-events: none;
 }
 
-/* ensure content stays above canvas */
-
+/* Ensure journey section stays above bubbles */
 .journey-section .container {
-
   position: relative;
-
   z-index: 2;
+  color: #fff;
+  text-align: left;
 }
 </style>
 
 	<script>
+  // --- Bubble background ---
+  (function() {
+    const canvas = document.getElementById('cosmosBubbles');
+    if (!canvas) return; // prevent error if canvas not found
+    const ctxB = canvas.getContext('2d');
+    let W, H;
+    const bubblesArr = [];
+    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
 
-const canvas = document.getElementById("journeyBubbles");
-const ctx = canvas.getContext("2d");
-
-const section = document.querySelector(".journey-section");
-
-function resizeCanvas() {
-
-  canvas.width = section.offsetWidth;
-  canvas.height = section.offsetHeight;
-}
-
-resizeCanvas();
-
-window.addEventListener("resize", resizeCanvas);
-
-const bubbles = [];
-
-const bubbleCount = 85;
-
-for (let i = 0; i < bubbleCount; i++) {
-
-  bubbles.push({
-
-    x: Math.random() * canvas.width,
-
-    y: Math.random() * canvas.height,
-
-    radius: Math.random() * 5 + 1,
-
-    speed: Math.random() * 0.5 + 0.15,
-
-    opacity: Math.random() * 0.20 + 0.03,
-
-    drift: (Math.random() - 0.5) * 0.3
-  });
-}
-
-function animateBubbles() {
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  bubbles.forEach(bubble => {
-
-    ctx.beginPath();
-
-    ctx.arc(
-      bubble.x,
-      bubble.y,
-      bubble.radius,
-      0,
-      Math.PI * 2
-    );
-
-    /* glowing navy blue */
-
-    ctx.fillStyle =
-      `rgba(0, 140, 255, ${bubble.opacity})`;
-
-    ctx.shadowBlur = 18;
-
-    ctx.shadowColor =
-      "rgba(0,140,255,0.45)";
-
-    ctx.fill();
-
-    /* movement */
-
-    bubble.y -= bubble.speed;
-
-    bubble.x += bubble.drift;
-
-    /* reset */
-
-    if (bubble.y < -10) {
-
-      bubble.y = canvas.height + 10;
-
-      bubble.x = Math.random() * canvas.width;
+    function resizeCanvas() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
     }
-  });
 
-  requestAnimationFrame(animateBubbles);
-}
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-animateBubbles();
+    for (let i = 0; i < 60; i++) {
+      bubblesArr.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 5 + 2,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        vy: Math.random() * -0.2 - 0.08,
+        alpha: Math.random() * 0.25 + 0.15
+      });
+    }
 
+    function animateBubbles() {
+      ctxB.clearRect(0, 0, W, H);
+      bubblesArr.forEach(b => {
+        b.y += b.vy;
+        if (b.y < -10) b.y = H + 10;
+		b.x += Math.sin(b.y / 50) * 0.2;
+		  
+        ctxB.beginPath();
+        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+        ctxB.fillStyle = b.c;
+        ctxB.globalAlpha = b.alpha;
+        ctxB.shadowBlur = 10;
+        ctxB.shadowColor = b.c;
+        ctxB.fill();
+      });
+      requestAnimationFrame(animateBubbles);
+    }
+
+    animateBubbles();
+  })();
 </script>
 
 
