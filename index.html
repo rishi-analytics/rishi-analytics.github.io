@@ -778,7 +778,7 @@
 <!-- ========================================= -->
 
 <article id="journey" class="journey-section">
-
+<canvas id="journeyBubbles"></canvas>
   <div class="container">
 
     <!-- HEADER -->
@@ -1186,7 +1186,7 @@
 
   position: absolute;
 
-  left: -39px;
+  left: -45px;
 
   top: 26px;
 
@@ -1373,9 +1373,103 @@
 
     padding-left: 46px;
   }
+
+/* =========================================
+   BUBBLE BACKGROUND
+========================================= */
+
+#journeyBubbles {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* ensure content stays above canvas */
+
+.journey-section .container {
+
+  position: relative;
+
+  z-index: 2;
 }
 </style>
+<script>
 
+const canvas = document.getElementById("journeyBubbles");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+const bubbles = [];
+
+for (let i = 0; i < 45; i++) {
+
+  bubbles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+
+    radius: Math.random() * 4 + 1,
+
+    speed: Math.random() * 0.4 + 0.1,
+
+    opacity: Math.random() * 0.25 + 0.05
+  });
+}
+
+function animateBubbles() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  bubbles.forEach(bubble => {
+
+    ctx.beginPath();
+
+    ctx.arc(
+      bubble.x,
+      bubble.y,
+      bubble.radius,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle =
+      `rgba(0, 140, 255, ${bubble.opacity})`;
+
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = "rgba(0,140,255,0.4)";
+
+    ctx.fill();
+
+    bubble.y -= bubble.speed;
+
+    if (bubble.y < -10) {
+
+      bubble.y = canvas.height + 10;
+
+      bubble.x = Math.random() * canvas.width;
+    }
+  });
+
+  requestAnimationFrame(animateBubbles);
+}
+
+animateBubbles();
+
+</script>
 
 
 <!-- Glowing Full-Width Separator -->
