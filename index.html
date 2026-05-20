@@ -1552,219 +1552,6 @@
   })();
 </script>
 
-
-<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>		
-
-<!-- ⚡ Revamped Tools Section with Constant Glow + Electric Waves -->
-<article id="tools" style="background: radial-gradient(circle at center, #000000 50%, #0a0a0a 100%); padding:100px 0; position:relative; overflow:hidden;">
- <canvas id="toolsBubbles"></canvas>
- <div class="container" style="text-align:center; max-width:1100px; margin:auto;">
-
-    <!-- Section Heading -->
-    <header style="margin-bottom:70px;">
-      <h2 style="font-family:'Montserrat',sans-serif; color:#ffffff; font-weight:700; font-size:2.5rem; text-shadow:0 0 20px rgba(255,215,0,0.6);">
-        Primary Tools I Use
-      </h2>
-      <p style="font-family:'Comic Sans MS', cursive; color:#ffffff; font-size:1.05rem;">
-        Tools that I'm proficient in Using
-      </p>
-    </header>
-
-    <!-- Glowing Layout -->
-    <div class="glow-layout">
-      
-      <!-- Python Card -->
-      <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="55" alt="Python Logo">
-        <h3 class="tool-title">Python</h3>
-        <p class="tool-desc">Data manipulation, visualization & ML</p>
-      </div>
-
-      <!-- Electric Wave 1 -->
-      <div class="electric-connector">
-        <div class="spark"></div>
-      </div>
-
-      <!-- Power BI Card -->
-      <div class="tool-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="55" alt="Power BI Logo">
-        <h3 class="tool-title">Power BI</h3>
-        <p class="tool-desc">Interactive dashboards & BI visualizations</p>
-      </div>
-
-      <!-- Electric Wave 2 -->
-      <div class="electric-connector">
-        <div class="spark"></div>
-      </div>
-
-      <!-- SQL Card -->
-      <div class="tool-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="55" alt="SQL Logo">
-        <h3 class="tool-title">SQL</h3>
-        <p class="tool-desc">Querying & managing relational databases</p>
-      </div>
-
-    </div>
-  </div>
-</article>
-
-<style>
-/* --- Layout --- */
-.glow-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding: 60px 20px;
-  flex-wrap: nowrap;
-  position: relative;
-}
-
-/* --- Tool Cards with Bright Navy Glow --- */
-.tool-card {
-  background: #0b0b0b;
-  border-radius: 20px;
-  border: 2px solid #003366; /* brighter navy for visibility */
-  box-shadow: 0 0 35px rgba(0,102,204,0.7); /* brighter navy glow */
-  padding: 35px 20px;
-  width: 200px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 60px rgba(0,102,204,0.9); /* stronger glow on hover */
-}
-
-.tool-card img {
-  margin-bottom: 18px;
-  filter: drop-shadow(0 0 15px rgba(0,102,204,0.6)); /* navy glow on image */
-}
-	
-/* --- Text Styles --- */
-.tool-title {
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.tool-desc {
-  font-family: 'Agrandir', serif;
-  color: #eaeaea;
-  font-size: 0.9rem;
-  line-height: 1.3rem;
-  margin: 0;
-}
-
-/* --- Electric Connectors --- */
-.electric-connector {
-  width: 80px;
-  height: 4px;
-  position: relative;
-  background: linear-gradient(90deg, #ffaa00, #ffcc00, #ffaa00);
-  border-radius: 2px;
-  box-shadow: 0 0 25px rgba(255,215,0,0.8);
-  overflow: hidden;
-}
-
-.spark {
-  position: absolute;
-  top: 0;
-  left: -20%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
-  animation: sparkFlow 1.5s linear infinite;
-}
-
-@keyframes sparkFlow {
-  0% { left: -40%; opacity: 0; }
-  30% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .glow-layout {
-    flex-direction: column;
-    gap: 45px;
-  }
-  .electric-connector {
-    display: none;
-  }
-}
-	/* Bubbles for Tools Section */
-#toolsBubbles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#tools.container {
-  position: relative;
-  z-index: 2;
-}
-</style>
-
-		<script>
-// --- Bubble background for Tools Section ---
-(function() {
-  const canvas = document.getElementById('toolsBubbles');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  const bubbles = [];
-  const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
-
-  function resizeCanvas() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  for (let i = 0; i < 60; i++) {
-    bubbles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 5 + 2,
-      c: colors[Math.floor(Math.random() * colors.length)],
-      vy: Math.random() * -0.2 - 0.08,
-      alpha: Math.random() * 0.25 + 0.15
-	
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    bubbles.forEach(b => {
-      b.y += b.vy;
-      if (b.y < -10) b.y = H + 10;
-      b.x += Math.sin(b.y / 50) * 0.2;
-
-
-      ctx.beginPath();
-      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = b.c;
-      ctx.globalAlpha = b.alpha;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = b.c;
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-})();
-</script>
-		
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
@@ -1911,480 +1698,404 @@
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
-
-
-		<!-- 🌌 Beyond Data Section -->
-<article id="beyond-data" class="wrapper" style="padding: 80px 0; background: radial-gradient(circle at center, #050505 20%, #000000 90%); color: #fff; text-align: center; position: relative; overflow: hidden;">
-
-  <!-- Bubbles canvas -->
-  <canvas id="beyondBubbles"></canvas>
 	
+	
+	
+	
+	<!-- 🌌 CORE COMPETENCIES SECTION -->
+<article id="core-competencies" class="core-section">
+
+  <!-- ONE COMMON BUBBLE CANVAS -->
+  <canvas id="coreBubbles"></canvas>
+
   <div class="container">
-    <header>
-      <h2>Beyond Data</h2>
-      <p>Data velho Rishi</p>
+
+    <!-- HEADER -->
+    <header class="core-header">
+      <h2>Core Competencies</h2>
+      <p>Tools, skills, and analytical identity in one system</p>
     </header>
 
-    <div class="data-cards">
-      <!-- CV Card -->
-      <div class="data-card">
-        <img src="images/moomin cv.jpeg" alt="CV Image">
-        <h3>Check out my CV</h3>
-        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/kesari.rishi_CV.pdf" class="button" target="_blank">View CV</a>
+    <!-- ========================= -->
+    <!-- 1. TOOLS STRIP -->
+    <!-- ========================= -->
+    <section class="tools-strip">
+
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <span>Python</span>
       </div>
 
-      <!-- About Me Card -->
-      <div class="data-card">
-        <img src="images/moomin_about me.jpeg" alt="About Me Image">
-        <h3>About Me</h3>
-        <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/About%20Me.md" class="button" target="_blank">Read About Me</a>
+      <div class="tool-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+        <span>Power BI</span>
       </div>
-    </div>
+
+      <div class="tool-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+        <span>SQL</span>
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 2. SKILLS MATRIX -->
+    <!-- ========================= -->
+    <section class="skills-section">
+
+      <h3 class="subheading">Skills Matrix</h3>
+
+      <div class="skills-grid">
+
+        <div class="skill-block">
+          <h4>Programming</h4>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>R</span>
+            <span>SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <h4>Data Platforms</h4>
+          <div class="skill-tags">
+            <span>BigQuery</span>
+            <span>Snowflake</span>
+            <span>Databricks</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <h4>BI Tools</h4>
+          <div class="skill-tags">
+            <span>Power BI</span>
+            <span>Tableau</span>
+            <span>Looker Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-block">
+          <h4>Analytics</h4>
+          <div class="skill-tags">
+            <span>EDA</span>
+            <span>A/B Testing</span>
+            <span>Regression</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 3. CV + ABOUT -->
+    <!-- ========================= -->
+    <section class="cta-section">
+
+      <h3 class="subheading">Professional Identity</h3>
+
+      <div class="cta-grid">
+
+        <div class="cta-card">
+          <img src="images/moomin cv.jpeg" alt="CV">
+          <h4>CV</h4>
+          <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/kesari.rishi_CV.pdf" target="_blank">
+            View CV
+          </a>
+        </div>
+
+        <div class="cta-card">
+          <img src="images/moomin_about me.jpeg" alt="About">
+          <h4>About Me</h4>
+          <a href="https://github.com/rishi-analytics/Rishi_Profile/blob/main/About%20Me.md" target="_blank">
+            Read Story
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
   </div>
 </article>
 
-<style>
-  /* Beyond Data Styling */
-  #beyond-data h2 {
-    font-size: 2.5rem;
-    color: #ffffff; /* clean white */
-    font-family: 'Montserrat', sans-serif;
-  }
+	<style>
+	/* =========================
+   CORE SECTION BASE
+========================= */
 
-  #beyond-data p {
-    font-family: 'Comic Sans MS', cursive;
-    color: #ddd;
-    margin-bottom: 50px;
-    font-size: 1.2rem;
-  }
+.core-section {
+  position: relative;
+  padding: 90px 0;
+  background: radial-gradient(circle at center, #050505 20%, #000 90%);
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
 
-  .data-cards {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    z-index: 2;
-    position: relative;
-  }
+#coreBubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
 
-  .data-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 2px solid rgba(0,191,255,0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 35px rgba(0,191,255,0.4); /* constant soft glow */
-    padding: 25px;
-    width: 300px;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
-  }
+.core-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+}
 
-  .data-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 45px rgba(0,191,255,0.8);
-  }
+/* =========================
+   HEADER
+========================= */
 
-  .data-card img {
-    border-radius: 15px;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 0 15px rgba(0,191,255,0.4));
-  }
+.core-header h2 {
+  font-size: 2.6rem;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+}
 
-  .data-card:hover img {
-    transform: scale(1.06);
-  }
+.core-header p {
+  color: #cfd8ff;
+  margin-top: 10px;
+}
 
-  .data-card h3 {
-    margin-top: 15px;
-    color: #00e5ff;
-    font-size: 1.4rem;
-    font-family: 'Montserrat', sans-serif;
-  }
+/* =========================
+   SUBHEADINGS
+========================= */
 
-  /* Restore older button style */
-  .data-card a.button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 18px;
-    border: 1px solid #00bfff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 0 10px rgba(0,191,255,0.5);
-  }
+.subheading {
+  margin: 50px 0 25px;
+  font-size: 1.6rem;
+  color: #4db8ff;
+  text-shadow: 0 0 12px rgba(0, 150, 255, 0.4);
+}
 
-  .data-card a.button:hover {
-    background: #00bfff;
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(0,191,255,0.8);
-  }
+/* =========================
+   TOOLS STRIP
+========================= */
 
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    .data-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+.tools-strip {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
 
-  /* Bubbles Layer */
-  #beyondBubbles {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-  }
+.tool-card {
+  background: #0b0b0b;
+  border: 1px solid #003a66;
+  box-shadow: 0 0 25px rgba(0, 120, 255, 0.4);
+  border-radius: 16px;
+  padding: 18px 22px;
+  min-width: 140px;
+  transition: 0.3s ease;
+}
 
-  #beyond-data .container {
-    position: relative;
-    z-index: 2;
-  }
-	.data-card a.button {
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 45px rgba(0, 140, 255, 0.7);
+}
+
+.tool-card img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: auto;
+}
+
+.tool-card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   SKILLS MATRIX
+========================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.skill-block {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0, 140, 255, 0.2);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 0 18px rgba(0, 120, 255, 0.15);
+}
+
+.skill-block h4 {
+  color: #8fd3ff;
+  margin-bottom: 10px;
+}
+
+.skill-tags span {
+  display: inline-block;
+  background: rgba(0, 120, 255, 0.15);
+  border: 1px solid rgba(0, 140, 255, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin: 3px;
+  white-space: nowrap;
+}
+
+/* =========================
+   CV + ABOUT
+========================= */
+
+.cta-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cta-card {
+  width: 260px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0, 140, 255, 0.3);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 0 25px rgba(0, 120, 255, 0.25);
+  transition: 0.3s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 50px rgba(0, 140, 255, 0.6);
+}
+
+.cta-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.cta-card h4 {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.cta-card a {
   display: inline-block;
   margin-top: 10px;
-  padding: 8px 18px;
-  background: transparent;
-  border: 2px solid #001f3f; /* deep navy outline */
-  color: #ffffff;
+  padding: 8px 14px;
+  border: 1px solid #2aa9ff;
+  border-radius: 8px;
+  color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 31, 63, 0.6); /* subtle navy glow */
-  background-color: #000; /* pure black inside */
+  transition: 0.3s;
 }
 
-.data-card a.button:hover {
-  background: #001f3f; /* deep navy fill on hover */
-  box-shadow: 0 0 18px rgba(0, 31, 63, 0.9);
-  transform: scale(1.05);
+.cta-card a:hover {
+  background: #1e90ff;
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.6);
 }
-</style>
+		/* =========================
+   CORE BUBBLES BACKGROUND
+========================= */
 
-<script>
-(function() {
-  const canvas = document.getElementById("beyondBubbles");
+#core-competencies {
+  position: relative;
+  overflow: hidden;
+}
+
+/* full background canvas layer */
+#coreBubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ensure content is above bubbles */
+#core-competencies .container {
+  position: relative;
+  z-index: 2;
+}
+	</style>
+	
+	<script>
+	(function () {
+  const canvas = document.getElementById("coreBubbles");
   if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
+
   let W, H;
   const bubbles = [];
 
-  // colorful tones for consistency
   const colors = [
-    "rgba(255, 0, 102, 0.6)",   // pink-red
-    "rgba(0, 191, 255, 0.6)",   // blue
-    "rgba(255, 255, 0, 0.5)",   // yellow
-    "rgba(0, 255, 128, 0.5)",   // green
-    "rgba(255, 102, 255, 0.6)"  // magenta
+    "rgba(0, 170, 255, 0.5)",
+    "rgba(0, 120, 255, 0.4)",
+    "rgba(120, 200, 255, 0.3)"
   ];
 
-  function resizeCanvas() {
+  function resize() {
     W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
 
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
+  window.addEventListener("resize", resize);
+  resize();
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 60; i++) {
     bubbles.push({
       x: Math.random() * W,
       y: Math.random() * H,
-      r: Math.random() * 5 + 2,
-      vy: Math.random() * -0.5 - 0.1,
-      alpha: Math.random() * 0.4 + 0.3,
+      r: Math.random() * 4 + 1.5,
+      vy: Math.random() * -0.4 - 0.1,
+      vx: Math.random() * 0.4 - 0.2,
+      alpha: Math.random() * 0.5 + 0.2,
       color: colors[Math.floor(Math.random() * colors.length)]
     });
   }
 
   function animate() {
     ctx.clearRect(0, 0, W, H);
+
     bubbles.forEach(b => {
       b.y += b.vy;
+      b.x += b.vx;
+
       if (b.y < -10) b.y = H + 10;
-      b.x += Math.sin(b.y / 40) * 0.3;
+      if (b.x < 0) b.x = W;
+      if (b.x > W) b.x = 0;
 
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+
       ctx.fillStyle = b.color;
       ctx.globalAlpha = b.alpha;
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 15;
       ctx.shadowColor = b.color;
+
       ctx.fill();
     });
+
     requestAnimationFrame(animate);
   }
 
   animate();
 })();
-</script>
-
-		
-<!-- Glowing Full-Width Separator -->
-<div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
-		
-		<div class="skills-columns">
-
-
-			 <!-- Skill Section -->
-		
-<article id="skills" class="wrapper" style="padding: 80px 0; background: radial-gradient(circle at center, #050505 20%, #000000 90%); color: #fff; text-align: center; position: relative; overflow: hidden;">
-
-  <!-- Bubbles canvas -->
-  <canvas id="cosmosBubbles"></canvas>
-
-  <div class="container">
-    <header>
-      <h2>Skills</h2>
-    </header>
-
-  <div class="skills-matrix">
-
-    <div class="skills-col">
-      <h3>Programming Languages</h3>
-      <ul>
-        <li>Python</li>
-		  <li>R</li>
-        <li>SQL</li>
-      </ul>
-    </div>
-
-    <div class="skills-col">
-      <h3>Data Analytics</h3>
-      <ul>
-        <li>MS Excel</li>
-		  <li>DataBricks</li>
-        <li>BigQuery</li>
-        <li>Snowflake</li>
-        <li>SAP</li>
-        <li>MS Azure</li>
-        
-      </ul>
-    </div>
-
-    <div class="skills-col">
-      <h3>Business Intelligence</h3>
-      <ul>
-        <li>Power BI</li>
-		  <li>Tableau</li>
-		  <li>Looker Studio</li>
-      </ul>
-    </div>
-
-    <div class="skills-col">
-      <h3>Analytics Methods</h3>
-      <ul>
-        <li>EDA</li>
-        <li>Regression Analysis</li>
-		  <li>SHAP Analysis</li>
-		  <li>Data Modelling</li>
-        <li>A/B Testing</li>
-		  <li>ANOVA</li>
-		  <li>Monte Carlo Simulation</li>
-		  <li>Post Hoc T Test</li>
-      </ul>
-    </div>
-</div>
-  </div>
-</article>
-		
-		<style>
-body {
-  background: #000 !important;
-  color: #ffffff;
-}
-
-/* ===== SKILLS SECTION ===== */
-#skills {
-  background: #000 !important;
-  padding: 60px 0;
-}
-
-/* MAIN TITLE */
-#skills h2 {
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-/* ===== MATRIX LAYOUT ===== */
-.skills-matrix {
-  display: flex;
-  gap: 45px;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* ===== COLUMN ===== */
-.skills-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* KEY FIX: alignment consistency */
-}
-
-/* COLUMN HEADINGS */
-.skills-col h3 {
-  color: #ffffff;
-  font-size: 1.45rem;   /* increased */
-  font-weight: 600;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-/* SKILLS LIST */
-.skills-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* SKILL ITEMS */
-.skills-col li {
-  margin: 8px 0;
-  font-size: 1.25rem;   /* increased */
-  opacity: 0.85;
-  text-align: left;
-  transition: 0.2s;
-}
-
-/* HOVER EFFECT */
-.skills-col li:hover {
-  opacity: 1;
-  transform: translateX(4px);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .skills-matrix {
-    flex-wrap: wrap;
-  }
-
-  .skills-col {
-    flex: 1 1 45%;
-  }
-}
-
-@media (max-width: 500px) {
-  .skills-col {
-    flex: 1 1 100%;
-  }
-}
-			.skills-col {
-  position: relative;
-}
-
-.skills-matrix {
-  align-items: stretch; /* IMPORTANT: makes all columns equal height */
-}
-
-.skills-col {
-  position: relative;
-}
-
-/* full-height divider */
-.skills-col:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -12px;
-  top: 0;
-  bottom: 0;  /* KEY FIX */
-  width: 1.5px;
-}
-			.skills-col:not(:last-child)::after {
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 170, 255, 0.4),
-    rgba(0, 170, 255, 0.8),
-    rgba(0, 170, 255, 0.4),
-    transparent
-  );
-
-  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
-}
-  /* Bubble Canvas Layer */
-  #skills {
-  position: relative;
-  overflow: hidden;
-  min-height: 500px;
-}
-
-/* Bubble Canvas Layer */
-#cosmosBubbles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;          /* BEHIND content */
-  pointer-events: none;
-}
-
-/* bring content above canvas */
-#skills .container {
-  position: relative;
-  z-index: 1;
-}
-</style>
-	<script>
-		  // --- Bubble background ---
-  (function() {
-    const canvas = document.getElementById('cosmosBubbles');
-    if (!canvas) return; // prevent error if canvas not found
-    const ctxB = canvas.getContext('2d');
-    let W, H;
-    const bubblesArr = [];
-    const colors = ['#00FFFF', '#FF00FF', '#FFD700', '#00FF7F', '#FF6347', '#1E90FF'];
-
-    function resizeCanvas() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    for (let i = 0; i < 60; i++) {
-      bubblesArr.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 5 + 2,
-        c: colors[Math.floor(Math.random() * colors.length)],
-        vy: Math.random() * -0.2 - 0.08,
-        alpha: Math.random() * 0.25 + 0.15
-      });
-    }
-
-    function animateBubbles() {
-      ctxB.clearRect(0, 0, W, H);
-      bubblesArr.forEach(b => {
-        b.y += b.vy;
-        if (b.y < -10) b.y = H + 10;
-		b.x += Math.sin(b.y / 50) * 0.2;
+	</script>
 		  
-        ctxB.beginPath();
-        ctxB.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctxB.fillStyle = b.c;
-        ctxB.globalAlpha = b.alpha;
-        ctxB.shadowBlur = 10;
-        ctxB.shadowColor = b.c;
-        ctxB.fill();
-      });
-	</script>	
-			
 		<!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
-
 
 
 <!-- 🌐 Social Section -->
