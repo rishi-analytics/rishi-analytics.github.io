@@ -533,6 +533,11 @@
           <img src="images/clash_royale.jpeg" alt="Game Data Analysis">
           <h3>Game Data Analysis</h3>
           <p>SuperCell Clash Royale Game Data Analysis</p>
+			<div class="project-tags">
+  <span>Python</span>
+  <span>EDA</span>
+  <span>Game Analytics</span>
+</div>
         </a>
       </div>
 
@@ -542,6 +547,11 @@
           <h3>SQL Project</h3>
           <p>Agricultural Production Analysis Using SQL</p>
         </a>
+			<div class="project-tags">
+  <span>SQL</span>
+  <span>Data Querying</span>
+  <span>Database</span>
+</div>
       </div>
 
       <div class="project-card">
@@ -550,6 +560,11 @@
           <h3>Supply Chain Analytics</h3>
           <p>Inventory, Logistics, Supplier Optimization</p>
         </a>
+		  <div class="project-tags">
+  <span>Excel</span>
+  <span>Supply Analytics</span>
+  <span>Data Analysis</span>
+</div>
       </div>
 		
 	      <div class="project-card">
@@ -558,6 +573,11 @@
           <h3>Bike Demand Prediction</h3>
           <p>Demand Prediction Using Regression & Random Forest Models</p>
         </a>
+			  <div class="project-tags">
+  <span>Machine Learning</span>
+  <span>Regression</span>
+  <span>Forecasting</span>
+</div>
       </div>
 		
 
@@ -567,6 +587,11 @@
           <h3>ESG Analysis Project</h3>
           <p>ESG Data Analysis for Sustainable Business Decisions</p>
         </a>
+		  <div class="project-tags">
+  <span>ESG</span>
+  <span>Sustainability</span>
+  <span>Data Analysis</span>
+</div>
       </div>
 		
 
@@ -576,6 +601,11 @@
           <h3>Churn Prediction</h3>
           <p>Data-driven Churn Insights Powered by PySpark Machine Learning</p>
         </a>
+		  <div class="project-tags">
+  <span>PySpark</span>
+  <span>Machine Learning</span>
+  <span>Customer Analytics</span>
+</div>
       </div>
 		
 
@@ -711,7 +741,36 @@
   50% { box-shadow: 0 0 30px rgba(0,160,255,0.8), 0 0 45px rgba(0,255,255,0.4); }
   100% { box-shadow: 0 0 15px rgba(0,160,255,0.7); }
 }
+/* --- css for subtags skills --- */
+	.project-tags {
+  display: flex;
+  flex-wrap: nowrap;   /* prevents second line */
+  gap: 8px;
+  margin-top: 12px;
+  overflow: hidden;
+}
 
+.project-tags span {
+  font-size: 0.72rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+
+  background: rgba(0, 160, 255, 0.10);
+  border: 1px solid rgba(0, 160, 255, 0.25);
+
+  color: #b8e8ff;
+
+  white-space: nowrap; /* prevents wrapping */
+  flex-shrink: 0;
+
+  transition: 0.25s ease;
+}
+
+.project-tags span:hover {
+  background: rgba(0, 160, 255, 0.22);
+  box-shadow: 0 0 12px rgba(0, 160, 255, 0.3);
+  transform: translateY(-1px);
+}
 </style>
 
 <script>
