@@ -1823,19 +1823,20 @@
 
 	<style>
 	/* =========================
-   CORE SECTION BASE
+   CORE SECTION BASE (FIXED)
 ========================= */
-:root {
-  --neon-blue: rgba(0, 160, 255, 0.9);
-  --neon-blue-soft: rgba(0, 160, 255, 0.35);
-  --neon-blue-deep: rgba(0, 120, 255, 1);
-}
+
 .core-section {
   position: relative;
   overflow: hidden;
-  min-height: 100vh; /* IMPORTANT FIX */
+  min-height: 100vh;
+
+  /* FIX: restore dark background */
+  background: radial-gradient(circle at center, #050505 20%, #000000 90%);
+  color: #ffffff;
 }
 
+/* Bubble Canvas Layer */
 #coreBubbles {
   position: absolute;
   inset: 0;
@@ -1843,8 +1844,10 @@
   height: 100%;
   z-index: 0;
   display: block;
+  opacity: 1 !important;
 }
 
+/* Ensure content sits above canvas */
 .core-section .container {
   position: relative;
   z-index: 2;
@@ -1858,24 +1861,34 @@
   font-size: 2.6rem;
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
-  text-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+  text-shadow: 0 0 14px rgba(0, 160, 255, 0.25);
 }
 
 .core-header p {
   color: #ffffff;
-  opacity: 0.75;
+  opacity: 0.8;
   margin-top: 10px;
   font-size: 1rem;
 }
 
-/* ALL subsection headings */
+/* Subheadings */
 .subheading {
   margin: 50px 0 25px;
   font-size: 1.6rem;
   color: #ffffff;
   font-weight: 500;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 12px rgba(0, 160, 255, 0.2);
 }
+
+/* =========================
+   GLOW SYSTEM (UNIFIED BLUE)
+========================= */
+
+:root {
+  --neon-blue: rgba(0, 160, 255, 0.9);
+  --neon-blue-soft: rgba(0, 160, 255, 0.35);
+}
+
 /* =========================
    TOOLS STRIP
 ========================= */
@@ -1891,12 +1904,19 @@
 .tool-card {
   background: #0b0b0b;
   border: 1px solid rgba(0, 160, 255, 0.25);
+
   box-shadow:
     0 0 25px var(--neon-blue-soft),
     0 0 60px rgba(0, 120, 255, 0.15);
+
+  border-radius: 16px;
+  padding: 18px 22px;
+  min-width: 140px;
+  transition: 0.3s ease;
 }
 
 .tool-card:hover {
+  transform: translateY(-6px);
   box-shadow:
     0 0 40px var(--neon-blue),
     0 0 90px var(--neon-blue-soft);
@@ -1929,14 +1949,17 @@
 .skill-block {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(0, 160, 255, 0.25);
-  box-shadow:
-    0 0 20px var(--neon-blue-soft);
+
+  box-shadow: 0 0 20px rgba(0, 160, 255, 0.15);
+
+  border-radius: 16px;
+  padding: 18px;
   transition: 0.3s ease;
 }
 
- .skill-block:hover {
+.skill-block:hover {
   box-shadow:
-    0 0 40px var(--neon-blue-soft),
+    0 0 40px rgba(0, 160, 255, 0.35),
     0 0 70px rgba(0, 120, 255, 0.2);
 }
 
@@ -1945,10 +1968,11 @@
   margin-bottom: 10px;
 }
 
+/* Tags */
 .skill-tags span {
   display: inline-block;
   background: rgba(0, 120, 255, 0.15);
-  border: 1px solid rgba(0, 140, 255, 0.3);
+  border: 1px solid rgba(0, 160, 255, 0.3);
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -1957,7 +1981,7 @@
 }
 
 /* =========================
-   CV + ABOUT
+   CV + ABOUT CARDS
 ========================= */
 
 .cta-grid {
@@ -1971,16 +1995,19 @@
 .cta-card {
   width: 260px;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(0, 140, 255, 0.3);
+  border: 1px solid rgba(0, 160, 255, 0.25);
+
+  box-shadow:
+    0 0 25px rgba(0, 160, 255, 0.25),
+    0 0 60px rgba(0, 120, 255, 0.15);
+
   border-radius: 18px;
   padding: 18px;
-  box-shadow:
-  0 0 25px var(--neon-blue-soft),
-  0 0 60px rgba(0, 120, 255, 0.15);
   transition: 0.3s ease;
 }
 
-  .cta-card:hover {
+.cta-card:hover {
+  transform: translateY(-8px);
   box-shadow:
     0 0 45px var(--neon-blue),
     0 0 90px var(--neon-blue-soft);
@@ -2000,7 +2027,7 @@
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
-  border: 1px solid #2aa9ff;
+  border: 1px solid rgba(0, 160, 255, 0.6);
   border-radius: 8px;
   color: #fff;
   text-decoration: none;
@@ -2008,18 +2035,18 @@
 }
 
 .cta-card a:hover {
-  background: #1e90ff;
-  box-shadow: 0 0 20px rgba(0, 140, 255, 0.6);
+  background: rgba(0, 140, 255, 0.9);
+  box-shadow: 0 0 20px rgba(0, 160, 255, 0.6);
 }
-		/* =========================
-   CORE BUBBLES BACKGROUND
+
+/* =========================
+   SAFETY FIX (BODY OVERRIDE)
 ========================= */
 
-#core-competencies {
-  position: relative;
-  overflow: hidden;
+body {
+  background: #000 !important;
+  color: #ffffff;
 }
-
 	</style>
 	
 	<script>
