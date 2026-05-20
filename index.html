@@ -599,7 +599,7 @@
         <a href="https://github.com/rishi-analytics/Machine-Learning-With-PySpark/tree/main?tab=readme-ov-file#preventing-customer-churn-through-machine-learning" target="_blank">
           <img src="images/churn.png" alt="Churn Prediction">
           <h3>Churn Prediction</h3>
-          <p>Data-driven Churn Insights Powered by PySpark Machine Learning</p>
+          <p>Predicting Customer Churn Using ML</p>
         </a>
 		  <div class="project-tags">
   <span>PySpark</span>
@@ -1825,14 +1825,15 @@
 	/* =========================
    CORE SECTION BASE
 ========================= */
-
+:root {
+  --neon-blue: rgba(0, 160, 255, 0.9);
+  --neon-blue-soft: rgba(0, 160, 255, 0.35);
+  --neon-blue-deep: rgba(0, 120, 255, 1);
+}
 .core-section {
   position: relative;
-  padding: 90px 0;
-  background: radial-gradient(circle at center, #050505 20%, #000 90%);
-  color: white;
   overflow: hidden;
-  text-align: center;
+  min-height: 100vh; /* IMPORTANT FIX */
 }
 
 #coreBubbles {
@@ -1840,15 +1841,13 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  pointer-events: none;
+  z-index: 0;
+  display: block;
 }
 
 .core-section .container {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
-  margin: auto;
 }
 
 /* =========================
@@ -1891,17 +1890,16 @@
 
 .tool-card {
   background: #0b0b0b;
-  border: 1px solid #003a66;
-  box-shadow: 0 0 25px rgba(0, 120, 255, 0.4);
-  border-radius: 16px;
-  padding: 18px 22px;
-  min-width: 140px;
-  transition: 0.3s ease;
+  border: 1px solid rgba(0, 160, 255, 0.25);
+  box-shadow:
+    0 0 25px var(--neon-blue-soft),
+    0 0 60px rgba(0, 120, 255, 0.15);
 }
 
 .tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 45px rgba(0, 140, 255, 0.7);
+  box-shadow:
+    0 0 40px var(--neon-blue),
+    0 0 90px var(--neon-blue-soft);
 }
 
 .tool-card img {
@@ -1930,10 +1928,16 @@
 
 .skill-block {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(0, 140, 255, 0.2);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 0 18px rgba(0, 120, 255, 0.15);
+  border: 1px solid rgba(0, 160, 255, 0.25);
+  box-shadow:
+    0 0 20px var(--neon-blue-soft);
+  transition: 0.3s ease;
+}
+
+ .skill-block:hover {
+  box-shadow:
+    0 0 40px var(--neon-blue-soft),
+    0 0 70px rgba(0, 120, 255, 0.2);
 }
 
 .skill-block h4 {
@@ -1970,13 +1974,16 @@
   border: 1px solid rgba(0, 140, 255, 0.3);
   border-radius: 18px;
   padding: 18px;
-  box-shadow: 0 0 25px rgba(0, 120, 255, 0.25);
+  box-shadow:
+  0 0 25px var(--neon-blue-soft),
+  0 0 60px rgba(0, 120, 255, 0.15);
   transition: 0.3s ease;
 }
 
-.cta-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 50px rgba(0, 140, 255, 0.6);
+  .cta-card:hover {
+  box-shadow:
+    0 0 45px var(--neon-blue),
+    0 0 90px var(--neon-blue-soft);
 }
 
 .cta-card img {
@@ -2034,13 +2041,16 @@ const colors = [
   "rgba(255, 80, 80, 0.45)"   // soft red
 ];
 
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
+function resize() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+}
 
-  window.addEventListener("resize", resize);
-  resize();
+window.addEventListener("resize", resize);
+resize();
+
+/*  */
+setTimeout(resize, 100);
 
   for (let i = 0; i < 60; i++) {
     bubbles.push({
