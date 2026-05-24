@@ -1051,8 +1051,9 @@
 </article>
 	
 	<style>
-		/* =========================================
-   SECTION
+		
+   /* =========================================
+   JOURNEY SECTION
 ========================================= */
 
 .journey-section {
@@ -1068,6 +1069,33 @@
 
   position: relative;
   overflow: hidden;
+}
+
+/* =========================================
+   BUBBLE BACKGROUND
+========================================= */
+
+#journeyBubbles {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.7;
+}
+
+.journey-section .container {
+
+  position: relative;
+  z-index: 2;
 }
 
 /* =========================================
@@ -1088,7 +1116,7 @@
     );
 
   box-shadow:
-    0 0 18px rgba(0,120,255,0.45);
+    0 0 18px rgba(0,120,255,0.40);
 }
 
 /* =========================================
@@ -1108,24 +1136,30 @@
 
   font-size: 2.5rem;
 
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+
   text-shadow:
-    0 0 12px rgba(0,120,255,0.28),
-    0 0 30px rgba(0,120,255,0.14);
+    0 0 14px rgba(0,120,255,0.24),
+    0 0 28px rgba(0,120,255,0.12);
 }
 
 .journey-header p {
 
-  color: #d2d2d2;
+  color: #cfcfcf;
 
-  max-width: 700px;
+  max-width: 720px;
 
   margin: auto;
 
-  line-height: 1.7;
+  line-height: 1.8;
+
+  font-size: 0.98rem;
 }
 
 /* =========================================
-   GRID
+   MAIN GRID
 ========================================= */
 
 .journey-grid {
@@ -1134,7 +1168,7 @@
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 40px;
+  gap: 38px;
 
   max-width: 1200px;
 
@@ -1142,43 +1176,49 @@
 }
 
 /* =========================================
-   SUBSYSTEM CONTAINER
+   SUBSYSTEM CONTAINERS
 ========================================= */
 
 .subsystem-container {
 
   position: relative;
 
-  padding: 34px;
+  padding: 28px;
 
   border-radius: 28px;
 
   background:
-    rgba(10,10,10,0.82);
+    rgba(10,10,10,0.84);
 
   border:
-    1px solid rgba(0,120,255,0.18);
+    1px solid rgba(0,120,255,0.16);
 
   box-shadow:
-    0 0 30px rgba(0,120,255,0.10),
-    inset 0 0 25px rgba(0,120,255,0.04);
+    0 0 28px rgba(0,120,255,0.08),
+    inset 0 0 22px rgba(0,120,255,0.03);
+
+  backdrop-filter: blur(10px);
 
   transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    border 0.35s ease;
 }
 
 .subsystem-container:hover {
 
   transform: translateY(-4px);
 
+  border:
+    1px solid rgba(0,140,255,0.24);
+
   box-shadow:
-    0 0 45px rgba(0,120,255,0.16),
-    inset 0 0 35px rgba(0,120,255,0.08);
+    0 0 40px rgba(0,120,255,0.14),
+    inset 0 0 28px rgba(0,120,255,0.05);
 }
 
 /* =========================================
-   TITLES
+   COLUMN TITLES
 ========================================= */
 
 .column-title {
@@ -1193,26 +1233,28 @@
 
   border-radius: 999px;
 
-  color: #4da6ff;
-
   background:
-    rgba(0,40,90,0.25);
+    rgba(0,35,80,0.30);
 
   border:
     1px solid rgba(0,102,204,0.22);
 
-  box-shadow:
-    0 0 18px rgba(0,102,204,0.16);
+  color: #4da6ff;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
 
   text-align: center;
 
-  font-size: 1.05rem;
-
-  letter-spacing: 0.4px;
+  box-shadow:
+    0 0 18px rgba(0,102,204,0.14);
 }
 
 /* =========================================
-   EDUCATION TIMELINE
+   EDUCATION SYSTEM
 ========================================= */
 
 .education-system {
@@ -1220,34 +1262,39 @@
   padding-left: 52px;
 }
 
+/* =========================================
+   TIMELINE
+========================================= */
+
 .timeline-line {
 
   position: absolute;
 
-  left: 10px;
+  left: 28px;
 
-  top: 90px;
+  top: 105px;
 
-  bottom: 50px;
+  bottom: 55px;
 
   width: 1px;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(0,140,255,0.95),
-      rgba(0,140,255,0.20)
+      rgba(0,140,255,0.90),
+      rgba(0,140,255,0.12)
     );
 
   box-shadow:
-    0 0 18px rgba(0,120,255,0.45);
+    0 0 16px rgba(0,120,255,0.35);
 }
 
 /* =========================================
-   EDUCATION BLOCK
+   BLOCKS
 ========================================= */
 
-.education-block {
+.education-block,
+.specialization-block {
 
   position: relative;
 
@@ -1256,6 +1303,32 @@
   align-items: flex-start;
 
   gap: 18px;
+
+  padding: 12px 10px;
+
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border 0.3s ease;
+}
+
+.education-block:hover,
+.specialization-block:hover {
+
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(0,120,255,0.05);
+
+  box-shadow:
+    0 0 22px rgba(0,120,255,0.10);
+
+  border:
+    1px solid rgba(0,140,255,0.14);
 }
 
 /* =========================================
@@ -1266,33 +1339,20 @@
 
   position: absolute;
 
-  left: -70px;
+  left: -29px;
 
-  top: 20px;
+  top: 24px;
 
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
 
-  border-radius: 30%;
+  border-radius: 50%;
 
   background: #00aaff;
 
   box-shadow:
     0 0 12px rgba(0,170,255,0.85),
-    0 0 28px rgba(0,170,255,0.50);
-}
-
-/* =========================================
-   SPECIALIZATION BLOCK
-========================================= */
-
-.specialization-block {
-
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 18px;
+    0 0 24px rgba(0,170,255,0.45);
 }
 
 /* =========================================
@@ -1303,18 +1363,18 @@
 
   height: 1px;
 
-  margin: 26px 0;
+  margin: 24px 0;
 
   background:
     linear-gradient(
       90deg,
       transparent,
-      rgba(0,120,255,0.35),
+      rgba(0,120,255,0.26),
       transparent
     );
 
   box-shadow:
-    0 0 12px rgba(0,120,255,0.18);
+    0 0 10px rgba(0,120,255,0.10);
 }
 
 /* =========================================
@@ -1330,18 +1390,37 @@
 
   border-radius: 16px;
 
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   background:
-    rgba(0,120,255,0.08);
+    rgba(0,120,255,0.06);
 
   border:
-    1px solid rgba(0,120,255,0.14);
+    1px solid rgba(0,120,255,0.12);
 
   box-shadow:
-    0 0 16px rgba(0,120,255,0.10);
+    0 0 10px rgba(0,120,255,0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border 0.3s ease;
+}
+
+.education-block:hover .journey-icon,
+.specialization-block:hover .journey-icon {
+
+  transform: scale(1.04);
+
+  border:
+    1px solid rgba(0,140,255,0.24);
+
+  box-shadow:
+    0 0 18px rgba(0,140,255,0.18);
 }
 
 .journey-icon img {
@@ -1352,11 +1431,6 @@
   object-fit: cover;
 
   border-radius: 12px;
-
-	filter:
-    drop-shadow(
-      0 0 8px rgba(0,120,255,0.24)
-    );
 }
 
 /* =========================================
@@ -1367,7 +1441,7 @@
 
   color: #4da6ff;
 
-  font-size: 0.78rem;
+  font-size: 0.76rem;
 
   text-transform: uppercase;
 
@@ -1378,21 +1452,47 @@
 
 .journey-content h4 {
 
-  color: #ffffff;
-
   margin:
     6px 0 6px;
 
-  font-size: 1.02rem;
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+.journey-content h4 a {
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.specialization-block:hover .specialization-title-link {
+
+  color: #9ed8ff;
+
+  text-shadow:
+    0 0 14px rgba(0,140,255,0.35);
+}
+
+.specialization-title-link {
+
+  cursor: pointer;
 }
 
 .institution-name {
 
-  color: #8fdfff;
+  color: #82d7ff;
 
   margin-bottom: 12px;
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 
   letter-spacing: 0.3px;
 }
@@ -1412,30 +1512,36 @@
 
 .skill-tags span {
 
-  padding: 5px 10px;
+  padding: 4px 9px;
 
   border-radius: 999px;
 
   background:
-    rgba(0,120,255,0.08);
+    rgba(0,120,255,0.07);
 
   border:
-    1px solid rgba(0,120,255,0.16);
+    1px solid rgba(0,120,255,0.14);
 
   color: #b8e8ff;
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
 
-  transition: 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .skill-tags span:hover {
 
   background:
-    rgba(0,120,255,0.18);
+    rgba(0,120,255,0.14);
+
+  transform:
+    translateY(-1px);
 
   box-shadow:
-    0 0 15px rgba(0,120,255,0.16);
+    0 0 12px rgba(0,120,255,0.12);
 }
 
 /* =========================================
@@ -1451,30 +1557,51 @@
 
   .education-system {
 
-    padding-left: 46px;
+    padding-left: 48px;
   }
-/* =========================================
-   SPECIALIZATION BLOCKS
-========================================= */
-.specialization-title-link {
 
-  color: inherit;
+  .journey-header h2 {
 
-  text-decoration: none;
-
-  transition:
-    color 0.3s ease,
-    text-shadow 0.3s ease;
+    font-size: 2rem;
+  }
 }
 
-.specialization-title-link:hover {
+@media (max-width: 640px) {
 
-  color: #6ec1ff;
+  .journey-section {
 
-  text-shadow:
-    0 0 12px rgba(0,140,255,0.45);
+    padding: 90px 16px;
+  }
+
+  .subsystem-container {
+
+    padding: 22px;
+  }
+
+  .education-block,
+  .specialization-block {
+
+    gap: 14px;
+  }
+
+  .journey-icon {
+
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+  }
+
+  .timeline-line {
+
+    left: 24px;
+  }
+
+  .timeline-node {
+
+    left: -25px;
+  }
 }
-	.subsystem-container:hover
 	
 /* =========================================
    BUBBLE BACKGROUND
