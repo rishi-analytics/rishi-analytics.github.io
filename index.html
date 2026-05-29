@@ -1827,8 +1827,233 @@
 <!-- Glowing Full-Width Separator -->
 <div style="width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #001f3f, transparent); box-shadow: 0 0 15px #ff004c; margin: 0; border: none;"></div>
 
-	
-	
+<article id="beyond" class="beyond-section">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="beyond-header">
+
+      <h2>Beyond Data</h2>
+
+      <p>
+        Volunteering, interests, and personal ambition.
+      </p>
+
+    </header>
+
+    <!-- CARDS -->
+    <div class="beyond-grid">
+
+      <!-- VOLUNTEERING -->
+      <div class="beyond-card">
+
+        <div class="beyond-icon">
+          <img src="images/volunteer_certificate.jpg" alt="Volunteering">
+        </div>
+
+        <h3>Volunteering</h3>
+
+        <p>
+          Active participation in community initiatives focused on collaboration, support, and impact-driven work.
+        </p>
+
+        <a href="YOUR_CERTIFICATE_LINK"
+           target="_blank"
+           class="beyond-link">
+          View Certificate
+        </a>
+
+      </div>
+
+      <!-- HOBBIES -->
+      <div class="beyond-card">
+
+        <div class="beyond-icon">
+          <img src="images/hobby-icon.png" alt="Hobbies">
+        </div>
+
+        <h3>Hobbies</h3>
+
+        <p>
+          I enjoy drawing, exploring design systems, learning languages, and building creative digital projects.
+        </p>
+
+      </div>
+
+      <!-- WHAT I DO -->
+      <div class="beyond-card">
+
+        <div class="beyond-icon">
+          <img src="images/focus-icon.png" alt="Focus">
+        </div>
+
+        <h3>What I Do</h3>
+
+        <p>
+          Data analysis, business intelligence, and applied machine learning to solve real-world operational problems.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+	<style>
+	.beyond-section {
+
+  padding: 100px 20px;
+
+  background:
+    radial-gradient(circle at center, #000 40%, #0a0a0a 100%);
+
+  position: relative;
+}
+
+.beyond-header {
+
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.beyond-header h2 {
+
+  color: #ffffff;
+
+  font-size: 2.3rem;
+
+  text-shadow: 0 0 18px rgba(0,120,255,0.25);
+}
+
+.beyond-header p {
+
+  color: #cfcfcf;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.7;
+}
+
+.beyond-grid {
+
+  display: flex;
+
+  gap: 24px;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.beyond-card {
+
+  width: 280px;
+
+  padding: 24px;
+
+  border-radius: 20px;
+
+  background: rgba(10,10,10,0.85);
+
+  border: 1px solid rgba(0,120,255,0.16);
+
+  box-shadow: 0 0 25px rgba(0,120,255,0.08);
+
+  transition: all 0.3s ease;
+}
+
+.beyond-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 0 40px rgba(0,120,255,0.18);
+}
+
+.beyond-icon {
+
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 12px;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: rgba(0,120,255,0.08);
+}
+
+.beyond-icon img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.beyond-card h3 {
+
+  color: #4da6ff;
+
+  margin-bottom: 10px;
+}
+
+.beyond-card p {
+
+  color: #d0d0d0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+.beyond-link {
+
+  display: inline-block;
+
+  margin-top: 12px;
+
+  color: #6ec1ff;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+}
+
+.beyond-link:hover {
+
+  text-shadow: 0 0 10px rgba(0,140,255,0.4);
+}
+
+@media (max-width: 900px) {
+
+  .beyond-grid {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+}
+		html {
+  scroll-behavior: smooth;
+}
+		:target {
+  animation: highlightGlow 2s ease;
+}
+
+@keyframes highlightGlow {
+  0% { box-shadow: 0 0 0 rgba(0,120,255,0); }
+  50% { box-shadow: 0 0 40px rgba(0,120,255,0.25); }
+  100% { box-shadow: 0 0 0 rgba(0,120,255,0); }
+}
+</style>	
 	
 	
 	<!-- 🌌 CORE COMPETENCIES SECTION -->
